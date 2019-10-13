@@ -10,6 +10,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
     'gatsby-plugin-eslint',
+    'gatsby-plugin-offline',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -36,24 +37,24 @@ module.exports = {
         path: `${__dirname}/src/content/`,
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-webfonts`,
-    //   options: {
-    //     fonts: {
-    //       google: [
-    //         {
-    //           family: 'Nunito',
-    //           variants: ['300', '400', '600', '700'],
-    //           //fontDisplay: 'swap',
-    //           //strategy: 'selfHosted' // 'base64' || 'cdn'
-    //         },
-    //       ],
-    //     },
-    //     useMinify: true,
-    //     usePreload: true,
-    //     usePreconnect: true,
-    //     //formats: ['woff2', 'woff'],
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-webfonts`,
+      options: {
+        fonts: {
+          google: [
+            {
+              family: 'Nunito',
+              variants: ['300', '400', '600', '700'],
+              //fontDisplay: 'swap',
+              //strategy: 'selfHosted' // 'base64' || 'cdn'
+            },
+          ],
+        },
+        useMinify: true,
+        usePreload: true,
+        usePreconnect: true,
+        //formats: ['woff2', 'woff'],
+      },
+    },
   ],
 }
