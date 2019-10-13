@@ -73,15 +73,15 @@ const PageLinks = styled.section`
   }
 `
 
-const LogoLink = styled(Logo)`
+const StyledLogo = styled(Logo)`
   font-size: 4.8rem;
 `
 
 const Nav = () => (
   <StyledNav>
-    <LogoLink to="/">
-      <Logo />
-    </LogoLink>
+    <Link to="/">
+      <StyledLogo />
+    </Link>
     <PageLinks aria-label="pages" className="text-sm">
       <StyledLink to="/type-spec" activeClassName="active">
         About

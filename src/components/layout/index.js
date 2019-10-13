@@ -1,7 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import { Grid } from 'react-flexbox-grid'
 
+import { screen } from '../global/vars'
 import GlobalStyles from '../global/styles'
 import SEO from './seo'
 import Nav from './nav'
@@ -18,10 +20,13 @@ const Main = styled.main`
   width: 100%;
   max-width: 144rem;
   margin: 0 auto;
-  padding: 0rem 2rem;
+  padding: 0rem 4rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  @media ${screen.max.md}{
+    padding: 0rem 2rem;
+  }
 `
 
 const Layout = ({ title, children }) => {
@@ -31,7 +36,9 @@ const Layout = ({ title, children }) => {
       <GlobalStyles />
       <Content>
         <Nav />
-        <Main><div>{children}</div></Main>
+        <Main>
+          <Grid>{children}</Grid>
+        </Main>
         <Footer />
       </Content>
     </>
