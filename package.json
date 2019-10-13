@@ -1,24 +1,42 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "maria-szubski-digital-llc",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Freelance Front End Web Developer - Cincinnati, OH",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Maria Szubski <hello@mariaszubski.com>",
   "dependencies": {
+    "@svgr/cli": "^4.3.3",
+    "babel-plugin-styled-components": "^1.10.6",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
     "gatsby": "^2.15.36",
     "gatsby-image": "^2.2.27",
     "gatsby-plugin-manifest": "^2.2.21",
     "gatsby-plugin-offline": "^3.0.14",
+    "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
     "gatsby-plugin-react-helmet": "^3.1.11",
+    "gatsby-plugin-remove-trailing-slashes": "^2.1.10",
     "gatsby-plugin-sharp": "^2.2.29",
+    "gatsby-plugin-styled-components": "^3.1.9",
     "gatsby-source-filesystem": "^2.1.31",
     "gatsby-transformer-sharp": "^2.2.21",
+    "gatsby-transformer-yaml": "^2.2.13",
     "prop-types": "^15.7.2",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
-    "react-helmet": "^5.2.1"
+    "react-flexbox-grid": "^2.1.2",
+    "react-helmet": "^5.2.1",
+    "react-inlinesvg": "^1.1.7",
+    "react-obfuscate": "^3.6.2",
+    "react-responsive": "^8.0.1",
+    "styled-components": "^4.4.0"
   },
   "devDependencies": {
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.5.1",
+    "eslint-loader": "^3.0.2",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-react": "^7.16.0",
+    "gatsby-plugin-eslint": "^2.0.5",
     "prettier": "^1.18.2"
   },
   "keywords": [
@@ -35,9 +53,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/mariaszubski/mariaszubski-com"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/mariaszubski/mariaszubski-com/issues"
   }
 }
