@@ -71,8 +71,8 @@ const global_styles = css`
     color: ${colors.white};
     font-weight: 600;
 
-    &:before,
-    &:after {
+    p &:before,
+    p &:after {
       content: '';
       position: absolute;
       width: 100%;
@@ -81,19 +81,19 @@ const global_styles = css`
       left: 0;
     }
 
-    &:before {
+    p &:before {
       background: ${colors.blue300};
       background: ${colors.blue300 + '80'};
     }
 
-    &:after {
+    p &:after {
       background: ${colors.blue300};
       transform: scaleX(0);
       transform-origin: bottom center;
       transition: transform .2s ease-out;
     }
 
-    &:hover:after {
+    p &:hover:after {
       transform: scaleX(1);
     }
   }
@@ -119,12 +119,12 @@ const global_styles = css`
   }
 
   hgroup,
-  h1[pad],
-  h2[pad],
-  h3[pad],
-  h4[pad],
-  h5[pad],
-  h6[pad] {
+  h1.pad,
+  h2.pad,
+  h3.pad,
+  h4.pad,
+  h5.pad,
+  h6.pad {
     margin-bottom: 1.5em;
   }
 
@@ -184,22 +184,28 @@ const global_styles = css`
     line-height: 140%;
   }
 
-  *[element]{
+  *.element{
     margin: 10rem 0rem;
   }
 
-  *[text-sm],
-  *[text-sm] * {
+  *.text-sm,
+  *.text-sm * {
     font-size: 1.3rem;
   }
 
-  *[text-lg],
-  *[text-lg] * {
+  *.text-lg,
+  *.text-lg * {
     font-size: 2.4rem;
     line-height: 145%;
   }
 
-  *[text-light] {
+  *.text-light,
+  *.text-light *  {
+    color: ${colors.gray700};
+  }
+
+  *.text-center,
+  *.text-center *  {
     color: ${colors.gray700};
   }
 
@@ -208,8 +214,8 @@ const global_styles = css`
       font-size: 1.4rem;
       line-height: 1.4;
     }
-    *[text-lg],
-    *[text-lg] * {
+    *.text-lg,
+    *.text-lg * {
       font-size: 2rem;
     }
   }

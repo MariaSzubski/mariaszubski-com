@@ -1,10 +1,19 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const Logo = props => (
-  <svg width="1em" height="1em" viewBox="0 0 48 48" {...props}>
+  <svg
+    width="1em"
+    height="1em"
+    viewBox="0 0 48 48"
+    role="img"
+    aria-label="Logo"
+    {...props}
+  >
+    <title>Logo</title>
     <path
       d="M22.563 1.797a22.25 22.25 0 11-20.766 23.64 22.25 22.25 0 0120.766-23.64M22.45.051A24 24 0 1047.949 22.45 24 24 0 0022.45.051z"
-      fill="#fff"
+      fill={props.color}
       opacity={0.8}
     />
     <path
@@ -18,5 +27,13 @@ const Logo = props => (
     />
   </svg>
 )
+
+Logo.propTypes = {
+  color: PropTypes.string,
+}
+
+Logo.defaultProps = {
+  color: 'white',
+}
 
 export default Logo
