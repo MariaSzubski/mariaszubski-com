@@ -12,6 +12,7 @@ export const colors = {
   blue:     '#004876',
   blue300:  '#0C8FE2',
   blue700:  '#003C62',
+  blue900:  '#000A10',
   grape:    '#272580',
   grape300: '#6B69DF',
   grape700: '#22216E',

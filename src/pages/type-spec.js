@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Layout from '../components/layout'
+import SkillTag from '../components/skills/tag'
 
 const TypeSpec = () => (
   <Layout>
@@ -25,7 +26,7 @@ const TypeSpec = () => (
     <p className="text-lg">
       Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
       ut fermentum massa justo sit amet risus. Maecenas sed diam eget risus
-      varius blandit sit amet non magna. <a href="#">This is an inline link</a>
+      varius blandit sit amet non magna. <a href="#">This is an inline link</a>.
       Maecenas sed diam eget risus varius blandit sit amet non magna.
     </p>
     <p>
@@ -40,9 +41,20 @@ const TypeSpec = () => (
       consectetur ac, vestibulum at eros. Cras justo odio, dapibus ac facilisis
       in, egestas.
     </p>
-    {/* <section element>
-        <SkillGroup class="lt" />
-      </section> */}
+    <section className="element dk">
+      <h5 className="pad">Technologies</h5>
+      <SkillTag icon="javascript" label="JavaScript / ES6+" />
+      <SkillTag icon="graphql" label="GraphQL" />
+      <SkillTag icon="github" label="GitHub" dark />
+      <SkillTag icon="netlify" />
+      <SkillTag icon="invision" />
+      <SkillTag icon="css3" label="CSS3" />
+      <SkillTag icon="photoshop" label="Adobe Photoshop" />
+      <SkillTag icon="w3c" label="Accessibility" dark />
+      <SkillTag icon="bootstrap" label="Bootstrap" />
+      <SkillTag icon="styledcomp" label="Styled Components" />
+      <SkillTag icon="invision" />
+    </section>
     <h4>Card Headers</h4>
     <h6>Labels</h6>
     <p>
