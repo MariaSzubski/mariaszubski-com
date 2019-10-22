@@ -11,11 +11,11 @@ const Github = props => (
 )
 
 Github.propTypes = {
-  dark: PropTypes.bool,
+  dark: PropTypes.number,
 }
 
 Github.defaultProps = {
-  dark: false,
+  dark: 0,
 }
 
 export default Github

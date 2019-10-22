@@ -1,7 +1,10 @@
 import React from 'react'
 
+import data from '../content/all-skills.yml'
+
 import Layout from '../components/layout'
-import SkillTag from '../components/skills/tag'
+import { SkillGroup } from '../components/skills'
+import { SkillList, SkillTag } from '../components/skills/list'
 
 const TypeSpec = () => (
   <Layout>
@@ -41,20 +44,17 @@ const TypeSpec = () => (
       consectetur ac, vestibulum at eros. Cras justo odio, dapibus ac facilisis
       in, egestas.
     </p>
-    <section className="element dk">
-      <h5 className="pad">Technologies</h5>
-      <SkillTag icon="javascript" label="JavaScript / ES6+" />
-      <SkillTag icon="graphql" label="GraphQL" />
-      <SkillTag icon="github" label="GitHub" dark />
-      <SkillTag icon="netlify" />
-      <SkillTag icon="invision" />
-      <SkillTag icon="css3" label="CSS3" />
+
+    <SkillGroup title="Skills" data={data} dark />
+
+    <SkillList dark>
       <SkillTag icon="photoshop" label="Adobe Photoshop" />
       <SkillTag icon="w3c" label="Accessibility" dark />
       <SkillTag icon="bootstrap" label="Bootstrap" />
       <SkillTag icon="styledcomp" label="Styled Components" />
       <SkillTag icon="invision" />
-    </section>
+    </SkillList>
+
     <h4>Card Headers</h4>
     <h6>Labels</h6>
     <p>

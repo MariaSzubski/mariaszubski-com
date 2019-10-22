@@ -13,8 +13,13 @@
       "flowVersion": "0.53"
     }
   },
+  env: {
+    browser: true,
+    node: true,
+  },
   "rules": {
-    "strict": 0
+    "strict": 0,
+    "no-unused-vars": "off"
   },
   "extends": ["eslint:recommended", "plugin:react/recommended"]
 }

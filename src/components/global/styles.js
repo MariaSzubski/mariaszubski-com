@@ -125,7 +125,7 @@ const global_styles = css`
   h4.pad,
   h5.pad,
   h6.pad {
-    margin-bottom: 1.5em;
+    margin-bottom: 1.25em;
   }
 
   h1 {

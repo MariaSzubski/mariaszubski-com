@@ -19,11 +19,11 @@ const W3c = props => (
 )
 
 W3c.propTypes = {
-  dark: PropTypes.bool,
+  dark: PropTypes.number,
 }
 
 W3c.defaultProps = {
-  dark: false,
+  dark: 0,
 }
 
 export default W3c
