@@ -206,7 +206,7 @@ const global_styles = css`
 
   *.text-center,
   *.text-center *  {
-    color: ${colors.gray700};
+    text-align: center;
   }
 
   @media ${screen.max.md} {

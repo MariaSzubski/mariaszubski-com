@@ -9,17 +9,17 @@ import { SkillList, SkillTag } from '../components/skills/list'
 const TypeSpec = () => (
   <Layout>
     <hgroup>
-      <h1>Page Title</h1>
-      <h2>Subtitle</h2>
+      <h1>h1 Page Title</h1>
+      <h2>h2 Subtitle</h2>
     </hgroup>
     <hgroup>
-      <h3>Section Header</h3>
+      <h3>h3 Section Header</h3>
       <h5>
-        MOBILE UI DESIGN • JQUERY • PHONEGAP • EDUCATION RESEARCH • USER TESTING
+        h5 MOBILE UI DESIGN • JQUERY • PHONEGAP • EDUCATION RESEARCH • USER TESTING
       </h5>
     </hgroup>
-    <h4>h4</h4>
-    <h6>h6</h6>
+    <h4>h4 Title</h4>
+    <h6>h6 Subtitle</h6>
     <p className="text-lg">
       Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas sed diam
       eget risus varius blandit sit amet non magna. Lorem ipsum dolor sit amet,
