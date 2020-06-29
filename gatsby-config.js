@@ -56,5 +56,13 @@ module.exports = {
         //formats: ['woff2', 'woff'],
       },
     },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_DELIVERY_TOKEN,
+        host: `cdn.contentful.com`,
+      },
+    },
   ],
 }
