@@ -92,7 +92,7 @@ const Nav = () => (
       <StyledLink to="/projects/style-guide" activeClassName="active">
         Experience
       </StyledLink>
-      <Button to="/projects" color="green" activeClassName="active">
+      <Button to="/projects" $color="green" activeClassName="active">
         Let&apos;s Connect
       </Button>
     </PageLinks>

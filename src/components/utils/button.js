@@ -11,7 +11,7 @@ const StyledButton = styled(Link)`
   vertical-align: top;
   justify-content: center;
   border-radius: 0.4rem;
-  border: 1px solid ${props => props.color};
+  border: 1px solid ${props => props.$color};
   &:not(:last-of-type) {
     margin-right: 1rem;
   }
@@ -23,14 +23,14 @@ const StyledButton = styled(Link)`
   text-transform: uppercase;
   text-decoration: none;
   text-align: center;
-  text-shadow: 0rem 0.1rem 0.1rem ${colors.black + 'C0'};
+  text-shadow: 0rem 0.1rem 0.1rem ${colors.$black + 'C0'};
 
   ${'' /* Vertical Buttons */}
   &:not(:last-of-type) {
-    margin-bottom: ${props => (props.stacked ? '1.5rem' : '')};
+    margin-bottom: ${props => (props.$stacked ? '1.5rem' : '')};
   }
-  width: ${props => (props.stacked ? '100%' : 'auto')};
-  padding: 1rem ${props => (props.stacked ? '1rem' : '3rem')};
+  width: ${props => (props.$stacked ? '100%' : 'auto')};
+  padding: 1rem ${props => (props.$stacked ? '1rem' : '3rem')};
   align-items: flex-start;
 
   img {
@@ -50,18 +50,18 @@ const StyledButton = styled(Link)`
     width: 100%;
     height: 100%;
     opacity: 0;
-    background: ${props => props.bg_before};
+    background: ${props => props.$bg_before};
     transition: opacity 0.12s ease-out;
   }
 
   ${'' /* Underline */}
   &:after {
-    background: ${props => props.bg_after};
+    background: ${props => props.$bg_after};
   }
 
   &:hover {
     color: ${colors.white};
-    background: ${props => props.hover};
+    background: ${props => props.$hover};
     &:before {
       opacity: 1;
       transition: opacity 0.12s ease-out;
@@ -94,14 +94,14 @@ const color_list = {
   },
 }
 
-const Button = ({ children, stacked, ...props }) => (
+const Button = ({ children, $stacked, ...props }) => (
   <StyledButton
     as={!props.to ? 'button' : Link}
-    border={color_list.border[props.color]}
-    bg_before={color_list.bg_before[props.color]}
-    bg_after={color_list.bg_after[props.color]}
-    hover={color_list.hover[props.color]}
-    stacked={stacked ? 1 : 0}
+    $border={color_list.border[props.$color]}
+    $bg_before={color_list.bg_before[props.$color]}
+    $bg_after={color_list.bg_after[props.$color]}
+    $hover={color_list.hover[props.$color]}
+    $stacked={$stacked ? 1 : 0}
     {...props}
   >
     {children}
@@ -111,14 +111,14 @@ const Button = ({ children, stacked, ...props }) => (
 Button.propTypes = {
   children: PropTypes.node.isRequired,
   to: PropTypes.string,
-  color: PropTypes.string, // 'green', 'plum'
-  stacked: PropTypes.bool,
+  $color: PropTypes.string, // 'green', 'plum'
+  $stacked: PropTypes.bool,
   layout: PropTypes.string, // vertical
 }
 
 Button.defaultProps = {
-  color: 'white',
-  stacked: false
+  $color: 'white',
+  $stacked: false
 }
 
 export default Button
