@@ -8,6 +8,7 @@ const fontfaces = css`
     src: url(${milkshake}) format('truetype');
     font-weight: 300;
   }
+  
 `
 
 export default fontfaces

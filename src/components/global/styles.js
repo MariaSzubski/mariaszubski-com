@@ -219,6 +219,7 @@ const global_styles = css`
       font-size: 2rem;
     }
   }
+
 `
 const all_styles = css`
   ${normalize}

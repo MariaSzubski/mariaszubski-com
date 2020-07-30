@@ -23,7 +23,7 @@ const StyledButton = styled(Link)`
   text-transform: uppercase;
   text-decoration: none;
   text-align: center;
-  text-shadow: 0rem 0.1rem 0.1rem ${colors.$black + 'C0'};
+  text-shadow: 0rem 0.1rem 0.1rem ${colors.black + 'C0'};
 
   ${'' /* Vertical Buttons */}
   &:not(:last-of-type) {
