@@ -46,11 +46,11 @@ const TypeSpec = () => (
       in, egestas.
     </p>
 
-    <SkillGroup title="Skills" data={data} dark />
+    <SkillGroup title="Skills" data={data} />
 
-    <SkillList dark>
+    <SkillList>
       <SkillTag icon="photoshop" label="Adobe Photoshop" />
-      <SkillTag icon="w3c" label="Accessibility" dark />
+      <SkillTag icon="w3c" label="Accessibility" />
       <SkillTag icon="bootstrap" label="Bootstrap" />
       <SkillTag icon="styledcomp" label="Styled Components" />
       <SkillTag icon="invision" />

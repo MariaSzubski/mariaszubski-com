@@ -175,6 +175,10 @@ const global_styles = css`
     margin: 10rem 0rem;
   }
 
+  *.element-minor{
+    margin: 4rem 0rem;
+  }
+
   *.text-sm,
   *.text-sm * {
     font-size: 1.3rem;

@@ -1,0 +1,8 @@
+---
+- title: This Site Is Built With
+  skills:
+    - icon: gatsby
+    - icon: reactjs
+      label: react
+    - icon: contentful
+    - icon: netlify

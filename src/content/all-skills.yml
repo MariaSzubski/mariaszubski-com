@@ -8,8 +8,12 @@
     - icon: vue
     - icon: gatsby
     - icon: graphql
-      label: grapQL
+      label: graphQL
     - icon: git
+    - icon: shopify
+    - icon: dato
+      label: datoCMS
+    - icon: contentful
     - icon: webpack
     - icon: netlify
     - icon: storybook
@@ -33,6 +37,8 @@
       label: LESS
     - icon: python
     - icon: ruby
+    - icon: php
+      label: PHP
 
 - title: Tools & Concepts
   skills:
@@ -41,6 +47,8 @@
       label: GitHub
     - icon: w3c
       label: Accessibility
+    - icon: jamstack
+      label: JAMStack
     - icon: node
     - icon: npm
       label: NPM
@@ -53,6 +61,8 @@
       label: Adobe Illustrator
     - icon: photoshop
       label: Adobe Photoshop
+    - icon: atom
+    - icon: phonegap
     - label: Responsive Design
     - label: Usability
     - label: UX Testing

@@ -7,7 +7,7 @@ import SkillTag from "./tag"
 
 const Groups = styled.div`
   background-color: hsla(0, 0%, 100%, 0.03);
-  padding: 4rem 1rem;
+  padding: ${props => (props.$simple ? "1.6rem 1rem" : "4rem 1rem")};
   margin: 0rem -2rem;
 
   > div:not(:last-of-type) {
@@ -15,7 +15,8 @@ const Groups = styled.div`
   }
 
   @media ${screen.min.md} {
-    padding: 4rem 3rem;
+    display: ${props => (props.$simple ? "inline-block" : "block")};
+    padding: ${props => (props.$simple ? "2rem" : "4rem 3rem")};
     margin: 0rem;
   }
 `
@@ -23,9 +24,10 @@ const Groups = styled.div`
 const Skills = styled.div`
   display: flex;
   flex-wrap: wrap;
+  justify-content: ${props => (props.$center ? "center" : "flex-start")};
 
   > span {
-    width: calc(50% - 0.6rem);
+    width: ${props => (props.$simple ? "auto" : "calc(50% - 0.6rem)")};
     @media ${screen.min.md} {
       width: auto;
     }
@@ -33,20 +35,34 @@ const Skills = styled.div`
 `
 
 const SkillGroup = ({ children, ...props }) => (
-  <section className={`element ${props.dark ? "dk" : "lt"}`}>
+  <section
+    className={`
+      ${props.$simple ? "element-minor " : "element "}
+      ${props.light ? "lt" : "dk"}
+    `}
+  >
     {props.title && <h3 className="pad">{props.title}</h3>}
-    <Groups>
+
+    <Groups $simple={props.$simple ? 1 : 0}>
       {props.data &&
         props.data.map((group, g_idx) => (
           <div key={`${group.title}-skills-${g_idx}`}>
-            <h5 className="pad">{group.title}</h5>
-            <Skills>
+            {props.$simple ? (
+              <h2>{group.title}</h2>
+            ) : (
+              <h5 className="pad">{group.title}</h5>
+            )}
+
+            <Skills
+              $center={props.$center ? 1 : 0}
+              $simple={props.$simple ? 1 : 0}
+            >
               {group.skills.map((skill, s_idx) => (
                 <SkillTag
                   key={`${group.title}-skill-${s_idx}`}
                   icon={skill.icon && skill.icon}
                   label={skill.label && skill.label}
-                  dark={props.dark}
+                  light={props.light}
                 />
               ))}
             </Skills>
@@ -57,14 +73,18 @@ const SkillGroup = ({ children, ...props }) => (
 )
 
 SkillGroup.propTypes = {
-  dark: PropTypes.bool,
+  light: PropTypes.bool,
   title: PropTypes.string,
   data: PropTypes.array,
+  $center: PropTypes.bool,
   children: PropTypes.node,
+  $simple: PropTypes.bool,
 }
 
 SkillGroup.defaultProps = {
-  dark: false,
+  light: false,
+  $center: false,
+  $simple: false,
 }
 
 export { SkillGroup, SkillTag }

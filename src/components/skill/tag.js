@@ -17,22 +17,22 @@ const StyledTag = styled.span`
   margin: 0.3rem;
   font-weight: 700;
   text-transform: capitalize;
-  font-size: 1.4rem;
+  font-size: 1.rem;
 
   .text {
     height: 1.8rem;
   }
 
   .lt & {
-    background-color: ${colors.white};
+    background-color: ${colors.white + "EE"};
     color: ${colors.black};
-    padding: 0.4rem 1.4rem;
+    padding: 1.8rem 1.4rem;
     height: 3rem;
   }
 
   .dk & {
     background-color: ${colors.blue900 + "80"};
-    padding: 0.3rem 1.2rem;
+    padding: 2rem 1.2rem;
     height: 3.4rem;
   }
 
@@ -43,11 +43,11 @@ const StyledTag = styled.span`
   ${StyledIcon} > * {
     height: 2.2rem;
     width: 2.2rem;
-    margin-right: ${props => (props.dark ? "1.1rem" : "1rem")};
+    margin-right: ${props => (props.light ? "1rem" : "1.1rem")};
   }
 
   @media ${screen.min.md} {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     margin: 0.3rem 0.6rem 0.3rem 0rem;
 
     &:first-of-type {
@@ -58,9 +58,7 @@ const StyledTag = styled.span`
     }
 
     ${StyledIcon} > * {
-      height: 2rem;
-      width: 2rem;
-      margin-right: 0.6rem;
+      margin-right: 0.9rem;
     }
   }
 `
@@ -71,7 +69,7 @@ const SkillTag = props => {
     <StyledTag title={props.label}>
       {Icon && (
         <StyledIcon>
-          <Icon dark={props.dark ? 1 : 0} />
+          <Icon light={props.light ? 1 : 0} />
         </StyledIcon>
       )}
       <div className="text">{props.label || props.icon}</div>
@@ -82,11 +80,11 @@ const SkillTag = props => {
 SkillTag.propTypes = {
   icon: PropTypes.string,
   label: PropTypes.string,
-  dark: PropTypes.bool,
+  light: PropTypes.bool,
 }
 
 SkillTag.defaultProps = {
-  dark: false,
+  light: false,
 }
 
 export default SkillTag

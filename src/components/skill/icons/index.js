@@ -1,6 +1,8 @@
 import Atom from "./atom"
 import Bootstrap from "./bootstrap"
 import Css3 from "./css3"
+import Contentful from "./contentful"
+import Dato from "./dato"
 import Gatsby from "./gatsby"
 import Git from "./git"
 import Github from "./github"
@@ -26,6 +28,7 @@ import Python from "./python"
 import Reactjs from "./reactjs"
 import Ruby from "./ruby"
 import Scss from "./scss"
+import Shopify from "./shopify"
 import Storybook from "./storybook"
 import Styledcomp from "./styledcomp"
 import Vue from "./vue"
@@ -39,6 +42,8 @@ const icons = {
   atom: Atom,
   bootstrap: Bootstrap,
   css3: Css3,
+  contentful: Contentful,
+  dato: Dato,
   gatsby: Gatsby,
   git: Git,
   github: Github,
@@ -63,6 +68,7 @@ const icons = {
   reactjs: Reactjs,
   ruby: Ruby,
   scss: Scss,
+  shopify: Shopify,
   storybook: Storybook,
   styledcomp: Styledcomp,
   vue: Vue,

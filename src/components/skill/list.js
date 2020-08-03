@@ -31,18 +31,18 @@ const StyledList = styled.div`
 `
 
 const SkillList = ({ children, ...props }) => (
-  <StyledList className={`element ${props.dark ? "dk" : "lt"}`}>
+  <StyledList className={`element ${props.light ? "lt" : "dk"}`}>
     {children}
   </StyledList>
 )
 
 SkillList.propTypes = {
-  dark: PropTypes.bool,
+  light: PropTypes.bool,
   children: PropTypes.node,
 }
 
 SkillList.defaultProps = {
-  dark: false,
+  light: false,
 }
 
 export { SkillList, SkillTag }
