@@ -1,8 +1,8 @@
-import { css, createGlobalStyle } from 'styled-components'
+import { css, createGlobalStyle } from "styled-components"
 
-import { fonts, colors, screen } from './vars'
-import normalize from './ref/normalize'
-import fontfaces from './ref/fonts'
+import { fonts, colors, screen } from "./vars"
+import normalize from "./ref/normalize"
+import fontfaces from "./ref/fonts"
 
 const global_styles = css`
   html {
@@ -27,24 +27,11 @@ const global_styles = css`
       background-repeat: no-repeat;
       background-attachment: fixed;
       background-size: 100vw 100vh;
-      ${
-        '' /* background: linear-gradient(
-        150deg, ${colors.black} 8%, ${colors.gray700} 100% ); */
-      }
-      background: linear-gradient(
-        150deg, ${colors.black} 8%, ${colors.green700}  100% );
-      ${
-        '' /* background: linear-gradient(
-        150deg, ${colors.black} 8%, ${colors.blue700} 100% ); */
-      }
-      ${
-        '' /* background: linear-gradient(
-        150deg, ${colors.black} 8%, ${colors.grape700} 100% ); */
-      }
-      ${
-        '' /* background: linear-gradient(
-        150deg, ${colors.black} 8%, ${colors.plum700} 100% ); */
-      }
+      ${'' /* background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.gray700} 100% ); */}
+      background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.green700}  100% );
+      ${'' /* background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.blue700} 100% );
+      background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.grape700} 100% );
+      background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.plum700} 100% ); */}
     }
   }
 
@@ -83,7 +70,7 @@ const global_styles = css`
 
     p &:before {
       background: ${colors.blue300};
-      background: ${colors.blue300 + '80'};
+      background: ${colors.blue300 + "80"};
     }
 
     p &:after {

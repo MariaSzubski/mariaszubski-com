@@ -1,13 +1,13 @@
-import React from 'react'
-import { Link, useStaticQuery, graphql } from 'gatsby'
+import React from "react"
+import { Link, useStaticQuery, graphql } from "gatsby"
 
-import Layout from '../components/layout'
-import SEO from '../components/layout/seo'
+import Layout from "../components/layout"
+import SEO from "../components/layout/seo"
 
 const FutureIndexPage = () => {
   const { contentfulPage: data } = useStaticQuery(graphql`
     query {
-      contentfulPage(contentful_id: {eq: "7KKQ9SlaHWAvVjXwpmF8QC"}) {
+      contentfulPage(contentful_id: { eq: "7KKQ9SlaHWAvVjXwpmF8QC" }) {
         title
         slug
         modules {

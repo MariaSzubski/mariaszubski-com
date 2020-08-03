@@ -1,10 +1,10 @@
-import React from 'react'
+import React from "react"
 
-import data from '../content/all-skills.yml'
+import data from "../content/all-skills.yml"
 
-import Layout from '../components/layout'
-import { SkillGroup } from '../components/skills'
-import { SkillList, SkillTag } from '../components/skills/list'
+import Layout from "../components/layout"
+import { SkillGroup } from "../components/skill"
+import { SkillList, SkillTag } from "../components/skill/list"
 
 const TypeSpec = () => (
   <Layout>
@@ -15,7 +15,8 @@ const TypeSpec = () => (
     <hgroup>
       <h3>h3 Section Header</h3>
       <h5>
-        h5 MOBILE UI DESIGN • JQUERY • PHONEGAP • EDUCATION RESEARCH • USER TESTING
+        h5 MOBILE UI DESIGN • JQUERY • PHONEGAP • EDUCATION RESEARCH • USER
+        TESTING
       </h5>
     </hgroup>
     <h4>h4 Title</h4>

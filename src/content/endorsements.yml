@@ -1,17 +1,24 @@
 ---
--
-  title: Simply Excellent Award
+- title: Simply Excellent Award
   subtitle: Nielsen Employee Engagement Team
-  quote: '"Maria was a valued member of the Employee Engagement Team who was constantly engaged, provided great guidance & was extremely diligent at meeting timelines. We definitely could not have made this happen without her."'
--
-  title: Best Overall App Design
+  quote:
+    '"Maria was a valued member of the Employee Engagement Team who was
+    constantly engaged, provided great guidance & was extremely diligent at
+    meeting timelines. We definitely could not have made this happen without
+    her."'
+- title: Best Overall App Design
   subtitle: Nielsen C-DAR Challenge
-  quote: '"Awarded for best interface design and user experience on a consumer-facing data collection iPad app."'
--
-  title: Simply Excellent Award
+  quote:
+    '"Awarded for best interface design and user experience on a consumer-facing
+    data collection iPad app."'
+- title: Simply Excellent Award
   subtitle: Nielsen Family Web App
-  quote: "&ldquo;Maria's outstanding work resulted in a superior and comprehensive upgrade and will ensure an improved panelist experience and achieve associated project productivity.&rdquo;"
--
-  title: Nielsen Author Series Award
+  quote:
+    "&ldquo;Maria's outstanding work resulted in a superior and comprehensive
+    upgrade and will ensure an improved panelist experience and achieve
+    associated project productivity.&rdquo;"
+- title: Nielsen Author Series Award
   subtitle: "White Paper: Quantifying the Business Value of User Experience"
-  quote: Awarded for an engaging and dynamic presentation on the benefits and challenges of positioning UX teams within an organization.
+  quote:
+    Awarded for an engaging and dynamic presentation on the benefits and
+    challenges of positioning UX teams within an organization.
