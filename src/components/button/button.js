@@ -76,19 +76,21 @@ const color_list = {
     white: colors.gray500,
   },
   bg_before: {
-    plum: colors.plum,
+    plum: `linear-gradient(
+    30deg, ${colors.plum300} 20%, ${colors.plum700} 100% )`,
     white: colors.gray700,
     green: `linear-gradient(
     30deg, ${colors.green} 20%, ${colors.green300} 100% )`,
   },
   bg_after: {
-    plum: "none",
+    plum: `linear-gradient(
+    90deg, ${colors.plum} 0%, ${colors.plum300} 50%, ${colors.plum} 100% );`,
     white: "none",
     green: `linear-gradient(
     90deg, ${colors.green} 0%, ${colors.blue} 50%, ${colors.green} 100% );`,
   },
   hover: {
-    plum: colors.gray700,
+    plum: "none",
     white: colors.gray700,
     green: "none",
   },

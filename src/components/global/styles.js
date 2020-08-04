@@ -46,7 +46,7 @@ const global_styles = css`
     font-size: 1.8rem;
     font-weight: 300;
     line-height: 1.5;
-    opacity: 0;
+    ${'' /* opacity: 0; */}
     &.loaded{
       opacity: 1;
       transition: opacity 0.4s 0.2s ease-in;
