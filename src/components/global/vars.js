@@ -7,13 +7,16 @@ export const colors = {
 
   yellow:   '#FEC52E',
   green:    '#009978', // #008F70, saturate( darken( #06A281, 5% ), 50% )
+  green200: '#34DDAA',
   green300: '#19BA8A',
   green700: '#005240',
   blue:     '#004876',
+  blue200:  '#49B8FF',
   blue300:  '#0C8FE2',
   blue700:  '#003C62',
   blue900:  '#000A10',
   grape:    '#272580',
+  grape200: '#8684F6',
   grape300: '#6B69DF',
   grape700: '#22216E',
   plum:     '#602651',

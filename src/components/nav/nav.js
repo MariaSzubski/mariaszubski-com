@@ -42,9 +42,9 @@ const PageLinks = styled.section`
       left: 0.8rem;
       background: linear-gradient(
         90deg,
-        ${colors.plum} 0%,
-        ${colors.plum300} 50%,
-        ${colors.plum} 100%
+        ${colors.blue} 0%,
+        ${colors.blue200} 50%,
+        ${colors.blue} 100%
       );
       transform: scaleX(0);
       transform-origin: bottom center;
@@ -57,9 +57,9 @@ const PageLinks = styled.section`
       transform: scaleX(1);
       background: linear-gradient(
         90deg,
-        ${colors.plum} 0%,
-        ${colors.plum300} 50%,
-        ${colors.plum} 100%
+        ${colors.blue300} 0%,
+        ${colors.blue200} 50%,
+        ${colors.blue300} 100%
       );
     }
   }
@@ -84,13 +84,13 @@ const Nav = () => (
     </Link>
     <PageLinks aria-label="pages" className="text-sm">
       <StyledLink to="/type-spec" activeClassName="active">
-        About
+        Type Spec
+      </StyledLink>
+      <StyledLink to="/about" activeClassName="active">
+        About Me
       </StyledLink>
       <StyledLink to="/projects" activeClassName="active">
         Projects
-      </StyledLink>
-      <StyledLink to="/projects/style-guide" activeClassName="active">
-        Experience
       </StyledLink>
       <Button to="/projects" $color="green" activeClassName="active">
         Let&apos;s Connect

@@ -44,12 +44,18 @@ const global_styles = css`
   body {
     font-size: 16px;
     font-size: 1.8rem;
+    font-weight: 300;
     line-height: 1.5;
     opacity: 0;
     &.loaded{
       opacity: 1;
       transition: opacity 0.4s 0.2s ease-in;
     }
+  }
+
+  strong {
+    font-weight: 700;
+    color: ${colors.yellow};
   }
 
   a {
@@ -74,7 +80,7 @@ const global_styles = css`
     }
 
     p &:after {
-      background: ${colors.blue300};
+      background: ${colors.blue200 + "AA"};
       transform: scaleX(0);
       transform-origin: bottom center;
       transition: transform .2s ease-out;
@@ -117,8 +123,8 @@ const global_styles = css`
 
   h1 {
     font-family: ${fonts.milkshake};
-    font-weight: 300;
-    font-size: 5.4rem;
+    font-weight: 200;
+    font-size: 4.8rem;
     text-align: center;
     color: ${colors.green300};
     text-shadow: 0.2rem 0.2rem 0rem ${colors.black};
@@ -187,6 +193,7 @@ const global_styles = css`
   *.text-lg,
   *.text-lg * {
     font-size: 2.4rem;
+    font-weight: 400;
     line-height: 145%;
   }
 

@@ -3,6 +3,6 @@
   "semi": false,
   "tabWidth": 2,
   "trailingComma": "es5",
-  "proseWrap": "always",
+  "proseWrap": "never",
   "arrowParens": "avoid"
 }

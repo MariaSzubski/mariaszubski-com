@@ -29,7 +29,6 @@
     "react-flexbox-grid": "^2.1.2",
     "react-helmet": "^6.1.0",
     "react-inlinesvg": "^2.0.0",
-    "react-obfuscate": "^3.6.7",
     "react-responsive": "^8.1.0",
     "styled-components": "^5.1.1"
   },
