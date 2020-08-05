@@ -13,7 +13,7 @@ const global_styles = css`
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
+    ${'' /* -webkit-font-smoothing: antialiased; */}
 
     position: relative;
     background-color: ${colors.gray700};
@@ -21,7 +21,7 @@ const global_styles = css`
     &:before {
       content: '';
       width: 100vw;
-      height: 100vh;
+      height: 110vh;
       position: fixed;
       z-index: -1;
       background-repeat: no-repeat;
@@ -138,6 +138,8 @@ const global_styles = css`
     letter-spacing: 0.02rem;
     text-align: center;
     text-shadow: 0.2rem 0.3rem 0rem ${colors.black};
+    margin-top: 2px;
+    margin-bottom: 12px;
   }
 
   h3 {
@@ -150,7 +152,7 @@ const global_styles = css`
   }
 
   h4 {
-    font-weight: 700;
+    font-weight: 800;
     font-size: 2rem;
   }
 
@@ -165,10 +167,12 @@ const global_styles = css`
 
   h6,
   .h6 {
-    font-weight: 400;
-    font-size: 1.2rem;
-    color: ${colors.gray500};
+    font-weight: 600;
+    font-size: 1.3rem;
+    line-height: 1.6rem;
+    color: ${colors.gray300};
     text-transform: uppercase;
+    letter-spacing: 0.02rem;
   }
 
   p {
@@ -183,6 +187,11 @@ const global_styles = css`
 
   *.element-minor{
     margin: 4rem 0rem;
+  }
+  .background {
+    background-color: #ffffff11;
+    box-shadow: 0px 0.4rem 1rem rgba(0,0,20,.15);
+    border-radius: 0.6rem;
   }
 
   *.text-sm,
@@ -209,12 +218,12 @@ const global_styles = css`
 
   @media ${screen.max.md} {
     body {
-      font-size: 1.4rem;
+      font-size: 1.6rem;
       line-height: 1.4;
     }
     *.text-lg,
     *.text-lg * {
-      font-size: 2rem;
+      font-size: 1.8rem;
     }
   }
 

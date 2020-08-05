@@ -1,7 +1,8 @@
 export const colors = {
   white:    '#E6E8EE',
-  gray300:  '#EDEFF6',
-  gray500:  'rgba(255,255,255,.7)',
+  gray200:  '#BEC0CD',
+  gray300:  '#979BB0',
+  gray500:  '#707488',
   gray700:  '#2B2E3C',
   black:    '#121D28',
 
