@@ -4,22 +4,21 @@ import styled from "styled-components"
 import { Row, Col } from "react-flexbox-grid"
 
 import Link from "../utilities/link"
-import { DateIcon, WorkshopIcon } from "./icons"
+import { DateIcon, WorkshopIcon, LocationIcon } from "./icons"
 
 import * as g from "../global/vars"
 
-const Wrapper = styled.div`
-  background-color: #ffffff11;
-  padding: 3rem;
-`
-
 const StyledWorkshop = styled.article`
-  border-bottom: 1px solid ${g.colors.gray500};
+  border-bottom: 1px solid ${g.colors.black + "99"};
   &:last-of-type {
     border-bottom: none;
   }
   a {
-    color: ${g.colors.green300};
+    color: ${g.colors.blue200};
+    &:hover,
+    &:focus {
+      color: ${g.colors.blue300};
+    }
   }
   @media (max-width: ${g.screen.max.sm}) {
     padding: 3rem 1.4rem;
@@ -27,99 +26,76 @@ const StyledWorkshop = styled.article`
 `
 
 const Details = styled(Row)`
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
   svg {
     height: 18px;
     width: 18px;
-    margin-right: 0.5rem;
+    margin-right: 0.8rem;
   }
 
-  & .h6 {
-    color: ${g.colors.gray200};
-    font-weight: 400;
+  @media ${g.screen.max.md} {
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+  }
+`
+
+const StyledCol = styled(Col)`
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+
+  padding-left: rem;
+  h5 {
+    text-align: left;
+  }
+
+  @media ${g.screen.max.md} {
+    &:nth-of-type(1) {
+      order: 2;
+    }
+    &:nth-of-type(2) {
+      order: 1;
+      padding-bottom: 0.5rem;
+    }
+    &:nth-of-type(3) {
+      order: 3;
+    }
   }
 `
 
 const DateRange = styled(Col)``
 
-const Workshop = props => (
-  <Wrapper>
-    <h4>Workshops Taught</h4>
-    <StyledWorkshop>
-      <Details>
-        <Col md={2}>
-          <DateRange className="h6">
-            <DateIcon />
-            {props.workshop.date}
-          </DateRange>
-        </Col>
-        <Col md={10}>
-          <p>
-            <WorkshopIcon />
-            {props.workshop.title}
-          </p>
-        </Col>
-      </Details>
-    </StyledWorkshop>
-    <StyledWorkshop>
-      <Details>
-        <Col md={2}>
-          <DateRange className="h6">
-            <DateIcon />
-            {props.workshop.date}
-          </DateRange>
-        </Col>
-        <Col md={10}>
-          <p>
-            <WorkshopIcon />
-            {props.workshop.title}
-          </p>
-        </Col>
-      </Details>
-    </StyledWorkshop>
-    <StyledWorkshop>
-      <Details>
-        <Col md={2}>
-          <DateRange className="h6">
-            <DateIcon />
-            {props.workshop.date}
-          </DateRange>
-        </Col>
-        <Col md={10}>
-          <p>
-            <WorkshopIcon />
-            {props.workshop.title}
-          </p>
-        </Col>
-      </Details>
-    </StyledWorkshop>
-  </Wrapper>
+const WorkshopCard = props => (
+  <StyledWorkshop>
+    <Details>
+      <StyledCol xs={5} sm={3} md={2}>
+        <DateRange className="h6">
+          <DateIcon />
+          {props.workshop.date}
+        </DateRange>
+      </StyledCol>
+      <StyledCol xs={12} md={7}>
+        <h5>
+          <Link to={props.workshop.permalink}>{props.workshop.title}</Link>
+        </h5>
+      </StyledCol>
+      <StyledCol xs={7} sm={9} md={3}>
+        <span className="h6">{props.workshop.org}</span>
+      </StyledCol>
+    </Details>
+  </StyledWorkshop>
 )
 
-Workshop.propTypes = {
+WorkshopCard.propTypes = {
   workshop: PropTypes.shape({
-    password: PropTypes.bool.isRequired,
-    category: PropTypes.string,
-    summary: PropTypes.string,
     title: PropTypes.string.isRequired,
     org: PropTypes.string,
     date: PropTypes.string.isRequired,
-    links: PropTypes.objectOf(PropTypes.string),
-    desc: PropTypes.string,
     permalink: PropTypes.string,
   }),
 }
 
-Workshop.defaultProps = {
-  workshop: {
-    password: false,
-    category: "workshop",
-    summary: "Intro to HTML/CSS, 4 Sessions",
-    title: "Code Your First Website: New Year's Edition",
-    org: "Girl Develop It Cincinnati",
-    date: "Jan 2018",
-    links: null,
-    desc: "Nullam quis risus eget urna mollis ornare vel eu leo.",
-  },
-}
+WorkshopCard.defaultProps = {}
 
-export default Workshop
+export default WorkshopCard

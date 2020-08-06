@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { Row, Col } from "react-flexbox-grid"
@@ -9,14 +9,17 @@ import { DateIcon, LocationIcon } from "./icons"
 import * as g from "../global/vars"
 
 const StyledExp = styled.article`
-  padding: 3rem;
-  border-bottom: 1px solid ${g.colors.green700};
-
+  padding: 2.8rem;
+  border-bottom: 1px solid ${g.colors.black + "99"};
   &:last-of-type {
     border-bottom: none;
   }
   a {
-    color: ${g.colors.green200};
+    color: ${g.colors.blue200};
+    &:hover,
+    &:focus {
+      color: ${g.colors.blue300};
+    }
   }
   @media (max-width: ${g.screen.max.sm}) {
     padding: 3rem 1.4rem;
@@ -24,12 +27,13 @@ const StyledExp = styled.article`
 `
 
 const Company = styled.h6`
-  margin-bottom: 1.6rem;
+  margin-bottom: ${props => (props.toggle ? "1.6rem" : "0rem")};
 `
 const Desc = styled.p`
   font-size: 1.6rem;
   font-weight: 400;
   margin: 1.6rem 0rem 2rem;
+  display: ${props => (props.toggle ? "block" : "none")};
 `
 const Meta = styled(Row)`
   svg {
@@ -37,89 +41,84 @@ const Meta = styled(Row)`
     width: 18px;
     margin-right: 0.5rem;
   }
-
-  & .h6 {
-    color: ${g.colors.gray200};
-    font-weight: 400;
+  &:not(:last-of-type) {
+    margin-bottom: 1rem;
   }
 `
-const DateRange = styled(Col)``
-const Location = styled(Col)``
+const StyledCol = styled(Col)`
+  display: flex;
+  align-items: center;
+`
 
 const ExpCard = props => (
   <>
     <StyledExp>
-      <h4>{props.job.title}</h4>
-      <Company>
-        <Link to={props.job.companyUrl} target="_blank">
-          {props.job.companyName}
-        </Link>
-        {props.job.team && `\u00A0\u00A0//\u00A0 ${props.job.team}`}
-      </Company>
-      <Desc>{props.job.desc}</Desc>
-      <Meta>
-        <DateRange xs={6} md={3} className="h6">
-          <DateIcon />
-          {props.job.dateStart}{" "}
-          {props.job.dateEnd ? `- ${props.job.dateEnd}` : `- Present`}
-        </DateRange>
-        {props.job.location && (
-          <Location xs={6} md={3} className="h6">
-            <LocationIcon />
-            Cincinnati, OH{" "}
-          </Location>
-        )}
-      </Meta>
-    </StyledExp>
-    <StyledExp>
-      <h4>Bachelor of Science: Digital Design</h4>
-      <Company>
-        <Link to="https://www.uc.edu/" target="_blank">
-          University of Cincinnati
-        </Link>
-        {props.job.team &&
-          `\u00A0\u00A0//\u00A0 College of Design, Architecture, Art, & Planning`}
-      </Company>
-      <Desc>
-        Participated in the Professional Practice program, alternating quarters
-        of courses with job experience in the field of Digital Design, focusing
-        on both UI design and web development.
-      </Desc>
-      <Meta>
-        <DateRange xs={6} md={3} className="h6">
-          <DateIcon />
-          Class of 2012
-        </DateRange>
-      </Meta>
+      <Row>
+        <Col md={props.toggle ? 12 : 8}>
+          <h4>{props.job.title}</h4>
+          <Company toggle={props.toggle}>
+            <Link to={props.job.companyUrl} target="_blank">
+              {props.job.companyName}
+            </Link>
+            {props.job.team && `\u00A0\u00A0//\u00A0 ${props.job.team}`}
+          </Company>
+
+          <Desc toggle={props.toggle}>{props.job.desc}</Desc>
+        </Col>
+
+        <Col md={props.toggle ? 12 : 4}>
+          {/* Date, Location, Job Titles */}
+          {props.job.dateRange.map((date, idx) => (
+            <Meta key={`${props.job.title}-meta-${idx}`}>
+              <StyledCol
+                xs={6}
+                md={props.toggle ? 4 : 12}
+                lg={props.toggle ? 3 : 12}
+                className="h6"
+              >
+                <DateIcon />
+                {date}
+              </StyledCol>
+              {props.job.location && props.toggle && (
+                <StyledCol xs={6} md={8} lg={9} className="h6">
+                  <LocationIcon />
+                  {props.job.location}
+                </StyledCol>
+              )}
+              {props.job.dateRange.length > 1 && (
+                <StyledCol
+                  xs={6}
+                  md={props.toggle ? 8 : 6}
+                  lg={9}
+                  className="h6"
+                >
+                  {props.job.jobTitles[idx]}
+                </StyledCol>
+              )}
+            </Meta>
+          ))}
+        </Col>
+      </Row>
     </StyledExp>
   </>
 )
 
 ExpCard.propTypes = {
+  toggle: PropTypes.bool,
   job: PropTypes.shape({
     title: PropTypes.string.isRequired,
     companyName: PropTypes.string.isRequired,
     companyUrl: PropTypes.string.isRequired,
     team: PropTypes.string,
     location: PropTypes.string,
-    dateStart: PropTypes.string.isRequired,
-    dateEnd: PropTypes.string,
+    dateRange: PropTypes.arrayOf(PropTypes.string).isRequired,
+    jobTitle: PropTypes.arrayOf(PropTypes.string),
     desc: PropTypes.string.isRequired,
   }),
 }
 
 ExpCard.defaultProps = {
-  job: {
-    title: "Freelance Web Developer",
-    companyName: "Maria Szubski Digital, LLC",
-    companyUrl: "/",
-    team: "Team Name",
-    location: "Cincinnati, OH",
-    dateStart: "Jan 2018",
-    dateEnd: null,
-    desc:
-      "Consult with clients to strategize and build web applications, with an emphasis on frontend development, accessibility, and the implementation of responsive design. Commonly used technologies include React, Vue, and static site generators such as Gatsby and Nuxt.",
-  },
+  toggle: true,
 }
 
 export default ExpCard

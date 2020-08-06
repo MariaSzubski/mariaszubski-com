@@ -21,7 +21,7 @@ const global_styles = css`
     &:before {
       content: '';
       width: 100vw;
-      height: 110vh;
+      height: 100vh;
       position: fixed;
       z-index: -1;
       background-repeat: no-repeat;
@@ -167,10 +167,10 @@ const global_styles = css`
 
   h6,
   .h6 {
-    font-weight: 600;
+    font-weight: 400;
     font-size: 1.3rem;
     line-height: 1.6rem;
-    color: ${colors.gray300};
+    color: ${colors.gray200};
     text-transform: uppercase;
     letter-spacing: 0.02rem;
   }
@@ -188,10 +188,11 @@ const global_styles = css`
   *.element-minor{
     margin: 4rem 0rem;
   }
+
   .background {
     background-color: #ffffff11;
-    box-shadow: 0px 0.4rem 1rem rgba(0,0,20,.15);
-    border-radius: 0.6rem;
+    box-shadow: 0px 0.4rem 1rem rgba(0,0,20,.2);
+    border-radius: 0.5rem;
   }
 
   *.text-sm,
@@ -217,6 +218,10 @@ const global_styles = css`
   }
 
   @media ${screen.max.md} {
+    html:before{
+      height: 120vh;
+      background-size: 100vw 120vh;
+    }
     body {
       font-size: 1.6rem;
       line-height: 1.4;
