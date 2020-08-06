@@ -17,14 +17,14 @@ const StyledTag = styled.span`
   margin: 0.3rem;
   font-weight: 700;
   text-transform: capitalize;
-  font-size: 1.rem;
+  font-size: 1rem;
 
   .text {
     height: 1.8rem;
   }
 
   .lt & {
-    background-color: ${colors.white + "EE"};
+    background-color: ${props => props.$simple ? "transparent" : `${colors.white}EE`};
     color: ${colors.black};
     padding: 1.8rem 1.4rem;
     height: 3rem;
@@ -43,7 +43,7 @@ const StyledTag = styled.span`
   ${StyledIcon} > * {
     height: 2.2rem;
     width: 2.2rem;
-    margin-right: ${props => (props.light ? "1rem" : "1.1rem")};
+    margin-right: ${props => (props.$simple ? "0rem" : "1.1rem")};
   }
 
   @media ${screen.min.md} {
@@ -58,7 +58,7 @@ const StyledTag = styled.span`
     }
 
     ${StyledIcon} > * {
-      margin-right: 0.9rem;
+      margin-right: ${props => (props.$simple ? "0rem" : "0.9rem")};
     }
   }
 `
@@ -66,13 +66,13 @@ const StyledTag = styled.span`
 const SkillTag = props => {
   let Icon = icons[props.icon]
   return (
-    <StyledTag title={props.label}>
+    <StyledTag title={props.label} $simple={props.simple}>
       {Icon && (
         <StyledIcon>
           <Icon light={props.light ? 1 : 0} />
         </StyledIcon>
       )}
-      <div className="text">{props.label || props.icon}</div>
+      {!props.simple && <div className="text">{props.label || props.icon}</div>}
     </StyledTag>
   )
 }
@@ -81,10 +81,12 @@ SkillTag.propTypes = {
   icon: PropTypes.string,
   label: PropTypes.string,
   light: PropTypes.bool,
+  simple: PropTypes.bool,
 }
 
 SkillTag.defaultProps = {
   light: false,
+  simple: false,
 }
 
 export default SkillTag

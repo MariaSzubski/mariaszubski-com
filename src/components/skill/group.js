@@ -6,7 +6,6 @@ import { screen, colors } from "../global/vars"
 import SkillTag from "./tag"
 
 const Groups = styled.div`
-  background-color: hsla(0, 0%, 100%, 0.03);
   padding: ${props => (props.$simple ? "1.6rem 1rem" : "4rem 1rem")};
   margin: 0rem -2rem;
 
@@ -38,12 +37,12 @@ const SkillGroup = ({ children, ...props }) => (
   <section
     className={`
       ${props.$simple ? "element-minor " : "element "}
-      ${props.light ? "lt" : "dk"}
+      ${(props.light || props.$simple) ? "lt" : "dk"}
     `}
   >
     {props.title && <h3 className="pad">{props.title}</h3>}
 
-    <Groups $simple={props.$simple ? 1 : 0}>
+    <Groups className={props.$simple ? "" : "background"} $simple={props.$simple ? 1 : 0}>
       {props.data &&
         props.data.map((group, g_idx) => (
           <div key={`${group.title}-skills-${g_idx}`}>
@@ -63,6 +62,7 @@ const SkillGroup = ({ children, ...props }) => (
                   icon={skill.icon && skill.icon}
                   label={skill.label && skill.label}
                   light={props.light}
+                  simple={props.$simple}
                 />
               ))}
             </Skills>
