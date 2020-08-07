@@ -2,10 +2,10 @@ import React from "react"
 import styled from "styled-components"
 import { Grid, Row, Col } from "react-flexbox-grid"
 
-import Layout from "../components/layout"
-import ProjectCard from "../components/projects/card"
+import Layout from "../../components/layout"
+import ProjectCard from "../../components/projects"
 
-const AboutPage = () => (
+const ProjectsLandingPage = () => (
   <Layout>
     <section className="element">
       <hgroup>
@@ -21,6 +21,7 @@ const AboutPage = () => (
             summary="Gatsby Site"
             skills={["gatsby", "reactjs", "dato", "netlify"]}
             hero="//images.ctfassets.net/sx9v94b5k8eh/5xVVYQ49TJZmBTHtqmwwjS/f576431f683d3bb61fcbaba3a3771aca/proj_guitar.png?w=800&q=50&fm=webp"
+            permalink="projects/sample"
           />
         </Col>
         <Col sm={6} xl={4}>
@@ -95,4 +96,4 @@ const AboutPage = () => (
   </Layout>
 )
 
-export default AboutPage
+export default ProjectsLandingPage

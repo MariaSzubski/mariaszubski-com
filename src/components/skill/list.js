@@ -6,7 +6,6 @@ import { screen, colors } from "../global/vars"
 import SkillTag from "./tag"
 
 const Groups = styled.div`
-  background-color: hsla(0, 0%, 100%, 0.03);
   padding: 4rem 1rem;
   margin: 0rem -2rem;
 

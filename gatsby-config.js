@@ -7,10 +7,18 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
+    `gatsby-transformer-yaml`,
+    {
+      resolve: "gatsby-transformer-remark",
+      options: {
+        commonmark: true,
+        plugins: [],
+      },
+    },
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
-    'gatsby-plugin-eslint',
-    'gatsby-plugin-offline',
+    "gatsby-plugin-eslint",
+    "gatsby-plugin-offline",
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -30,7 +38,6 @@ module.exports = {
         icon: `src/images/favicon.png`,
       },
     },
-    `gatsby-transformer-yaml`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -43,8 +50,8 @@ module.exports = {
         fonts: {
           google: [
             {
-              family: 'Nunito',
-              variants: ['300', '400', '600', '700'],
+              family: "Nunito",
+              variants: ["300", "400", "600", "700"],
               //fontDisplay: 'swap',
               //strategy: 'selfHosted' // 'base64' || 'cdn'
             },

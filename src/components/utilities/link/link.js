@@ -33,7 +33,7 @@ Link.propTypes = {
 }
 
 Link.defaultProps = {
-  target: "_blank",
+  target: "",
 }
 
 export default Link
