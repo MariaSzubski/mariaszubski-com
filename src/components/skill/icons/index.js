@@ -26,6 +26,7 @@ import Photoshop from "./photoshop"
 import Php from "./php"
 import Python from "./python"
 import Reactjs from "./reactjs"
+import Reveal from "./reveal"
 import Ruby from "./ruby"
 import Scss from "./scss"
 import Shopify from "./shopify"
@@ -66,6 +67,7 @@ const icons = {
   php: Php,
   python: Python,
   reactjs: Reactjs,
+  reveal: Reveal,
   ruby: Ruby,
   scss: Scss,
   shopify: Shopify,

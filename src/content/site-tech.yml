@@ -5,4 +5,5 @@
     - icon: reactjs
       label: react
     - icon: contentful
+    - icon: graphql
     - icon: netlify

@@ -112,7 +112,7 @@ ExpCard.propTypes = {
     team: PropTypes.string,
     location: PropTypes.string,
     dateRange: PropTypes.arrayOf(PropTypes.string).isRequired,
-    jobTitle: PropTypes.arrayOf(PropTypes.string),
+    jobTitles: PropTypes.arrayOf(PropTypes.string),
     desc: PropTypes.string.isRequired,
   }),
 }

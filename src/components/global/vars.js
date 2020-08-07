@@ -10,20 +10,25 @@ export const colors = {
   green:    '#009978', // #008F70, saturate( darken( #06A281, 5% ), 50% )
   green200: '#34DDAA',
   green300: '#19BA8A',
+  green500: '#128F6A',
   green700: '#005240',
   blue:     '#004876',
   blue200:  '#49B8FF',
   blue300:  '#0C8FE2',
+  blue500:  '#166794',
   blue700:  '#003C62',
   blue900:  '#000A10',
   grape:    '#272580',
   grape200: '#8684F6',
   grape300: '#6B69DF',
+  grape500: '#484691',
   grape700: '#22216E',
   plum:     '#602651',
   plum300:  '#A24088',
+  plum500:  '#732F64',
   plum700:  '#4E1D42',
   pink:     '#F3695A',
+  pink500:  '#D1584B',
 }
 
 export const fonts = {

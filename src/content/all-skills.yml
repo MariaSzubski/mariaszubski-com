@@ -55,6 +55,8 @@
     - icon: yarn
     - icon: grunt
     - icon: gulp
+    - icon: reveal
+      label: revealJS
     - icon: invision
       label: InVision
     - icon: illustrator

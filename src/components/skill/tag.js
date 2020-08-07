@@ -41,8 +41,8 @@ const StyledTag = styled.span`
   }
 
   ${StyledIcon} > * {
-    height: 2.2rem;
-    width: 2.2rem;
+    height: ${props => props.$size};
+    width: ${props => props.$size};
     margin-right: ${props => (props.$simple ? "0rem" : "1.1rem")};
   }
 
@@ -57,8 +57,8 @@ const StyledTag = styled.span`
       margin-right: 0rem;
     }
 
-    ${StyledIcon} > * {
-      margin-right: ${props => (props.$simple ? "0rem" : "0.9rem")};
+    ${StyledIcon}:not(:last-of-type) > * {
+      margin-right: ${props => (props.$simple ? "0.2rem" : "0.9rem")};
     }
   }
 `
@@ -66,7 +66,7 @@ const StyledTag = styled.span`
 const SkillTag = props => {
   let Icon = icons[props.icon]
   return (
-    <StyledTag title={props.label} $simple={props.simple}>
+    <StyledTag title={props.label} $simple={props.simple} $size={props.size}>
       {Icon && (
         <StyledIcon>
           <Icon light={props.light ? 1 : 0} />
@@ -82,11 +82,13 @@ SkillTag.propTypes = {
   label: PropTypes.string,
   light: PropTypes.bool,
   simple: PropTypes.bool,
+  size: PropTypes.string,
 }
 
 SkillTag.defaultProps = {
   light: false,
   simple: false,
+  size: "2.2rem"
 }
 
 export default SkillTag

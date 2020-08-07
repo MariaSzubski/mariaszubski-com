@@ -13,10 +13,10 @@ const global_styles = css`
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     -moz-osx-font-smoothing: grayscale;
-    ${'' /* -webkit-font-smoothing: antialiased; */}
+    ${"" /* -webkit-font-smoothing: antialiased; */}
 
     position: relative;
-    background-color: ${colors.gray700};
+    background-color: ${colors.white};
 
     &:before {
       content: '';
@@ -27,11 +27,14 @@ const global_styles = css`
       background-repeat: no-repeat;
       background-attachment: fixed;
       background-size: 100vw 100vh;
-      ${'' /* background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.gray700} 100% ); */}
-      background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.green700}  100% );
-      ${'' /* background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.blue700} 100% );
-      background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.grape700} 100% );
-      background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.plum700} 100% ); */}
+      ${"" /* background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.gray700} 100% ); */}
+      ${"" /* background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.green500}  100% ); */}
+      ${"" /* background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.blue500} 100% ); */}
+      background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.grape500} 100% );
+      ${"" /* background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.plum500} 100% ); */}
+      ${"" /* background: linear-gradient( 150deg, ${colors.gray300} 8%, ${colors.white} 100% ); */}
+      ${"" /* background: linear-gradient( 150deg, ${colors.pink500} 0%, ${colors.plum500} 100% ); */}
+      ${"" /* background: linear-gradient( 150deg, ${colors.yellow} 0%, ${colors.plum300} 100% ); */}
     }
   }
 
@@ -126,7 +129,7 @@ const global_styles = css`
     font-weight: 200;
     font-size: 4.8rem;
     text-align: center;
-    color: ${colors.green300};
+    color: ${colors.green200};
     text-shadow: 0.2rem 0.2rem 0rem ${colors.black};
   }
 
@@ -183,6 +186,9 @@ const global_styles = css`
 
   *.element{
     margin: 10rem 0rem;
+    :first-of-type {
+      margin: 2rem 0rem;
+    }
   }
 
   *.element-minor{
