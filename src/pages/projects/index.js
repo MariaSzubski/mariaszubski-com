@@ -13,7 +13,7 @@ const ProjectsLandingPage = () => (
       </hgroup>
       <Row>
         <Col sm={6} xl={4}>
-          <ProjectCard skills={["reactjs", "gatsby", "contentful"]} />
+          <ProjectCard skills={["reactjs", "gatsby", "contentful"]} permalink="blog" />
         </Col>
         <Col sm={6} xl={4}>
           <ProjectCard

@@ -80,7 +80,10 @@ const WorkshopCard = props => (
           <Link to={props.workshop.permalink}>{props.workshop.title}</Link>
         </h5>
       </StyledCol>
-      <StyledCol xs={7} sm={9} md={3}>
+      <StyledCol xs={7} sm={9} md={1}>
+        <span className="h6">⏱ {props.workshop.time}</span>
+      </StyledCol>
+      <StyledCol xs={7} sm={9} md={2}>
         <span className="h6">{props.workshop.org}</span>
       </StyledCol>
     </Details>
@@ -93,6 +96,7 @@ WorkshopCard.propTypes = {
     org: PropTypes.string,
     date: PropTypes.string.isRequired,
     permalink: PropTypes.string,
+    time: PropTypes.string,
   }),
 }
 

@@ -67,38 +67,71 @@ export const workshopCard = () => {
         }}
       />
     </div>
-    <h1>Volunteer Experience</h1>
+    <h1>Volunteering</h1>
     <div
       className="background"
       style={{ margin: "20px 20px 20px 20px", padding: "3rem" }}
     >
-      <h4>Workshops I've Led</h4>
+      <h4>Tech Talks I've Led</h4>
       <div>
         <WorkshopCard
           workshop={{
-            title: "Getting Started with Static Site Generators",
+            title: "👩🏻‍💻 Getting Started with Static Site Generators",
             org: "JAMStack Cincinnati",
-            date: "Jun 2018",
+            date: "Jun 2019",
+            time: "90 min",
             permalink: "/workshop",
           }}
         />
         <WorkshopCard
           workshop={{
-            title: "Code Your First Website",
-            org: "Girl Develop It Cincinnati",
+            title: "⚡️ My Coding Journey",
+            org: "GDI 100k Celebration",
+            date: "Jul 2018",
+            time: "5-10 min",
+            permalink: "/workshop",
+          }}
+        />
+        <WorkshopCard
+          workshop={{
+            title: "☕️ Code & Coffee: Event Organizer Training",
+            org: "GDI Cincinnati",
+            date: "May 2018",
+            time: "1 hr",
+            permalink: "/workshop",
+          }}
+        />
+        <WorkshopCard
+          workshop={{
+            title: "☕️ Code & Coffee: HTML Study Session",
+            org: "GDI Cincinnati",
             date: "Apr 2018",
+            time: "2 hr",
+            permalink: "/blog",
+          }}
+        />
+        <WorkshopCard
+          workshop={{
+            title: "👩🏻‍💻 Intro to HTML & CSS",
+            org: "GDI Cincinnati",
+            date: "Apr 2018",
+            time: "8 hr",
             permalink: "/workshop",
           }}
         />
         <WorkshopCard
           workshop={{
-            title: "Code Your First Website: New Year's Edition",
-            org: "Girl Develop It Cincinnati",
+            title: "👩🏻‍💻 Code Your First Website: New Year's Edition",
+            org: "GDI Cincinnati",
             date: "Jan 2018",
+            time: "8 Hr",
             permalink: "/workshop",
           }}
         />
       </div>
+    </div>
+    <div className="background" style={{ margin: "20px 20px 20px 20px" }}>
+      <a href="/">🙋🏻See additional tech events I've helped with</a>
     </div>
     <div className="background" style={{ margin: "20px 20px 80px 20px" }}>
       <ExpCard
@@ -113,7 +146,7 @@ export const workshopCard = () => {
             "Nov 2015 - Jul 2017",
           ],
           jobTitles: [
-            "Chapter Leader",
+            "Chapter Leader & Event Coordinator",
             "Class Organizer",
             "Teaching Assistant",
           ],
@@ -121,7 +154,7 @@ export const workshopCard = () => {
         }}
       />
     </div>
-    <h1>Co-Op Experience</h1>
+    <h1>Co-Op Internships</h1>
     <p onClick={() => setToggle(!toggle)}
     style={{ "text-align": "right"}}>Details</p>
     <div className="background" style={{ margin: "20px 20px 80px 20px" }}>

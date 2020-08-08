@@ -33,7 +33,7 @@ const ProjectTemplate = props => (
           <section className="element">
             <Row>
               <Col lg={9} xl={9}>
-                <HTML content={props.desc} className="text-lg" />
+                <HTML content={props.desc} className="" />
               </Col>
               <Col lg={3} xl={3}>
                 <Aside className="background">
@@ -60,8 +60,12 @@ const ProjectTemplate = props => (
                 </Aside>
                 <Aside className="background">
                   <h5>Presented At</h5>
-                  <p>{props.org}</p>
-                  <p>June 2019</p>
+                  <p>
+                    {props.org} <br />
+                    June 2019
+                  </p>
+                  <h5>Workshop Duration</h5>
+                  <p>⏱ 60 - 90 minutes</p>
                 </Aside>
               </Col>
             </Row>
@@ -90,11 +94,11 @@ ProjectTemplate.defaultProps = {
     { url: "/", label: "Link 1", targetBlank: true },
     { url: "/", label: "Link 2", targetBlank: true },
   ],
-  skills: ["gatsby", "reactjs", "dato", "netlify"],
+  skills: ["gatsby", "reactjs", "netlify", "styledcomp"],
   desc: {
     childMarkdownRemark: {
       html:
-        '<p>I led a workshop on <strong>Static Site Generators &#x26; GatsbyJS</strong> for <a href="https://www.meetup.com/JAMstack-Cincinnati/">JAMstack Cincinnati</a>. The demo project for this workshop introduces React components, props and state, routing, plugins, css-in-js, and Netlify deployment.</p>\n<p>Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam quis risus eget urna mollis ornare vel eu leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>\n<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Aenean lacinia bibendum nulla sed consectetur. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>',
+        '<p>This workshop covers the basics of GatsbyJS and the benefits of Static Site Generators. It begins with a brief comparison of popular generators before moving on to a hands-on demo. Participants will build a single-page Gatsby site and deploy it to Netlify.</p>\n<p>This workshop explores the basics of React and Gatsby including function components, props and state, routing, plugins, and css-in-js. </p>\n<p>⏱ <strong>Workshop Duration:</strong> 60 - 90 minutes\n</p><p>🔥 <strong><a href="https://docs.google.com/presentation/d/12_HeL80Du2B6GEUQhsxrLm4R0gKGQdaM9Hm1JEtk_HQ">Slides</a></strong></p>\n<h4>Topics Covered</h4>\n<ul>\n<li>React project structure &#x26; routing</li>\n<li>Pre-fetching with Gatsby Link</li>\n<li>Gatsby Image</li>\n<li>React Building Blocks: Function Components, Props, Hooks, State</li>\n<li>Plugins: Styled Components, Web Font Loader</li>\n<li>Netlify deployment</li>\n</ul>\n<h3>👩‍💻 Additional Resources:</h3><h4>Static Site Generators to check out</h4>\n<ul>\n<li><a href="https://www.gatsbyjs.org/">Gatsby</a> (React)</li>\n<li><a href="https://nextjs.org/">Next</a> (React)</li>\n<li><a href="https://jekyllrb.com/">Jekyll</a> (Liquid, GitHub Pages)</li>\n<li><a href="https://middlemanapp.com/">Middleman</a> (ERB)</li>\n<li><a href="https://gohugo.io/">Hugo</a> (Go)</li>\n<li><a href="https://nuxtjs.org/">Nuxt</a> (Vue)</li>\n<li><a href="https://www.staticgen.com/">Full List of Static Site Generators</a></li>\n</ul>\n<h4>Podcasts &#x26; books mentioned</h4>\n<ul>\n<li>🎧 Syntax - <a href="https://syntax.fm/show/120/gatsby-vs-next">Gatsby vs Next</a></li>\n<li>🎧 Syntax - <a href="https://syntax.fm/show/034/why-static-site-generators-are-awesome">Why Static Site Generators Are Awesome</a></li>\n<li>📘 O\'Reilly - <a href="https://www.oreilly.com/library/view/static-site-generators/9781492048558/">Static Site Generators free eBook</a></li>\n</ul>\n<h4>Helpful resources</h4>\n<ul>\n<li>📖 <a href="https://www.gatsbyjs.org/docs/">Official Gatsby Docs</a></li>\n<li>🛠 <a href="https://www.gatsbyjs.org/starters/?v=2">Starter Templates</a></li>\n<li>🛠 <a href="https://www.gatsbyjs.org/plugins/">Gatsby Plugins</a></li>\n<li>👩‍💻 <a href="https://github.com/MicheleBertoli/css-in-js">List of CSS-In-JS Techniques</a></li>\n<li>🛠 <a href="https://www.gatsbyjs.org/packages/gatsby-plugin-styled-components/">Styled Components</a></li>\n<li>🛠 <a href="https://github.com/typekit/webfontloader#modules">Web Font Loader</a></li>\n</ul>\n<h4>Presented At</h4>\n<ul>\n<li>JAMStack Cincinnati - June 2019</li>\n</ul>',
     },
   },
   hero:
