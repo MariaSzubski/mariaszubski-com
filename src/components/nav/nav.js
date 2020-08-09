@@ -84,6 +84,9 @@ const Nav = () => (
     </Link>
     <PageLinks aria-label="pages" className="text-sm">
       <StyledLink to="/type-spec" activeClassName="active">
+        Type Spec
+      </StyledLink>
+      <StyledLink to="/blog" activeClassName="active">
         Blog
       </StyledLink>
       <StyledLink to="/about" activeClassName="active">
@@ -92,7 +95,7 @@ const Nav = () => (
       <StyledLink to="/projects" activeClassName="active">
         Code
       </StyledLink>
-      <StyledLink to="/blog" activeClassName="active">
+      <StyledLink to="/speaking" activeClassName="active">
         Speaking
       </StyledLink>
       <Button to="/projects" $color="green" activeClassName="active">

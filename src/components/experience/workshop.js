@@ -9,7 +9,7 @@ import { DateIcon, WorkshopIcon, LocationIcon } from "./icons"
 import * as g from "../global/vars"
 
 const StyledWorkshop = styled.article`
-  border-bottom: 1px solid ${g.colors.black + "99"};
+  border-bottom: 1px solid ${g.colors.black + "66"};
   &:last-of-type {
     border-bottom: none;
   }
@@ -26,8 +26,8 @@ const StyledWorkshop = styled.article`
 `
 
 const Details = styled(Row)`
-  padding-top: 1.2rem;
-  padding-bottom: 1.2rem;
+  padding-top: ${props => (props.$compact ? "0.5rem" : "1.2rem")};
+  padding-bottom: ${props => (props.$compact ? "0.5rem" : "1.2rem")};
   svg {
     height: 18px;
     width: 18px;
@@ -35,8 +35,8 @@ const Details = styled(Row)`
   }
 
   @media ${g.screen.max.md} {
-    padding-top: 1.6rem;
-    padding-bottom: 1.6rem;
+    padding-top: ${props => (props.$compact ? "0.5rem" : "1.6rem")};
+    padding-bottom: ${props => (props.$compact ? "0.5rem" : "1.6rem")};
   }
 `
 
@@ -45,7 +45,6 @@ const StyledCol = styled(Col)`
   align-items: center;
   font-weight: 600;
 
-  padding-left: rem;
   h5 {
     text-align: left;
   }
@@ -56,10 +55,10 @@ const StyledCol = styled(Col)`
     }
     &:nth-of-type(2) {
       order: 1;
-      padding-bottom: 0.5rem;
+      padding-bottom: ${props => (props.$compact ? "0rem" : "0.5rem")};
     }
     &:nth-of-type(3) {
-      order: 3;
+      order: ${props => (props.$compact ? 2 : 3)};
     }
   }
 `
@@ -68,24 +67,40 @@ const DateRange = styled(Col)``
 
 const WorkshopCard = props => (
   <StyledWorkshop>
-    <Details>
-      <StyledCol xs={5} sm={3} md={2}>
+    <Details between="md" $compact={props.compact}>
+      <StyledCol $compact={props.compact} xs={5} sm={3} md={3}>
         <DateRange className="h6">
           <DateIcon />
-          {props.workshop.date}
+          {new Intl.DateTimeFormat("en-US", {
+            month: "short",
+            year: "numeric",
+          }).format(new Date(props.workshop.date))}
         </DateRange>
       </StyledCol>
-      <StyledCol xs={12} md={7}>
-        <h5>
-          <Link to={props.workshop.permalink}>{props.workshop.title}</Link>
-        </h5>
+      <StyledCol $compact={props.compact} xs={props.compact ? null : 12} md>
+        {props.workshop.permalink ? (
+          <h5>
+            <Link to={props.workshop.permalink}>{props.workshop.title}</Link>
+          </h5>
+        ) : (
+          props.workshop.title
+        )}
       </StyledCol>
-      <StyledCol xs={7} sm={9} md={1}>
-        <span className="h6">⏱ {props.workshop.time}</span>
-      </StyledCol>
-      <StyledCol xs={7} sm={9} md={2}>
-        <span className="h6">{props.workshop.org}</span>
-      </StyledCol>
+      {props.workshop.duration && (
+        <StyledCol
+          $compact={props.compact}
+          xs={props.compact ? 2 : 7}
+          sm={9}
+          md={2}
+        >
+          <span className="h6">⏱ {props.workshop.duration}</span>
+        </StyledCol>
+      )}
+      {props.workshop.org && (
+        <StyledCol $compact={props.compact} xs={7} sm={9} md={2}>
+          <span className="h6">{props.workshop.org}</span>
+        </StyledCol>
+      )}
     </Details>
   </StyledWorkshop>
 )
@@ -96,10 +111,13 @@ WorkshopCard.propTypes = {
     org: PropTypes.string,
     date: PropTypes.string.isRequired,
     permalink: PropTypes.string,
-    time: PropTypes.string,
+    duration: PropTypes.string,
   }),
+  compact: PropTypes.bool,
 }
 
-WorkshopCard.defaultProps = {}
+WorkshopCard.defaultProps = {
+  compact: false,
+}
 
 export default WorkshopCard
