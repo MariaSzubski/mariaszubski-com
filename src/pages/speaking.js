@@ -25,11 +25,13 @@ const Section = styled.section`
 
 const ImageGroup = styled.aside`
   display: flex;
+  flex-wrap: wrap;
   padding: 0.4rem;
   .gatsby-image-wrapper {
     border: 0.4rem solid transparent;
     border-radius: 1rem;
     flex: 1;
+    ${"" /* flex-basis: 33.333%; */}
     max-height: 40rem;
     margin: auto;
   }
@@ -41,11 +43,12 @@ const SpeakingPage = props => {
   const { contentfulPage: data } = useStaticQuery(graphql`
     query {
       contentfulPage(contentful_id: { eq: "3wkQbDkmDvNmzOjGUhdigt" }) {
+        contentful_id
         title
         subtitle
         modules {
           ... on ContentfulSection {
-            id
+            contentful_id
             title
             subtitle
             copy {
@@ -55,16 +58,14 @@ const SpeakingPage = props => {
             }
             content {
               ... on ContentfulTechTalk {
-                id
+                contentful_id
                 date
                 label
-                org
                 duration
                 detailsLink
-                expCV
               }
               ... on ContentfulImage {
-                id
+                contentful_id
                 alt
                 image {
                   fluid(maxWidth: 800, quality: 100) {
@@ -78,58 +79,79 @@ const SpeakingPage = props => {
       }
     }
   `)
+
+  console.table(data.modules[0].content[0].label)
+  let imagesArr = []
   return (
     <Layout>
       <Grid fluid>
         <hgroup className="element">
           <h1>{data.title}</h1>
         </hgroup>
-        {data.modules.map((section, idx_s) => (
-          <section className="element" key={`${data.title}-section-${idx_s}`}>
-            <Row around="md">
-              <Col lg={9} xl={6}>
+        <h3>Available Workshops</h3>
+        [ Gatsby Workshop ]
+        <p>More Coming Soon</p>
+
+        {data.modules.map((section, i) => (
+          <section className="element" key={section.contentful_id}>
+
+
+
+            <Row between="md">
+              <Col lg={9} xl={5}>
                 <h3>{section.title}</h3>
                 <HTML content={section.copy} />
-                <h5>{section.subtitle}</h5>
+                <ImageGroup className="element-minor">
+                  {section.content
+                    .filter(c => c.__typename === "ContentfulImage")
+                    .map(img => {imagesArr.push(img)})}
+                </ImageGroup>
               </Col>
-              <Col xl={7}>
-                <div
-                  className="background"
-                  style={{ margin: "20px 0px 20px 0px", padding: "2rem" }}
-                >
+
+              <Col xl={6}>
+                <div className="background">
+                  <h5 className="pad">{section.subtitle}</h5>
                   {section.content
                     .filter(c => c.__typename === "ContentfulTechTalk")
-                    .map((talk, idx_t) => (
+                    .map(talk => (
                       <WorkshopCard
-                        workshop={{
-                          title: talk.label,
-                          date: talk.date,
-                          duration: talk.duration,
-                        }}
                         compact
-                        key={`${section.title}-talk-${idx_t}`}
+                        workshop={talk}
+                        key={talk.contentful_id}
                       />
                     ))}
                 </div>
               </Col>
 
-              <Col xl={idx_s === 0 ? 10 : 7}>
-                <ImageGroup>
+              {/* <Col xl={i === 0 ? 10 : 7}>
+                <ImageGroup className="element-minor">
                   {section.content
                     .filter(c => c.__typename === "ContentfulImage")
-                    .map((img, idx_i) => (
+                    .map(img => (
                       <Img
                         fluid={img.image.fluid}
                         alt={img.alt}
                         objectFit="contain"
-                        key={`${section.title}-image-${idx_i}`}
+                        key={img.contentful_id}
                       />
                     ))}
                 </ImageGroup>
-              </Col>
+              </Col> */}
             </Row>
           </section>
         ))}
+        <section className="element">
+          <ImageGroup className="element-minor">
+            {imagesArr.map(img => (
+                <Img
+                  fluid={img.image.fluid}
+                  alt={img.alt}
+                  objectFit="contain"
+                  key={img.contentful_id}
+                />
+              ))}
+          </ImageGroup>
+        </section>
         <Row around="xs">
           <Col md={3}>
             <Link to="/contact">💁🏻‍♀️ Book me to speak at your event</Link>

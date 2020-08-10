@@ -29,8 +29,8 @@ const global_styles = css`
       background-size: 100vw 100vh;
       ${"" /* background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.gray700} 100% ); */}
       ${"" /* background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.green500}  100% ); */}
-      ${"" /* background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.blue500} 100% ); */}
-      background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.grape500} 100% );
+      background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.blue500} 100% );
+      ${"" /* background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.grape500} 100% ); */}
       ${"" /* background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.plum500} 100% ); */}
       ${"" /* background: linear-gradient( 150deg, ${colors.gray300} 8%, ${colors.white} 100% ); */}
       ${"" /* background: linear-gradient( 150deg, ${colors.pink500} 0%, ${colors.plum500} 100% ); */}
@@ -49,7 +49,7 @@ const global_styles = css`
     font-size: 1.8rem;
     font-weight: 300;
     line-height: 1.5;
-    ${'' /* opacity: 0; */}
+    ${"" /* opacity: 0; */}
     &.loaded{
       opacity: 1;
       transition: opacity 0.4s 0.2s ease-in;
@@ -59,6 +59,9 @@ const global_styles = css`
   strong {
     font-weight: 700;
     color: ${colors.yellow};
+    .highlighted p:first-of-type & {
+      font-weight: inherit;
+    }
   }
 
   a {
@@ -120,7 +123,8 @@ const global_styles = css`
   h3.pad,
   h4.pad,
   h5.pad,
-  h6.pad {
+  h6.pad,
+  .highlighted h4 {
     margin-bottom: 1.25em;
   }
 
@@ -185,7 +189,7 @@ const global_styles = css`
   }
 
   *.element{
-    margin: 10rem 0rem;
+    margin: 8rem 0rem;
     :first-of-type {
       margin: 2rem 0rem;
     }
@@ -196,9 +200,16 @@ const global_styles = css`
   }
 
   .background {
-    background-color: #ffffff11;
+    background-color: ${colors.blue900 + "55"};
     box-shadow: 0px 0.4rem 1rem rgba(0,0,20,.2);
     border-radius: 0.5rem;
+    * {
+      text-shadow: 1px 1px 2px black;
+    }
+
+    > h4 {
+      padding: 2rem 3rem 1rem 3rem;
+    }
   }
 
   *.text-sm,
@@ -206,7 +217,9 @@ const global_styles = css`
     font-size: 1.3rem;
   }
 
+  .highlighted p:first-of-type,
   *.text-lg,
+  .highlighted p:first-of-type,
   *.text-lg * {
     font-size: 2.4rem;
     font-weight: 400;
@@ -232,7 +245,9 @@ const global_styles = css`
       font-size: 1.6rem;
       line-height: 1.4;
     }
+    .highlighted p:first-of-type,
     *.text-lg,
+    .highlighted p:first-of-type,
     *.text-lg * {
       font-size: 1.8rem;
     }

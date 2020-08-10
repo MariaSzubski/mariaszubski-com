@@ -10,9 +10,9 @@
 
 Hi, I’m Maria and I work remotely as a **Freelance Front-End Developer** based in Cincinnati, OH. I specialize in **Javascript**, **React**, **JAMStack**, and **Shopify**. I love to help small businesses launch projects with the best practices in accessibility, user experience, and maintainable code standards.
 
-I've been a full-time contractor since 2018 and have worked with **7 clients** on over **25 projects**. I’ve launched websites solo and have been embedded in teams long-term. I pick up development languages and frameworks quickly and am comfortable hopping on whatever tech stack best suits the client's needs.
+I've been a full-time contractor since 2018 and have worked with **6 clients** on over **25 projects**. I’ve launched websites solo and have been embedded in teams long-term. I pick up development languages and frameworks quickly and am comfortable hopping on whatever tech stack best suits the client's needs.
 
-Before freelancing, I spent 7 years as a **UX Designer** and **Developer** in the consumer retail, entertainment, sports, and B2B software industries. I volunteered with a tech non-profit for 3 years, organizing events and classes for the local chapter. I've led in-person workshops on **GatsbyJS** and Intro to Web Development.
+Before freelancing, I spent 7 years as a **UX Designer** and **Developer** in the consumer retail, entertainment, sports, and B2B software industries. I volunteered with a tech non-profit for 3 years, organizing events and teaching classes for the local chapter. I've led in-person workshops on **GatsbyJS** and Intro to Web Development.
 
 ### Interested in working together?
 

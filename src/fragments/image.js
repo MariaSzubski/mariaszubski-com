@@ -6,7 +6,7 @@ export const ImageAttr = graphql`
     alt
     image {
       fluid(maxWidth: 2400, quality: 100) {
-        ...GatsbyDatoCmsFluid
+        ...GatsbyContentfulFluid_withWebp
       }
     }
   }

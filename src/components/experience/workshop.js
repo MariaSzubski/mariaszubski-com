@@ -26,8 +26,10 @@ const StyledWorkshop = styled.article`
 `
 
 const Details = styled(Row)`
-  padding-top: ${props => (props.$compact ? "0.5rem" : "1.2rem")};
-  padding-bottom: ${props => (props.$compact ? "0.5rem" : "1.2rem")};
+  padding-top: ${props => (props.$compact ? "0.6rem" : "1.2rem")};
+  padding-bottom: ${props => (props.$compact ? "0.6rem" : "1.2rem")};
+  padding-left: 3rem;
+  padding-right: 3rem;
   svg {
     height: 18px;
     width: 18px;
@@ -44,10 +46,6 @@ const StyledCol = styled(Col)`
   display: flex;
   align-items: center;
   font-weight: 600;
-
-  h5 {
-    text-align: left;
-  }
 
   @media ${g.screen.max.md} {
     &:nth-of-type(1) {
@@ -71,19 +69,20 @@ const WorkshopCard = props => (
       <StyledCol $compact={props.compact} xs={5} sm={3} md={3}>
         <DateRange className="h6">
           <DateIcon />
-          {new Intl.DateTimeFormat("en-US", {
+          {/* {Intl.DateTimeFormat("en-US", {
             month: "short",
             year: "numeric",
-          }).format(new Date(props.workshop.date))}
+          }).format(Date(props.workshop.date))} */}
+          {props.workshop.date}
         </DateRange>
       </StyledCol>
       <StyledCol $compact={props.compact} xs={props.compact ? null : 12} md>
         {props.workshop.permalink ? (
           <h5>
-            <Link to={props.workshop.permalink}>{props.workshop.title}</Link>
+            <Link to={props.workshop.permalink}>{props.workshop.label}</Link>
           </h5>
         ) : (
-          props.workshop.title
+          props.workshop.label
         )}
       </StyledCol>
       {props.workshop.duration && (
@@ -107,7 +106,7 @@ const WorkshopCard = props => (
 
 WorkshopCard.propTypes = {
   workshop: PropTypes.shape({
-    title: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
     org: PropTypes.string,
     date: PropTypes.string.isRequired,
     permalink: PropTypes.string,
