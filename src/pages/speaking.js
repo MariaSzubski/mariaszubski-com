@@ -68,7 +68,7 @@ const SpeakingPage = props => {
                 contentful_id
                 alt
                 image {
-                  fluid(maxWidth: 800, quality: 100) {
+                  fluid(maxWidth: 400, quality: 100) {
                     ...GatsbyContentfulFluid_withWebp
                   }
                 }
@@ -88,27 +88,28 @@ const SpeakingPage = props => {
         <hgroup className="element">
           <h1>{data.title}</h1>
         </hgroup>
-        <h3>Available Workshops</h3>
-        [ Gatsby Workshop ]
-        <p>More Coming Soon</p>
 
+        <section className="element">
+          <ImageGroup className="element-minor">
+            {imagesArr.map(img => (
+              <Img
+                fluid={img.image.fluid}
+                alt={img.alt}
+                objectFit="contain"
+                key={img.contentful_id}
+              />
+            ))}
+          </ImageGroup>
+        </section>
+        <h3>Available Workshops</h3>[ Gatsby Workshop ]<p>More Coming Soon</p>
         {data.modules.map((section, i) => (
           <section className="element" key={section.contentful_id}>
-
-
-
-            <Row between="md">
-              <Col lg={9} xl={5}>
+            <Row around="md">
+              <Col lg={9} xl={9}>
                 <h3>{section.title}</h3>
                 <HTML content={section.copy} />
-                <ImageGroup className="element-minor">
-                  {section.content
-                    .filter(c => c.__typename === "ContentfulImage")
-                    .map(img => {imagesArr.push(img)})}
-                </ImageGroup>
               </Col>
-
-              <Col xl={6}>
+              <Col lg={9} xl={7}>
                 <div className="background">
                   <h5 className="pad">{section.subtitle}</h5>
                   {section.content
@@ -122,8 +123,9 @@ const SpeakingPage = props => {
                     ))}
                 </div>
               </Col>
+            </Row>
 
-              {/* <Col xl={i === 0 ? 10 : 7}>
+            <Col xl={i === 0 ? 12 : 7}>
                 <ImageGroup className="element-minor">
                   {section.content
                     .filter(c => c.__typename === "ContentfulImage")
@@ -136,22 +138,9 @@ const SpeakingPage = props => {
                       />
                     ))}
                 </ImageGroup>
-              </Col> */}
-            </Row>
+              </Col>
           </section>
         ))}
-        <section className="element">
-          <ImageGroup className="element-minor">
-            {imagesArr.map(img => (
-                <Img
-                  fluid={img.image.fluid}
-                  alt={img.alt}
-                  objectFit="contain"
-                  key={img.contentful_id}
-                />
-              ))}
-          </ImageGroup>
-        </section>
         <Row around="xs">
           <Col md={3}>
             <Link to="/contact">💁🏻‍♀️ Book me to speak at your event</Link>

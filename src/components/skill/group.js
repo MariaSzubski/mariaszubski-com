@@ -36,33 +36,36 @@ const Skills = styled.div`
 const SkillGroup = ({ children, ...props }) => (
   <section
     className={`
-      ${props.$simple ? "element-minor " : "element "}
-      ${(props.light || props.$simple) ? "lt" : "dk"}
+      ${props.simple ? "element-minor " : "element "}
+      ${(props.theme === "transparent" || props.simple) && "tr"}
+      ${(props.theme === "light") && "lt"}
+      ${(props.theme === "dark") && "dk"}
     `}
   >
     {props.title && <h3 className="pad">{props.title}</h3>}
 
-    <Groups className={props.$simple ? "" : "background"} $simple={props.$simple ? 1 : 0}>
+    <Groups $simple={props.simple ? 1 : 0}>
       {props.data &&
         props.data.map((group, g_idx) => (
           <div key={`${group.title}-skills-${g_idx}`}>
-            {props.$simple ? (
+            {props.simple ? (
               <h2>{group.title}</h2>
             ) : (
               <h5 className="pad">{group.title}</h5>
             )}
 
             <Skills
-              $center={props.$center ? 1 : 0}
-              $simple={props.$simple ? 1 : 0}
+              $center={props.center ? 1 : 0}
+              $simple={props.simple ? 1 : 0}
             >
               {group.skills.map((skill, s_idx) => (
                 <SkillTag
                   key={`${group.title}-skill-${s_idx}`}
                   icon={skill.icon && skill.icon}
                   label={skill.label && skill.label}
-                  light={props.light}
-                  simple={props.$simple}
+                  theme={props.theme}
+                  simple={props.simple}
+                  size={props.size}
                 />
               ))}
             </Skills>
@@ -73,18 +76,20 @@ const SkillGroup = ({ children, ...props }) => (
 )
 
 SkillGroup.propTypes = {
-  light: PropTypes.bool,
+  theme: PropTypes.oneOf(["dark", "light", "transparent"]),
+  transparent: PropTypes.bool,
   title: PropTypes.string,
   data: PropTypes.array,
-  $center: PropTypes.bool,
+  center: PropTypes.bool,
   children: PropTypes.node,
-  $simple: PropTypes.bool,
+  simple: PropTypes.bool,
+  size: PropTypes.string
 }
 
 SkillGroup.defaultProps = {
-  light: false,
-  $center: false,
-  $simple: false,
+  theme: "dark",
+  center: false,
+  simple: false,
 }
 
 export { SkillGroup, SkillTag }

@@ -19,7 +19,7 @@ const StyledFooter = styled.footer`
 
 const Footer = () => (
   <StyledFooter text-sm text-center>
-    <SkillGroup data={data} $center $simple />
+    <SkillGroup data={data} center simple />
     &copy; {new Date().getFullYear()} Maria Szubski Digital, LLC
   </StyledFooter>
 )

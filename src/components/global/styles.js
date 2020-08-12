@@ -8,6 +8,7 @@ const global_styles = css`
   html {
     font-size: 62.5%;
     box-sizing: border-box;
+    ${"" /* color: ${colors.gray700}; */}
     color: ${colors.white};
     font-family: ${fonts.nunito};
     -ms-text-size-adjust: 100%;
@@ -27,12 +28,12 @@ const global_styles = css`
       background-repeat: no-repeat;
       background-attachment: fixed;
       background-size: 100vw 100vh;
-      ${"" /* background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.gray700} 100% ); */}
+      background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.gray700} 100% );
       ${"" /* background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.green500}  100% ); */}
       background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.blue500} 100% );
       ${"" /* background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.grape500} 100% ); */}
-      ${"" /* background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.plum500} 100% ); */}
-      ${"" /* background: linear-gradient( 150deg, ${colors.gray300} 8%, ${colors.white} 100% ); */}
+      background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.plum500} 100% );
+      ${"" /* background: linear-gradient( 150deg, ${colors.white} 8%, #FFFFFF 100% ); */}
       ${"" /* background: linear-gradient( 150deg, ${colors.pink500} 0%, ${colors.plum500} 100% ); */}
       ${"" /* background: linear-gradient( 150deg, ${colors.yellow} 0%, ${colors.plum300} 100% ); */}
     }
@@ -45,10 +46,13 @@ const global_styles = css`
   }
 
   body {
-    font-size: 16px;
-    font-size: 1.8rem;
-    font-weight: 300;
-    line-height: 1.5;
+    font-size: 23px;
+    font-size: 2.3rem;
+    font-weight: 400;
+    line-height: 1.68;
+    ${"" /* color: ${colors.gray700}; */}
+    ${"" /* color: ${"#FFFFFF" + "EE"}; */}
+    color: ${colors.gray200};
     ${"" /* opacity: 0; */}
     &.loaded{
       opacity: 1;
@@ -154,17 +158,17 @@ const global_styles = css`
     text-align: center;
     text-transform: uppercase;
     font-size: 3.6rem;
-    text-shadow: 0.2rem 0.3rem 0rem ${colors.black};
+    ${"" /* text-shadow: 0.2rem 0.3rem 0rem ${colors.black}; */}
     padding-top: 1rem;
   }
 
   h4 {
     font-weight: 800;
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   h5 {
-    font-weight: 700;
+    font-weight: 800;
     font-size: 1.5rem;
     color: ${colors.yellow};
     text-transform: uppercase;
@@ -174,10 +178,10 @@ const global_styles = css`
 
   h6,
   .h6 {
-    font-weight: 400;
+    font-weight: 700;
     font-size: 1.3rem;
     line-height: 1.6rem;
-    color: ${colors.gray200};
+    color: ${colors.gray00};
     text-transform: uppercase;
     letter-spacing: 0.02rem;
   }
@@ -185,7 +189,7 @@ const global_styles = css`
   p {
     margin-top: 0;
     margin-bottom: 3rem;
-    line-height: 140%;
+    ${"" /* line-height: 140%; */}
   }
 
   *.element{
@@ -200,11 +204,12 @@ const global_styles = css`
   }
 
   .background {
-    background-color: ${colors.blue900 + "55"};
+    background-color: #ffffff11;
+    ${"" /* background-color: ${colors.blue900 + ""}; */}
     box-shadow: 0px 0.4rem 1rem rgba(0,0,20,.2);
     border-radius: 0.5rem;
     * {
-      text-shadow: 1px 1px 2px black;
+      ${"" /* text-shadow: 1px 1px 2px #000000DD; */}
     }
 
     > h4 {
@@ -221,7 +226,7 @@ const global_styles = css`
   *.text-lg,
   .highlighted p:first-of-type,
   *.text-lg * {
-    font-size: 2.4rem;
+    font-size: 3.6rem;
     font-weight: 400;
     line-height: 145%;
   }

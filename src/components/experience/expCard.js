@@ -10,7 +10,7 @@ import HTML from "../utilities/html"
 import * as g from "../global/vars"
 
 const StyledExp = styled.article`
-  padding: 2.4rem 3rem;
+  padding: 3rem;
   border-bottom: 1px solid ${g.colors.black + "99"};
   &:last-of-type {
     border-bottom: none;
@@ -29,14 +29,22 @@ const StyledExp = styled.article`
 
 const Company = styled.h6`
   margin-bottom: ${props => (props.$toggle ? "1.6rem" : "0rem")};
+  span {
+    color: ${g.colors.green300};
+  }
 `
 const Desc = styled(HTML)`
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 400;
   margin: 1.6rem 0rem 2rem;
   display: ${props => (props.$toggle ? "block" : "none")};
 `
 const Meta = styled(Row)`
+  * {
+    font-weight: 400 !important;
+    font-size: 1.2rem;
+    ${"" /* color: ${g.colors.gray500}; */}
+  }
   svg {
     height: 18px;
     width: 18px;
@@ -61,6 +69,7 @@ const ExpCard = props => (
         <Col md={props.toggle ? 12 : 9}>
           <h4>{props.job.title}</h4>
           <Company $toggle={props.toggle}>
+            <span>
             {props.job.companyUrl ? (
               <Link to={props.job.companyUrl} target="_blank">
                 {props.job.companyName}
@@ -68,6 +77,7 @@ const ExpCard = props => (
             ) : (
               props.job.companyName
             )}
+          </span>
             {props.job.team && `\u00A0\u00A0//\u00A0 ${props.job.team}`}
           </Company>
 

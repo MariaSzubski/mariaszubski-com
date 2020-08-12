@@ -33,7 +33,7 @@ const BlogPostTemplate = props => {
     <Layout>
       <Grid fluid>
         <Row around="md">
-          <Col xl={7}>
+          <Col xl={8}>
             <Section className="element">
               <hgroup>
                 <h1>{props.title}</h1>

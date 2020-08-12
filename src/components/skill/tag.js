@@ -19,8 +19,13 @@ const StyledTag = styled.span`
   text-transform: capitalize;
   font-size: 1rem;
 
-  .text {
-    height: 1.8rem;
+  .tr & {
+    padding: 0rem 1.2rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.19rem;
+    font-size: 1.7rem;
+    color: ${colors.white};
   }
 
   .lt & {
@@ -69,7 +74,7 @@ const SkillTag = props => {
     <StyledTag title={props.label} $simple={props.simple} $size={props.size}>
       {Icon && (
         <StyledIcon>
-          <Icon light={props.light ? 1 : 0} />
+          <Icon light={(props.theme === "light" || props.theme === "transparent") ? 1 : 0} />
         </StyledIcon>
       )}
       {!props.simple && <div className="text">{props.label || props.icon}</div>}
@@ -78,15 +83,15 @@ const SkillTag = props => {
 }
 
 SkillTag.propTypes = {
+  theme: PropTypes.oneOf(["dark", "light", "transparent"]),
   icon: PropTypes.string,
   label: PropTypes.string,
-  light: PropTypes.bool,
   simple: PropTypes.bool,
   size: PropTypes.string,
 }
 
 SkillTag.defaultProps = {
-  light: false,
+  theme: "dark",
   simple: false,
   size: "2.2rem"
 }
