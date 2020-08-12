@@ -5,12 +5,14 @@ import * as g from "../global/vars"
 const fieldMixin = css`
   width: 100%;
   margin: 1rem auto;
-  padding: 2rem;
-  border: 0.1rem solid ${g.colors.white};
-  height: 4.8rem;
+  padding: 3rem;
+  border: none;
+  height: 5.2rem;
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: ${g.colors.white};
   &::placeholder {
-    font-style: italic;
-    color: ${g.colors.blue500};
+  color: ${g.colors.gray300};
   }
   &.invalid {
     box-shadow: 0rem 0rem 0rem 0.2rem ${g.colors.pink500};
@@ -30,11 +32,11 @@ const formStyles = css`
   select {
     ${fieldMixin}
     :hover {
-      border: 0.1rem solid ${g.colors.blue900};
+      ${"" /* border: 0.1rem solid ${g.colors.blue900}; */}
     }
     :focus {
       outline: none;
-      border: 0.1rem solid ${g.colors.plum500};
+      ${"" /* border: 0.1rem solid ${g.colors.gray500}; */}
     }
   }
 
@@ -46,18 +48,6 @@ const formStyles = css`
   form button {
     margin-top: 1rem;
   }
-
-@media ${g.screen.min.sm} {
-  .field-50 {
-    width: calc(50% - 1rem);
-    &.col-left {
-      margin-right: 1rem;
-    }
-    &.col-right {
-      margin-left: 1rem;
-    }
-  }
-}
 
   ${"" /* Bug fix for react-flexbox-grid */}
   @media ${g.screen.max.md} {

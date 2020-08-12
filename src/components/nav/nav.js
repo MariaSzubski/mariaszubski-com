@@ -98,7 +98,7 @@ const Nav = () => (
       <StyledLink to="/speaking" activeClassName="active">
         Speaking
       </StyledLink>
-      <Button to="/projects" $color="green" activeClassName="active">
+      <Button to="/contact" $color="green" activeClassName="active">
         Let&apos;s Connect
       </Button>
     </PageLinks>
