@@ -1,7 +1,8 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import { Link } from "gatsby"
 import styled from "styled-components"
-import { Row, Col } from "react-flexbox-grid"
+import { Row, Col, Visible, Hidden } from "react-grid-system"
 
 import endorsements from "../content/endorsements.yml"
 
@@ -13,28 +14,57 @@ import Button from "../components/button/button"
 import Form from "../components/form"
 
 import data from "../content/specialize.yml"
-import { colors } from "../components/global/vars"
+import { colors, screen } from "../components/global/vars"
 
-const Hero = styled.section`
-  min-height: 85vh;
-  display: flex;
-  justify-content: flex-start;
+const Hero = styled(Row)`
+  min-height: 50vh;
+  @media ${screen.min.xl} {
+    min-height: 85vh;
+  }
 `
 
-const Headshot = styled.div`
-  flex: 0 1 39%;
-  align-self: stretch;
+const Headshot = styled(Col)`
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: bottom left;
   opacity: 0.7;
   background-image: url("http://images.ctfassets.net/sx9v94b5k8eh/4hcNblDYZaRY7T2j5HH1D2/ed866bc95b329baa65791be6d939d3e8/headshot.png?w=640&h=640&q=100&fm=webp");
+  @media ${screen.max.lg} {
+    background-size: 12rem 12rem;
+    background-position: center top;
+
+    opacity: 1;
+    height: 12rem;
+  }
 `
 
-const Content = styled.div`
-  flex-basis: 45vw;
-  align-self: flex-start;
-  margin-top: 26.5rem;
+const Content = styled(Col)`
+  align-self: center;
+  margin-top: 5rem;
+  p {
+    font-size: 2.4rem;
+    line-height: 1.6;
+    max-width: 80rem;
+    text-align: center;
+    margin: auto;
+  }
+  @media ${screen.min.md} {
+    p {
+      font-size: 3.8rem;
+    }
+  }
+  @media ${screen.min.lg} {
+    margin-top: 10rem;
+    p {
+      max-width: none;
+      text-align: left;
+    }
+  }
+  @media ${screen.min.xxl} {
+    p {
+      font-size: 4.6rem;
+    }
+  }
 `
 
 const Other = styled(Row)`
@@ -51,49 +81,76 @@ const Stats = styled(Col)`
     ${colors.black} 8%,
     ${colors.blue900} 100%
   );
-  padding: 3rem 3rem 4rem 3rem;
+  padding: 3rem 4rem 4rem 4rem;
   border-radius: 1rem;
   text-align: center;
   color: white;
 `
 
 const Num = styled.div`
-  font-size: 4rem;
+  font-size: 3.2rem;
   text-transform: lowercase;
   font-weight: 600;
+  @media ${screen.min.lg} {
+    font-size: 4rem;
+  }
 `
 
 const IndexPage = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      form: contentfulForm(contentful_id: { eq: "2BIm4mvh8sivBJmxWvjBbL" }) {
+        contentful_id
+        title
+        action
+        desc {
+          childMarkdownRemark {
+            html
+          }
+        }
+        formFields {
+          contentful_id
+          name
+          required
+          type
+          placeholder
+          values
+        }
+      }
+    }
+  `)
+
   return (
     <Layout>
       <SEO title="Home" />
       <Hero>
-        <Headshot />
-        <Content>
-          <p style={{ fontSize: "4.6rem" }}>
+        <Hidden xs sm md>
+          <Headshot xs={12} lg={3.5} xl={4} />
+        </Hidden>
+        <Content xs={12} lg={7.5} xl={6.8} xxl={6.2} offset={{ xxl: 1 }}>
+          <p>
             Hi, I&#39;m Maria and I work remotely as a{" "}
             <strong>Freelance Frontend Developer</strong> based in Cincinnati,
             OH. I specialize in...
           </p>
-          <SkillGroup data={data} size="3.8rem" center theme="transparent" />
+          {/* <SkillGroup data={data} size="3.8rem" center theme="transparent" /> */}
           <Button to="/contact" $color="green">
             Let&#39;s work together
           </Button>
         </Content>
       </Hero>
-      {/* <Other /> */}
-      <Other around="md" top="md" className="background">
-        <Stats md={6}>
+      <Other justify="center" align="start" className="background">
+        <Stats xs={11} md={9.5} lg={8} xl={6.75} xxl={5}>
           <Row>
             <Col md={3}>
               <Num>2.5 yrs</Num>
               <h6>in business</h6>
             </Col>
-            <Col md={2}>
+            <Col md={2.4}>
               <Num>7</Num>
               <h6>clients</h6>
             </Col>
-            <Col md={3}>
+            <Col md={2.6}>
               <Num>28+</Num>
               <h6>projects</h6>
             </Col>
@@ -105,49 +162,15 @@ const IndexPage = () => {
         </Stats>
       </Other>
       ^ Appear/hide on scroll
-      <Other>
+      <section>
         <h3>Contact Me</h3>
-        <Row around="xs">
-          <Col md={7}>
-            <Form
-              config={{
-                form_fields: [
-                  {
-                    required: true,
-                    type: "input",
-                    name: "field name 1",
-                    placeholder: "What's Your Name?",
-                  },
-                  {
-                    required: false,
-                    type: "email",
-                    name: "field name 1",
-                    placeholder: "Email Address",
-                  },
-                  {
-                    required: false,
-                    type: "radio",
-                    name: "field name 1",
-                    placeholder: "placeholder",
-                  },
-                  {
-                    required: false,
-                    type: "textarea",
-                    name: "field name 1",
-                    placeholder: "How can I help?",
-                  },
-                  {
-                    required: false,
-                    type: "submit",
-                    name: "field name 1",
-                    placeholder: "Submit",
-                  },
-                ],
-              }}
-            />
+
+        <Row justify="center">
+          <Col xs={11.5} sm={10} md={8} xl={5}>
+            <Form config={data.form} />
           </Col>
         </Row>
-      </Other>
+      </section>
       {/* <Testimonials data={endorsements} /> */}
     </Layout>
   )

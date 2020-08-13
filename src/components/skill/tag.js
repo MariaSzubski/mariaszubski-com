@@ -20,7 +20,7 @@ const StyledTag = styled.span`
   font-size: 1rem;
 
   .tr & {
-    padding: 0rem 1.2rem;
+    padding: 0.5rem 1.2rem;
     letter-spacing: 0.1rem;
     text-transform: uppercase;
     letter-spacing: 0.19rem;
@@ -46,8 +46,8 @@ const StyledTag = styled.span`
   }
 
   ${StyledIcon} > * {
-    height: ${props => props.$size};
-    width: ${props => props.$size};
+    height: 2.4rem;
+    width: 2.4rem;
     margin-right: ${props => (props.$simple ? "0rem" : "1.1rem")};
   }
 
@@ -64,6 +64,8 @@ const StyledTag = styled.span`
 
     ${StyledIcon}:not(:last-of-type) > * {
       margin-right: ${props => (props.$simple ? "0.2rem" : "0.9rem")};
+      height: ${props => props.$size};
+      width: ${props => props.$size};
     }
   }
 `

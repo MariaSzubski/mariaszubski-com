@@ -24,10 +24,9 @@ const Skills = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: ${props => (props.$center ? "center" : "flex-start")};
-
   > span {
-    width: ${props => (props.$simple ? "auto" : "calc(50% - 0.6rem)")};
-    @media ${screen.min.md} {
+    width: ${props => (props.$simple || props.$transparent) ? "100%" : "calc(50% - 0.6rem)"};
+    @media ${screen.min.sm} {
       width: auto;
     }
   }
@@ -57,6 +56,7 @@ const SkillGroup = ({ children, ...props }) => (
             <Skills
               $center={props.center ? 1 : 0}
               $simple={props.simple ? 1 : 0}
+              $transparent={props.theme === "transparent" ? 1 : 0}
             >
               {group.skills.map((skill, s_idx) => (
                 <SkillTag

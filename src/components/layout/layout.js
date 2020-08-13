@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { Grid } from "react-flexbox-grid"
+import { Container } from "react-grid-system"
 
 import { screen } from "../global/vars"
 import GlobalStyles from "../global/styles"
@@ -11,21 +11,18 @@ import Footer from "../footer"
 
 const Content = styled.div`
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 `
 
 const Main = styled.main`
   width: 100%;
-  max-width: 144rem;
+  ${"" /* max-width: 144rem; */}
   margin: 0 auto;
-  padding: 0rem 4rem;
-  display: flex;
+  ${"" /* padding: 0rem 4rem; */}
+  ${"" /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */}
   @media ${screen.max.md} {
-    padding: 0rem 2rem;
+    ${"" /* padding: 0rem 2rem; */}
   }
 `
 
@@ -35,9 +32,9 @@ const Layout = ({ title, children }) => {
       <SEO title={title} />
       <GlobalStyles />
       <Content>
-        <Nav />
+        {/* <Nav /> */}
         <Main>
-          <Grid fluid>{children}</Grid>
+          <Container fluid>{children}</Container>
         </Main>
         <Footer />
       </Content>

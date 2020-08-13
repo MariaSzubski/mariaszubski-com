@@ -43,6 +43,7 @@ export const bp = {
   md: 768,
   lg: 992,
   xl: 1200,
+  xxl: 1440,
 }
 
 export const screen = {
@@ -52,6 +53,7 @@ export const screen = {
     md: `(min-width: ${bp.md}px)`,
     lg: `(min-width: ${bp.lg}px)`,
     xl: `(min-width: ${bp.xl}px)`,
+    xxl: `(min-width: ${bp.xxl}px)`,
   },
   max: {
     xs: `(max-width: ${bp.xs - 1}px)`,
@@ -59,5 +61,6 @@ export const screen = {
     md: `(max-width: ${bp.md - 1}px)`,
     lg: `(max-width: ${bp.lg - 1}px)`,
     xl: `(max-width: ${bp.xl - 1}px)`,
+    xxl: `(max-width: ${bp.xxl - 1}px)`,
   },
 }
