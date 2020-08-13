@@ -32,7 +32,7 @@ const Layout = ({ title, children }) => {
       <SEO title={title} />
       <GlobalStyles />
       <Content>
-        {/* <Nav /> */}
+        <Nav />
         <Main>
           <Container fluid>{children}</Container>
         </Main>

@@ -11,7 +11,7 @@ const StyledForm = styled.form`
   ${formStyles};
 `
 
-const Form = ({ config, ...props }) => {
+const Form = ({ config, source, ...props }) => {
   const renderInput = opts => (
     <input
       key={opts.contentful_id}
@@ -20,7 +20,6 @@ const Form = ({ config, ...props }) => {
       required={opts.required}
       placeholder={opts.placeholder}
       aria-label={opts.placeholder}
-      className={`${opts.className}`}
     />
   )
 
@@ -29,13 +28,12 @@ const Form = ({ config, ...props }) => {
       {"Looking for a..."}
       <input
         type={opts.type}
-        name={opts.name}
+        name={`${opts.name + "name 1"}`}
         id="radio_1"
         value={opts.values[0]}
         required={opts.required}
         placeholder={opts.placeholder}
         aria-label={opts.placeholder}
-        className={`${opts.className}`}
         defaultChecked
       />
       <label htmlFor="radio_1">{opts.values[0]}</label>
@@ -47,7 +45,6 @@ const Form = ({ config, ...props }) => {
         required={opts.required}
         placeholder={opts.placeholder}
         aria-label={opts.placeholder}
-        className={`${opts.className}`}
       />
       <label htmlFor={"radio_2"}>{opts.values[1]}</label>
     </span>
@@ -67,7 +64,6 @@ const Form = ({ config, ...props }) => {
       placeholder={opts.placeholder}
       aria-label={opts.label + " text area"}
       rows={10}
-      className={`${opts.className}`}
     />
   )
 
@@ -89,7 +85,7 @@ const Form = ({ config, ...props }) => {
       data-netlify="true"
       netlify-honeypot="bot-field"
     >
-      <input type="hidden" name="contact" value="contact" />
+      <input type="hidden" name="form-source" value={`${config.title} - ${source}`} />
       {config.formFields.map(f => fieldMap[f.type](f))}
     </StyledForm>
   )
@@ -97,6 +93,7 @@ const Form = ({ config, ...props }) => {
 
 Form.propTypes = {
   config: PropTypes.object.isRequired,
+  source: PropTypes.string.isRequired,
 }
 
 Form.defaultProps = {}
