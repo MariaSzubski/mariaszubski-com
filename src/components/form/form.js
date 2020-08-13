@@ -54,7 +54,7 @@ const Form = ({ config, ...props }) => {
   )
 
   const renderSubmit = opts => (
-    <Button key={opts.contenful_id} to="/" type="submit">
+    <Button key={opts.contenful_id} type={opts.type}>
       {opts.placeholder}
     </Button>
   )
