@@ -3,14 +3,17 @@ import { css } from "styled-components"
 import * as g from "../global/vars"
 
 const fieldMixin = css`
+  display: block;
   width: 100%;
   margin: 1rem auto;
-  padding: 3rem;
+  padding: 1.25rem 1.5rem;
   border: none;
-  height: 5.2rem;
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   font-weight: 400;
-  color: ${g.colors.white};
+  color: black;
+  border-radius: 0.4rem;
+  box-shadow: 0rem 0rem 1rem rgba(0,0,20,.6);
+  resize: none;
   &::placeholder {
   color: ${g.colors.gray300};
   }
@@ -21,10 +24,7 @@ const fieldMixin = css`
 
 const formStyles = css`
   form {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 1rem 0rem;
+    ${"" /* padding: 1rem 0rem; */}
   }
 
   input,
@@ -42,7 +42,6 @@ const formStyles = css`
 
   textarea {
     height: auto;
-    min-height: 4.8rem;
   }
 
   form button {
@@ -52,8 +51,8 @@ const formStyles = css`
   ${"" /* Bug fix for react-flexbox-grid */}
   @media ${g.screen.max.md} {
     form  {
-      font-size: 1.6rem;
-      padding: 0rem 0.7rem;
+      ${"" /* font-size: 1.6rem; */}
+      ${"" /* padding: 0rem 0.7rem; */}
     }
   }
 }

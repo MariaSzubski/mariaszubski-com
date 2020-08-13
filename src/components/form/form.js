@@ -11,64 +11,63 @@ const StyledForm = styled.form`
   ${formStyles};
 `
 
-const Form = ({ config }) => {
+const Form = ({ config, ...props }) => {
   const renderInput = opts => (
     <input
-      key={opts.name}
+      key={opts.contentful_id}
       type={opts.type}
       name={opts.name}
       required={opts.required}
       placeholder={opts.placeholder}
       aria-label={opts.placeholder}
-      className={`${opts.className + " background"}`}
+      className={`${opts.className}`}
     />
   )
 
   const renderRadio = opts => (
-    <>
+    <span key={opts.contentful_id}>
       {"Looking for a..."}
       <input
-        key={opts.name}
         type={opts.type}
         name={opts.name}
-        id="radio1"
-        value="radio1"
+        id="radio_1"
+        value={opts.values[0]}
         required={opts.required}
         placeholder={opts.placeholder}
         aria-label={opts.placeholder}
-        className={`${opts.className + " background"}`}
-        checked
+        className={`${opts.className}`}
+        defaultChecked
       />
-      <label htmlFor="radio1">Developer</label>
+      <label htmlFor="radio_1">{opts.values[0]}</label>
       <input
-        key={opts.name}
         type={opts.type}
         name={opts.name}
-        id="radio2"
-        value="radio2"
+        id={"radio_2"}
+        value={opts.values[1]}
         required={opts.required}
         placeholder={opts.placeholder}
         aria-label={opts.placeholder}
-        className={`${opts.className + " background"}`}
+        className={`${opts.className}`}
       />
-      <label htmlFor="radio2">Guest Speaker</label>
-    </>
+      <label htmlFor={"radio_2"}>{opts.values[1]}</label>
+    </span>
   )
 
   const renderSubmit = opts => (
-    <Button key="submit" to="/" type="submit">
+    <Button key={opts.contenful_id} to="/" type="submit">
       {opts.placeholder}
     </Button>
   )
 
   const renderTextarea = opts => (
     <textarea
+      data-autoresize
       key={opts.name}
       name={opts.name}
       placeholder={opts.placeholder}
       aria-label={opts.label + " text area"}
-      rows={opts.rows || 5}
-      className={`${opts.className + " background"}`}
+      rows={10}
+      className={`${opts.className}`}
     />
   )
 
@@ -84,7 +83,15 @@ const Form = ({ config }) => {
   }
 
   return (
-    <StyledForm>{config.form_fields.map(f => fieldMap[f.type](f))}</StyledForm>
+    <StyledForm
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+    >
+      <input type="hidden" name="contact" value="contact" />
+      {config.formFields.map(f => fieldMap[f.type](f))}
+    </StyledForm>
   )
 }
 
