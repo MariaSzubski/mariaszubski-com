@@ -12,16 +12,28 @@ import Form from "../components/form"
 const SpeakingPage = props => {
   let blogDate = new Date("2020-08-07")
   let trans = blogDate.toDateString()
-  const { contentfulPage: data } = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     query {
-      contentfulPage(contentful_id: { eq: "3wkQbDkmDvNmzOjGUhdigt" }) {
+      form: contentfulForm(contentful_id: { eq: "2BIm4mvh8sivBJmxWvjBbL" }) {
         contentful_id
         title
+        action
+        desc {
+          childMarkdownRemark {
+            html
+          }
+        }
+        formFields {
+          contentful_id
+          name
+          required
+          type
+          placeholder
+          values
+        }
       }
     }
   `)
-
-  // console.table(data.modules[0].content[0].label)
   return (
     <Layout>
       <h3>Contact Me</h3>
@@ -30,42 +42,7 @@ const SpeakingPage = props => {
       </p>
       <Row around="xs">
         <Col md={7}>
-          <Form
-            config={{
-              form_fields: [
-                {
-                  required: true,
-                  type: "input",
-                  name: "field name 1",
-                  placeholder: "What's Your Name?",
-                },
-                {
-                  required: false,
-                  type: "email",
-                  name: "field name 1",
-                  placeholder: "Email Address",
-                },
-                {
-                  required: false,
-                  type: "radio",
-                  name: "field name 1",
-                  placeholder: "placeholder",
-                },
-                {
-                  required: false,
-                  type: "textarea",
-                  name: "field name 1",
-                  placeholder: "How can I help?",
-                },
-                {
-                  required: false,
-                  type: "submit",
-                  name: "field name 1",
-                  placeholder: "Submit",
-                },
-              ],
-            }}
-          />
+          <Form config={data.form} />
         </Col>
       </Row>
     </Layout>
