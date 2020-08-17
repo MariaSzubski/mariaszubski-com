@@ -42,7 +42,7 @@ const SpeakingPage = props => {
       </p>
       <Row around="xs">
         <Col md={7}>
-          <Form config={data.form} source="Contact Page" />
+          {/* <Form config={data.form} source="Contact Page" /> */}
         </Col>
       </Row>
     </Layout>

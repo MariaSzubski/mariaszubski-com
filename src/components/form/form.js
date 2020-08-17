@@ -51,7 +51,7 @@ const Form = ({ config, source, ...props }) => {
   )
 
   const renderSubmit = opts => (
-    <Button key={opts.contenful_id} type={opts.type}>
+    <Button key={opts.contentful_id} type={opts.type}>
       {opts.placeholder}
     </Button>
   )
@@ -59,7 +59,7 @@ const Form = ({ config, source, ...props }) => {
   const renderTextarea = opts => (
     <textarea
       data-autoresize
-      key={opts.name}
+      key={opts.contentful_id}
       name={opts.name}
       placeholder={opts.placeholder}
       aria-label={opts.label + " text area"}
@@ -84,8 +84,14 @@ const Form = ({ config, source, ...props }) => {
       method="POST"
       data-netlify="true"
       netlify-honeypot="bot-field"
+      key={`${config.contentful_id}-${source}`}
     >
-      <input type="hidden" name="form-source" value={`${config.title} - ${source}`} />
+      <input
+        type="hidden"
+        name="form-source"
+        value={`${config.title} - ${source}`}
+        key={`${config.contentful_id}-${source}-hidden`}
+      />
       {config.formFields.map(f => fieldMap[f.type](f))}
     </StyledForm>
   )
