@@ -166,16 +166,7 @@ const IndexPage = () => {
 
         <Row justify="center">
           <Col xs={11.5} sm={10} md={8} xl={5}>
-            {/* <Form config={data.form} source="Home" /> */}
-            <form name="new-contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
-              {/* You still need to add the hidden input with the form name to your JSX form */}
-              <input type="hidden" name="form-name" value="new-contact" />
-
-                <input type="text" name="name" />
-                <input type="email" name="email" />
-                <textarea name="message"></textarea>
-                <button type="submit">Submit</button>
-            </form>
+            <Form config={data.form} source="Home Footer" />
           </Col>
         </Row>
       </section>

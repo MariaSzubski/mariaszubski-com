@@ -62,7 +62,7 @@ const Form = ({ config, source, ...props }) => {
       key={opts.contentful_id}
       name={opts.name}
       placeholder={opts.placeholder}
-      aria-label={opts.label + " text area"}
+      aria-label={opts.name + " text area"}
       rows={10}
     />
   )
@@ -80,18 +80,29 @@ const Form = ({ config, source, ...props }) => {
 
   return (
     <StyledForm
-      name="contact"
+      name={`${config.title}`.replace(/\s/g, "-").toLowerCase()}
       method="POST"
       data-netlify="true"
       netlify-honeypot="bot-field"
       key={`${config.contentful_id}-${source}`}
     >
+      {/* This field's `value` must match the Form's `name` attribute */}
       <input
         type="hidden"
         name="form-name"
-        value={`${config.title} - ${source}`}
+        value={`${config.title}`.replace(/\s/g, "-").toLowerCase()}
         key={`${config.contentful_id}-${source}-hidden`}
       />
+      <input
+        type="hidden"
+        name="form-source"
+        value={`${source}`.replace(/\s/g, "-").toLowerCase()}
+      />
+      <p style={{ display: "none" }}>
+        <label>
+          Human verification <input name="bot-field" />
+        </label>
+      </p>
       {config.formFields.map(f => fieldMap[f.type](f))}
     </StyledForm>
   )
