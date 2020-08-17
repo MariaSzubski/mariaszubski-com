@@ -88,7 +88,7 @@ const Form = ({ config, source, ...props }) => {
     >
       <input
         type="hidden"
-        name="form-source"
+        name="form-name"
         value={`${config.title} - ${source}`}
         key={`${config.contentful_id}-${source}-hidden`}
       />
