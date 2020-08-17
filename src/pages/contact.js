@@ -2,10 +2,11 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { Grid, Row, Col } from "react-flexbox-grid"
+import { Container, Row, Col } from "react-grid-system"
 
 import Layout from "../components/layout"
 import Link from "../components/utilities/link"
+import HTML from "../components/utilities/html"
 
 import Form from "../components/form"
 
@@ -36,15 +37,29 @@ const SpeakingPage = props => {
   `)
   return (
     <Layout>
-      <h3>Contact Me</h3>
-      <p>
-        Cras justo odio, dapibus ac facilisis in, egestas eget quam. Sed posuere consectetur est at lobortis. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam id dolor id nibh ultricies vehicula ut id elit. Nullam quis risus eget urna mollis ornare vel eu leo. Maecenas sed diam eget risus varius blandit sit amet non magna.
-      </p>
-      <Row around="xs">
-        <Col md={7}>
-          <Form config={data.form} source="Contact Page" />
-        </Col>
-      </Row>
+      <Container>
+        <section className="element">
+          <hgroup>
+            <h1>Let&#39;s Work Together!</h1>
+          </hgroup>
+          <Row justify="center">
+            <Col md={7} xl={6}>
+              <HTML content={data.form.desc} className="text-center" />
+            </Col>
+          </Row>
+          <Row justify="center">
+            <Col md={5}>
+              <Form config={data.form} source="Contact Page" />
+              <ul>
+                <li>✉️<Link to="mailto:hello@mariaszubski.com">hello@mariaszubski.com</Link></li>
+                <li>Twitter</li>
+                <li>Linked In</li>
+                <li>Github</li>
+              </ul>
+            </Col>
+          </Row>
+        </section>
+      </Container>
     </Layout>
   )
 }

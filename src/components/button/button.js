@@ -69,6 +69,8 @@ const StyledButton = styled(Link)`
   }
 `
 
+const wtf = styled.div``
+
 const color_list = {
   border: {
     plum: colors.plum,

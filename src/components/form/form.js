@@ -24,30 +24,41 @@ const Form = ({ config, source, ...props }) => {
   )
 
   const renderRadio = opts => (
-    <span key={opts.contentful_id}>
-      {"Looking for a..."}
-      <input
-        type={opts.type}
-        name={`${opts.name + "name 1"}`}
-        id="radio_1"
-        value={opts.values[0]}
-        required={opts.required}
-        placeholder={opts.placeholder}
-        aria-label={opts.placeholder}
-        defaultChecked
-      />
-      <label htmlFor="radio_1">{opts.values[0]}</label>
-      <input
-        type={opts.type}
-        name={opts.name}
-        id={"radio_2"}
-        value={opts.values[1]}
-        required={opts.required}
-        placeholder={opts.placeholder}
-        aria-label={opts.placeholder}
-      />
-      <label htmlFor={"radio_2"}>{opts.values[1]}</label>
-    </span>
+    <fieldset key={opts.contentful_id} className="toggle">
+      <span className="toggleField" aria-labelledby="group-label">
+        <legend id="#group-label">{opts.placeholder}</legend>
+        <span className="toggleGrp" tabIndex="-1">
+          <label tabIndex="-1">
+            <input
+              type={opts.type}
+              name={`${opts.name}`}
+              value={opts.values[0]}
+              required={opts.required}
+              placeholder={opts.placeholder}
+              aria-label={opts.placeholder}
+              defaultChecked
+            />
+            <span
+            role="radio" aria-checked="true" tabIndex="0" defaultChecked>
+              {opts.values[0]}
+            </span>
+          </label>
+          <label tabIndex="-1">
+            <input
+              type={opts.type}
+              name={opts.name}
+              value={opts.values[1]}
+              required={opts.required}
+              placeholder={opts.placeholder}
+            />
+            <span
+            aria-label={opts.placeholder} role="radio" aria-checked="false" tabIndex="-1">
+              {opts.values[1]}
+            </span>
+          </label>
+        </span>
+      </span>
+    </fieldset>
   )
 
   const renderSubmit = opts => (

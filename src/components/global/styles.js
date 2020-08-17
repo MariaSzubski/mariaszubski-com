@@ -222,6 +222,11 @@ const global_styles = css`
     font-size: 1.3rem;
   }
 
+  *.text-md,
+  *.text-md * {
+    font-size: 1.8rem;
+  }
+
   .highlighted p:first-of-type,
   *.text-lg,
   .highlighted p:first-of-type,
@@ -247,7 +252,7 @@ const global_styles = css`
       background-size: 100vw 120vh;
     }
     body {
-      font-size: 1.6rem;
+      font-size: 1.8rem;
       line-height: 1.4;
     }
     .highlighted p:first-of-type,

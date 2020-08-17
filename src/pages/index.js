@@ -12,6 +12,7 @@ import Testimonials from "../components/testimonials"
 import { SkillGroup } from "../components/skill"
 import Button from "../components/button/button"
 import Form from "../components/form"
+import HTML from "../components/utilities/html"
 
 import data from "../content/specialize.yml"
 import { colors, screen } from "../components/global/vars"
@@ -162,8 +163,15 @@ const IndexPage = () => {
       </Other>
       ^ Appear/hide on scroll
       <section>
-        <h3>Contact Me</h3>
-
+        <h3>Let&#39;s Work Together!</h3>
+        <Row justify="center">
+          <Col md={9} xl={6}>
+            <HTML
+              content={data.form.desc}
+              className="text-md text-center"
+            />
+          </Col>
+        </Row>
         <Row justify="center">
           <Col xs={11.5} sm={10} md={8} xl={5}>
             <Form config={data.form} source="Home Footer" />
