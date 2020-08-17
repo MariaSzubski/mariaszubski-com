@@ -27,12 +27,11 @@ const Headshot = styled(Col)`
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: bottom left;
-  opacity: 0.7;
+  opacity: 0.8;
   background-image: url("http://images.ctfassets.net/sx9v94b5k8eh/4hcNblDYZaRY7T2j5HH1D2/ed866bc95b329baa65791be6d939d3e8/headshot.png?w=640&h=640&q=100&fm=webp");
   @media ${screen.max.lg} {
     background-size: 12rem 12rem;
     background-position: center top;
-
     opacity: 1;
     height: 12rem;
   }
@@ -167,7 +166,16 @@ const IndexPage = () => {
 
         <Row justify="center">
           <Col xs={11.5} sm={10} md={8} xl={5}>
-            <Form config={data.form} source="Home" />
+            {/* <Form config={data.form} source="Home" /> */}
+            <form name="new-contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+              {/* You still need to add the hidden input with the form name to your JSX form */}
+              <input type="hidden" name="form-name" value="new-contact" />
+
+                <input type="text" name="name" />
+                <input type="email" name="email" />
+                <textarea name="message"></textarea>
+                <button type="submit">Submit</button>
+            </form>
           </Col>
         </Row>
       </section>
