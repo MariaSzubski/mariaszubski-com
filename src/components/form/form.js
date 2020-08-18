@@ -13,14 +13,17 @@ const StyledForm = styled.form`
 
 const Form = ({ config, source, ...props }) => {
   const renderInput = opts => (
-    <input
-      key={opts.contentful_id}
-      type={opts.type}
-      name={opts.name}
-      required={opts.required}
-      placeholder={opts.placeholder}
-      aria-label={opts.placeholder}
-    />
+    <label htmlFor={opts.name}>
+      {opts.placeholder}
+      <input
+        key={opts.contentful_id}
+        type={opts.type}
+        name={opts.name}
+        required={opts.required}
+        placeholder=" "
+        aria-label={opts.placeholder}
+      />
+    </label>
   )
 
   const renderRadio = opts => (
@@ -38,8 +41,7 @@ const Form = ({ config, source, ...props }) => {
               aria-label={opts.placeholder}
               defaultChecked
             />
-            <span
-            role="radio" aria-checked="true" tabIndex="0" defaultChecked>
+            <span role="radio" aria-checked="true" tabIndex="0" defaultChecked>
               {opts.values[0]}
             </span>
           </label>
@@ -52,7 +54,11 @@ const Form = ({ config, source, ...props }) => {
               placeholder={opts.placeholder}
             />
             <span
-            aria-label={opts.placeholder} role="radio" aria-checked="false" tabIndex="-1">
+              aria-label={opts.placeholder}
+              role="radio"
+              aria-checked="false"
+              tabIndex="-1"
+            >
               {opts.values[1]}
             </span>
           </label>
@@ -62,20 +68,23 @@ const Form = ({ config, source, ...props }) => {
   )
 
   const renderSubmit = opts => (
-    <Button key={opts.contentful_id} type={opts.type}>
+    <Button key={opts.contentful_id} type={opts.type} $color="green">
       {opts.placeholder}
     </Button>
   )
 
   const renderTextarea = opts => (
-    <textarea
-      data-autoresize
-      key={opts.contentful_id}
-      name={opts.name}
-      placeholder={opts.placeholder}
-      aria-label={opts.name + " text area"}
-      rows={10}
-    />
+    <label>
+      {opts.name}
+      <textarea
+        data-autoresize
+        key={opts.contentful_id}
+        name={opts.name}
+        placeholder={opts.placeholder}
+        aria-label={opts.name + " text area"}
+        rows={7}
+      />
+    </label>
   )
 
   const fieldMap = {
@@ -93,6 +102,7 @@ const Form = ({ config, source, ...props }) => {
     <StyledForm
       name={`${config.title}`.replace(/\s/g, "-").toLowerCase()}
       method="POST"
+      autoComplete="off"
       data-netlify="true"
       netlify-honeypot="bot-field"
       key={`${config.contentful_id}-${source}`}

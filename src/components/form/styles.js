@@ -5,21 +5,22 @@ import * as g from "../global/vars"
 const fieldMixin = css`
   display: block;
   width: 100%;
-  margin: 1.6rem auto;
+  margin: 0rem auto 1.6rem auto;
   padding: 1.25rem 1.5rem;
   border: none;
   font-size: 2rem;
   font-weight: 400;
-  color: black;
-  border-radius: 0.4rem;
-  box-shadow: 0rem 0rem 1rem rgba(0, 0, 20, 0.6);
-  resize: none;
+  color: ${g.colors.white};
+  border-radius: 0.2rem;
+  resize: vertical;
+  background-color: #00000044;
+  line-height: 1.5;
   &::placeholder {
     color: ${g.colors.gray300};
   }
   &:not(:placeholder-shown):invalid,
   form:invalid & {
-    box-shadow: 0rem 0rem 0rem 0.2rem ${g.colors.pink500};
+    box-shadow: 0rem 0rem 0rem 0.1rem ${g.colors.pink500};
   }
 `
 
@@ -30,8 +31,16 @@ const formStyles = css`
     ${fieldMixin}
     :focus {
       outline: none;
-      box-shadow: 0rem 0rem 0rem 0.2rem ${g.colors.yellow};
+      box-shadow: 0rem 0rem 0rem 0.2rem ${g.colors.yellow + "44"};
     }
+  }
+
+  label, legend {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 1px;
   }
 
   textarea {
@@ -45,6 +54,7 @@ const formStyles = css`
   fieldset.toggle {
     border: none;
     padding: 0rem;
+    margin: 2rem 0rem 1rem 0rem;
     font-size: 2rem;
     outline: none;
 
@@ -57,7 +67,7 @@ const formStyles = css`
       legend {
         padding-left: 0rem;
         padding-right: 2rem;
-        min-height: 3.4rem;
+        margin: 0.5rem 0rem;
         white-space: nowrap;
         flex: 0 1 auto;
       }
@@ -68,10 +78,9 @@ const formStyles = css`
       min-width: 32.5rem;
       display: flex;
       align-items: center;
-      border-radius: 0.4rem;
+      border-radius: 0.3rem;
       overflow: hidden;
-      border: 0.1rem solid ${g.colors.gray500};
-      box-shadow: 0rem 0rem 1rem rgba(0, 0, 20, 0.6);
+      border: 0.1rem solid ${g.colors.green500};
 
       label {
         flex: 1 0 auto;
@@ -91,6 +100,10 @@ const formStyles = css`
           box-shadow: none;
         }
         + span {
+          font-size: 2rem;
+          font-weight: 400;
+          text-transform: capitalize;
+          letter-spacing: normal;
           outline: none;
           padding: 0.5rem 1.5rem;
           display: flex;
@@ -99,13 +112,13 @@ const formStyles = css`
           align-items: center;
           user-select: none;
           color: ${g.colors.gray200};
-          text-shadow: 0rem 0.1rem 0.1rem ${g.colors.black + "C0"};
+          background-color: #00000044;
         }
 
         :checked + span {
           outline: none;
           background: ${g.colors.green300};
-          color: white;
+          color: black;
         }
       }
     }

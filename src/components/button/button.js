@@ -12,6 +12,7 @@ const StyledButton = styled(Link)`
   justify-content: center;
   border-radius: 0.4rem;
   border: 1px solid ${props => props.$color};
+  background-color: transparent;
   &:not(:last-of-type) {
     margin-right: 1rem;
   }

@@ -30,9 +30,9 @@ const global_styles = css`
       background-size: 100vw 100vh;
       background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.gray700} 100% );
       ${"" /* background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.green500}  100% ); */}
-      background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.blue500} 100% );
+      ${"" /* background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.blue500} 100% ); */}
       ${"" /* background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.grape500} 100% ); */}
-      background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.plum500} 100% );
+      ${"" /* background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.plum500} 100% ); */}
       ${"" /* background: linear-gradient( 150deg, ${colors.white} 8%, #FFFFFF 100% ); */}
       ${"" /* background: linear-gradient( 150deg, ${colors.pink500} 0%, ${colors.plum500} 100% ); */}
       ${"" /* background: linear-gradient( 150deg, ${colors.yellow} 0%, ${colors.plum300} 100% ); */}
@@ -52,7 +52,7 @@ const global_styles = css`
     line-height: 1.68;
     ${"" /* color: ${colors.gray700}; */}
     ${"" /* color: ${"#FFFFFF" + "EE"}; */}
-    color: ${colors.gray200};
+    color: ${ colors.gray100};
     ${"" /* opacity: 0; */}
     &.loaded{
       opacity: 1;
@@ -204,10 +204,12 @@ const global_styles = css`
   }
 
   .background {
-    background-color: #ffffff11;
+    ${"" /* background-color: #ffffff11; */}
+
+    background-color: #00000044;
     ${"" /* background-color: ${colors.blue900 + ""}; */}
-    box-shadow: 0px 0.4rem 1rem rgba(0,0,20,.2);
-    border-radius: 0.5rem;
+    ${"" /* box-shadow: 0px 0.4rem 1rem rgba(0,0,20,.2); */}
+    border-radius: 0.4rem;
     * {
       ${"" /* text-shadow: 1px 1px 2px #000000DD; */}
     }
@@ -224,7 +226,7 @@ const global_styles = css`
 
   *.text-md,
   *.text-md * {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .highlighted p:first-of-type,
