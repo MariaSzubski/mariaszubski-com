@@ -9,7 +9,7 @@ import { DateIcon, WorkshopIcon, LocationIcon } from "./icons"
 import * as g from "../global/vars"
 
 const StyledWorkshop = styled.article`
-  border-bottom: 1px solid ${g.colors.black + "66"};
+  border-bottom: 1px solid ${g.colors.gray200 + "33"};
   &:last-of-type {
     border-bottom: none;
   }
@@ -47,6 +47,10 @@ const StyledCol = styled(Col)`
   align-items: center;
   font-weight: 600;
 
+  .label {
+
+  }
+
   @media ${g.screen.max.md} {
     &:nth-of-type(1) {
       order: 2;
@@ -66,7 +70,7 @@ const DateRange = styled(Col)``
 const WorkshopCard = props => (
   <StyledWorkshop>
     <Details between="md" $compact={props.compact}>
-      <StyledCol $compact={props.compact} xs={5} sm={3} md={3}>
+      <StyledCol $compact={props.compact} xs={5} sm={3} md={2}>
         <DateRange className="h6">
           <DateIcon />
           {/* {Intl.DateTimeFormat("en-US", {
@@ -77,13 +81,15 @@ const WorkshopCard = props => (
         </DateRange>
       </StyledCol>
       <StyledCol $compact={props.compact} xs={props.compact ? null : 12} md>
-        {props.workshop.permalink ? (
-          <h5>
-            <Link to={props.workshop.permalink}>{props.workshop.label}</Link>
-          </h5>
-        ) : (
-          props.workshop.label
-        )}
+        <span className="label text-md">
+          {props.workshop.permalink ? (
+            <h5>
+              <Link to={props.workshop.permalink}>{props.workshop.label}</Link>
+            </h5>
+          ) : (
+            props.workshop.label
+          )}
+        </span>
       </StyledCol>
       {props.workshop.duration && (
         <StyledCol

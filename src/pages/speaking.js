@@ -2,13 +2,15 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { Grid, Row, Col } from "react-flexbox-grid"
+import { Container, Row, Col } from "react-grid-system"
 import Img from "gatsby-image/withIEPolyfill"
 
 import Layout from "../components/layout"
 import HTML from "../components/utilities/html"
 import Link from "../components/utilities/link"
 import WorkshopCard from "../components/experience/workshop"
+
+import { colors } from "../components/global/vars"
 
 const Aside = styled.aside`
   padding: 2rem 2rem;
@@ -34,6 +36,38 @@ const ImageGroup = styled.aside`
     ${"" /* flex-basis: 33.333%; */}
     max-height: 40rem;
     margin: auto;
+  }
+`
+
+const Headline = styled.h3`
+  text-align: left;
+  font-weight: 400;
+  color: white;
+  margin-bottom: 4rem;
+
+  @keyframes grow {
+    0% {
+      width: 0rem;
+    }
+    100% {
+      width: 8rem;
+    }
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    width: 0rem;
+    height: 5px;
+    background-color: ${colors.grape300};
+    border-radius: 0.2rem;
+    overflow: hidden;
+
+    animation-name: grow;
+    animation-duration: 0.4s;
+    animation-timing-function: ease-out;
+    animation-delay: 1.1s;
+    animation-fill-mode: forwards;
   }
 `
 
@@ -84,7 +118,7 @@ const SpeakingPage = props => {
   let imagesArr = []
   return (
     <Layout>
-      <Grid fluid>
+      <Container fluid style={{ maxWidth: 1440}}>
         <hgroup className="element">
           <h1>{data.title}</h1>
         </hgroup>
@@ -101,16 +135,19 @@ const SpeakingPage = props => {
             ))}
           </ImageGroup>
         </section>
-        <h3>Available Workshops</h3>[ Gatsby Workshop ]<p>More Coming Soon</p>
         {data.modules.map((section, i) => (
           <section className="element" key={section.contentful_id}>
-            <Row around="md">
-              <Col lg={9} xl={9}>
-                <h3>{section.title}</h3>
-                <HTML content={section.copy} />
+            <Row>
+              <Col lg={12}>
+                <Headline>{section.title}</Headline>
               </Col>
-              <Col lg={9} xl={7}>
-                <div className="background">
+            </Row>
+            <Row>
+              <Col lg={9} xl={4}>
+                {i !== 0 && <HTML content={section.copy} className="text-md" />}
+              </Col>
+              <Col xl={7} offset={{ xl: 1 }}>
+                <div className="background" style={{ padding: "2rem 0rem" }}>
                   <h5 className="pad">{section.subtitle}</h5>
                   {section.content
                     .filter(c => c.__typename === "ContentfulTechTalk")
@@ -126,27 +163,27 @@ const SpeakingPage = props => {
             </Row>
 
             <Col xl={i === 0 ? 12 : 7}>
-                <ImageGroup className="element-minor">
-                  {section.content
-                    .filter(c => c.__typename === "ContentfulImage")
-                    .map(img => (
-                      <Img
-                        fluid={img.image.fluid}
-                        alt={img.alt}
-                        objectFit="contain"
-                        key={img.contentful_id}
-                      />
-                    ))}
-                </ImageGroup>
-              </Col>
+              <ImageGroup className="element-minor">
+                {section.content
+                  .filter(c => c.__typename === "ContentfulImage")
+                  .map(img => (
+                    <Img
+                      fluid={img.image.fluid}
+                      alt={img.alt}
+                      objectFit="contain"
+                      key={img.contentful_id}
+                    />
+                  ))}
+              </ImageGroup>
+            </Col>
           </section>
         ))}
-        <Row around="xs">
-          <Col md={3}>
+        <Row justify="center">
+          <Col md={4}>
             <Link to="/contact">💁🏻‍♀️ Book me to speak at your event</Link>
           </Col>
         </Row>
-      </Grid>
+      </Container>
     </Layout>
   )
 }
