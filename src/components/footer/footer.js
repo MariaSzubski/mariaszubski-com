@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import { SkillGroup } from "../skill"
-import { Row, Col } from "react-flexbox-grid"
 
 import data from "../../content/site-tech.yml"
 import { colors } from "../global/vars"

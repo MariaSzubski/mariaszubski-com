@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { Row, Col } from "react-flexbox-grid"
+import { Row, Col } from "react-grid-system"
 
 import { screen, colors } from "../global/vars"
 
@@ -27,7 +27,7 @@ const Quote = props => (
 const Testimonials = props => (
   <section>
     <h3>Nice words from people I&#39;ve worked with. Thanks you guys!</h3>
-    <Row center="sm">
+    <Row justify="center">
       {props.data.map((quote, idx) => (
         <Quote key={`quote_${idx}`} {...quote} />
       ))}

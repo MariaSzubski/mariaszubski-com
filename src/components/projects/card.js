@@ -13,7 +13,7 @@ const Wrapper = styled(Link)`
   box-shadow: 0px 0.4rem 1rem rgba(0, 0, 20, 0.5);
   border-radius: 0.5rem;
   overflow: hidden;
-  margin: 1.8rem 0.5rem;
+  margin: 1.2rem 0rem;
   transform: scale(1) translateY(0rem);
   transition: all 0.1s ease-in;
 

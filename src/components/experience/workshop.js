@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { Row, Col } from "react-flexbox-grid"
+import { Row, Col } from "react-grid-system"
 
 import Link from "../utilities/link"
 import { DateIcon, WorkshopIcon, LocationIcon } from "./icons"
@@ -20,67 +20,78 @@ const StyledWorkshop = styled.article`
       color: ${g.colors.blue300};
     }
   }
-  @media (max-width: ${g.screen.max.sm}) {
+  @media (max-width: ${g.screen.max.lg}) {
     padding: 3rem 1.4rem;
   }
 `
 
-const Details = styled(Row)`
+const Details = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
   padding-top: ${props => (props.$compact ? "0.6rem" : "1.2rem")};
   padding-bottom: ${props => (props.$compact ? "0.6rem" : "1.2rem")};
-  padding-left: 3rem;
-  padding-right: 3rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   svg {
     height: 18px;
     width: 18px;
     margin-right: 0.8rem;
   }
 
-  @media ${g.screen.max.md} {
+  @media ${g.screen.max.lg} {
     padding-top: ${props => (props.$compact ? "0.5rem" : "1.6rem")};
     padding-bottom: ${props => (props.$compact ? "0.5rem" : "1.6rem")};
   }
 `
 
-const StyledCol = styled(Col)`
+const BaseCol = styled.div`
   display: flex;
   align-items: center;
   font-weight: 600;
+`
 
-  .label {
-
-  }
-
-  @media ${g.screen.max.md} {
-    &:nth-of-type(1) {
-      order: 2;
-    }
-    &:nth-of-type(2) {
-      order: 1;
-      padding-bottom: ${props => (props.$compact ? "0rem" : "0.5rem")};
-    }
-    &:nth-of-type(3) {
-      order: ${props => (props.$compact ? 2 : 3)};
-    }
+const DateCol = styled(BaseCol)`
+  width: 12rem;
+  @media ${g.screen.max.lg} {
+    order: 2;
   }
 `
 
-const DateRange = styled(Col)``
+const Label = styled(BaseCol)`
+  flex: 1 0 auto;
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+
+  @media ${g.screen.max.lg} {
+    order: 1;
+    max-width: 71%;
+    padding-left: 0rem;
+    padding-bottom: ${props => (props.$compact ? "0rem" : "0.5rem")};
+  }
+`
+
+const Company = styled(BaseCol)`
+  width: 15rem;
+  @media ${g.screen.max.lg} {
+    order: 3;
+    flex-basis: 100%;
+  }
+`
 
 const WorkshopCard = props => (
   <StyledWorkshop>
-    <Details between="md" $compact={props.compact}>
-      <StyledCol $compact={props.compact} xs={5} sm={3} md={2}>
-        <DateRange className="h6">
+    <Details $compact={props.compact}>
+      <DateCol>
+        <div className="h6">
           <DateIcon />
-          {/* {Intl.DateTimeFormat("en-US", {
+          {Intl.DateTimeFormat("en-US", {
             month: "short",
             year: "numeric",
-          }).format(Date(props.workshop.date))} */}
-          {props.workshop.date}
-        </DateRange>
-      </StyledCol>
-      <StyledCol $compact={props.compact} xs={props.compact ? null : 12} md>
+          }).format(new Date(props.workshop.date))}
+        </div>
+      </DateCol>
+      <Label>
         <span className="label text-md">
           {props.workshop.permalink ? (
             <h5>
@@ -90,21 +101,16 @@ const WorkshopCard = props => (
             props.workshop.label
           )}
         </span>
-      </StyledCol>
+      </Label>
       {props.workshop.duration && (
-        <StyledCol
-          $compact={props.compact}
-          xs={props.compact ? 2 : 7}
-          sm={9}
-          md={2}
-        >
+        <BaseCol>
           <span className="h6">⏱ {props.workshop.duration}</span>
-        </StyledCol>
+        </BaseCol>
       )}
       {props.workshop.org && (
-        <StyledCol $compact={props.compact} xs={7} sm={9} md={2}>
+        <Company>
           <span className="h6">{props.workshop.org}</span>
-        </StyledCol>
+        </Company>
       )}
     </Details>
   </StyledWorkshop>

@@ -9,7 +9,7 @@ import Layout from "../components/layout"
 import SEO from "../components/layout/seo"
 
 import Testimonials from "../components/testimonials"
-import Contact from "../components/Contact"
+import Contact from "../components/contact"
 import { SkillGroup } from "../components/skill"
 import Button from "../components/button/button"
 

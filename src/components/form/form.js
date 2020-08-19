@@ -13,10 +13,9 @@ const StyledForm = styled.form`
 
 const Form = ({ config, source, ...props }) => {
   const renderInput = opts => (
-    <label htmlFor={opts.name}>
+    <label htmlFor={opts.name} key={opts.contentful_id}>
       {opts.placeholder}
       <input
-        key={opts.contentful_id}
         type={opts.type}
         name={opts.name}
         required={opts.required}
@@ -74,11 +73,10 @@ const Form = ({ config, source, ...props }) => {
   )
 
   const renderTextarea = opts => (
-    <label>
+    <label key={opts.contentful_id}>
       {opts.name}
       <textarea
         data-autoresize
-        key={opts.contentful_id}
         name={opts.name}
         placeholder={opts.placeholder}
         aria-label={opts.name + " text area"}
@@ -106,6 +104,7 @@ const Form = ({ config, source, ...props }) => {
       data-netlify="true"
       netlify-honeypot="bot-field"
       key={`${config.contentful_id}-${source}`}
+      {...props}
     >
       {/* This field's `value` must match the Form's `name` attribute */}
       <input

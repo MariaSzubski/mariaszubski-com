@@ -14,20 +14,21 @@ const global_styles = css`
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     -moz-osx-font-smoothing: grayscale;
-    ${"" /* -webkit-font-smoothing: antialiased; */}
-
+    background: ${colors.black};
     position: relative;
-    background-color: ${colors.white};
 
     &:before {
       content: '';
       width: 100vw;
-      height: 100vh;
+      height: 100%;
       position: fixed;
       z-index: -1;
       background-repeat: no-repeat;
       background-attachment: fixed;
-      background-size: 100vw 100vh;
+      background-size: 100vw 100%;
+      background-position: center center;
+      -webkit-background-size: cover;
+      background-size: cover;
       background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.gray700} 100% );
       ${"" /* background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.green500}  100% ); */}
       ${"" /* background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.blue500} 100% ); */}
@@ -49,10 +50,11 @@ const global_styles = css`
     font-size: 23px;
     font-size: 2.3rem;
     font-weight: 400;
-    line-height: 1.68;
+    line-height: 1.6;
     ${"" /* color: ${colors.gray700}; */}
     ${"" /* color: ${"#FFFFFF" + "EE"}; */}
     color: ${ colors.gray100};
+    ${"" /* text-shadow: 0.1rem 0.1rem 0.2rem ${colors.black}; */}
     ${"" /* opacity: 0; */}
     &.loaded{
       opacity: 1;
@@ -154,12 +156,43 @@ const global_styles = css`
   }
 
   h3 {
-    font-weight: 300;
-    text-align: center;
     text-transform: uppercase;
     font-size: 3.6rem;
-    ${"" /* text-shadow: 0.2rem 0.3rem 0rem ${colors.black}; */}
     padding-top: 1rem;
+    text-align: left;
+    font-weight: 400;
+    color: white;
+
+    margin-bottom: 3rem;
+
+    @media ${screen.max.lg} {
+      font-size: 3.2rem;
+    }
+
+    @keyframes grow {
+      0% {
+        width: 0rem;
+      }
+      100% {
+        width: 8rem;
+      }
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      width: 0rem;
+      height: 5px;
+      background-color: ${colors.pink500};
+      border-radius: 0.2rem;
+      overflow: hidden;
+
+      animation-name: grow;
+      animation-duration: 0.4s;
+      animation-timing-function: ease-out;
+      animation-delay: 1.1s;
+      animation-fill-mode: forwards;
+    }
   }
 
   h4 {
@@ -193,7 +226,7 @@ const global_styles = css`
   }
 
   *.element{
-    margin: 8rem 0rem;
+    margin: 12rem 0rem;
     :first-of-type {
       margin: 2rem 0rem;
     }
@@ -226,14 +259,15 @@ const global_styles = css`
 
   *.text-md,
   *.text-md * {
-    font-size: 2rem;
+    font-size: 2.1rem;
+    line-height: 1.5;
   }
 
   .highlighted p:first-of-type,
   *.text-lg,
   .highlighted p:first-of-type,
   *.text-lg * {
-    font-size: 3.6rem;
+    font-size: 3.4rem;
     font-weight: 400;
     line-height: 145%;
   }
@@ -254,14 +288,14 @@ const global_styles = css`
       background-size: 100vw 120vh;
     }
     body {
-      font-size: 1.8rem;
-      line-height: 1.4;
+      font-size: 1.6rem;
+      line-height: 1.45;
     }
     .highlighted p:first-of-type,
     *.text-lg,
     .highlighted p:first-of-type,
     *.text-lg * {
-      font-size: 1.8rem;
+      font-size: 2.3rem;
     }
   }
 

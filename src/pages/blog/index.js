@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { Grid, Row, Col } from "react-flexbox-grid"
+import { Container, Row, Col } from "react-grid-system"
 
 import Layout from "../../components/layout"
 import HTML from "../../components/utilities/html"
@@ -31,9 +31,9 @@ const BlogPostTemplate = props => {
   let trans = blogDate.toDateString()
   return (
     <Layout>
-      <Grid fluid>
-        <Row around="md">
-          <Col xl={8}>
+      <Container style={{ padding: "0rem" }}>
+        <Row justify="center">
+          <Col xl={8.5} xxl={7.5}>
             <Section className="element">
               <hgroup>
                 <h1>{props.title}</h1>
@@ -49,7 +49,7 @@ const BlogPostTemplate = props => {
             <section className="element">💁🏻‍♀️ Book me for a talk</section>
           </Col>
         </Row>
-      </Grid>
+      </Container>
     </Layout>
   )
 }

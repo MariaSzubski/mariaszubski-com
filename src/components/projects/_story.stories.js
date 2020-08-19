@@ -1,7 +1,7 @@
 import React from "react"
 // import { select } from "@storybook/addon-knobs"
 import Component from "./"
-import { Grid, Row, Col } from "react-flexbox-grid"
+import { Row, Col } from "react-grid-system"
 
 // Category|Group/Sub-Group
 export default {

@@ -24,6 +24,7 @@ const StyledNav = styled.nav`
 
 const PageLinks = styled.section`
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
   ${StyledLink} {
@@ -99,7 +100,7 @@ const Nav = () => (
         Speaking
       </StyledLink>
       <Button to="/contact" $color="green" activeClassName="active">
-        Let&apos;s Connect
+        Contact
       </Button>
     </PageLinks>
   </StyledNav>

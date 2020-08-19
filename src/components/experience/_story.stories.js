@@ -14,7 +14,6 @@ export const experienceCard = () => (
         job={{
           title: "Freelance Web Developer",
           companyName: "Maria Szubski Digital, LLC",
-          companyUrl: "/",
           location: "Cincinnati, OH",
           dateRange: ["Jan 2018 - Present"],
           desc:
@@ -25,7 +24,6 @@ export const experienceCard = () => (
         job={{
           title: "UX Designer",
           companyName: "Nielsen",
-          companyUrl: "https://nielsen.com",
           team: "User Experience",
           location: "Cincinnati, OH",
           dateRange: ["Nov 2012 - Dec 2017"],
@@ -47,7 +45,6 @@ export const workshopCard = () => {
         job={{
           title: "Freelance Web Developer",
           companyName: "Maria Szubski Digital, LLC",
-          companyUrl: "/",
           location: "Cincinnati, OH",
           dateRange: ["Jan 2018 - Present"],
           desc:
@@ -58,7 +55,6 @@ export const workshopCard = () => {
         job={{
           title: "UX Designer",
           companyName: "Nielsen",
-          companyUrl: "https://nielsen.com",
           team: "User Experience",
           location: "Cincinnati, OH",
           dateRange: ["Nov 2012 - Dec 2017"],
@@ -138,7 +134,6 @@ export const workshopCard = () => {
         job={{
           title: "Chapter Leader & Instructor",
           companyName: "Girl Develop It",
-          companyUrl: "https://girldevelopit.com",
           team: "Cincinnati Chapter",
           dateRange: [
             "Winter & Summer 2011",
@@ -164,7 +159,6 @@ export const workshopCard = () => {
           title: "Interactive Design Intern",
           team: "Entertainment Advertising Agency",
           companyName: "The Ant Farm",
-          companyUrl: "/",
           location: "Los Angeles, CA",
           dateRange: ["Winter & Summer 2011"],
           desc:
@@ -176,7 +170,6 @@ export const workshopCard = () => {
         job={{
           title: "UX Designer",
           companyName: "Nielsen",
-          companyUrl: "https://nielsen.com",
           team: "User Experience",
           location: "Cincinnati, OH",
           dateRange: ["Nov 2012 - Dec 2017"],
@@ -189,7 +182,6 @@ export const workshopCard = () => {
         job={{
           title: "Freelance Web Developer",
           companyName: "Maria Szubski Digital, LLC",
-          companyUrl: "/",
           location: "Cincinnati, OH",
           dateRange: ["Jan 2018 - Present"],
           desc:
@@ -201,7 +193,6 @@ export const workshopCard = () => {
         job={{
           title: "UX Designer",
           companyName: "Nielsen",
-          companyUrl: "https://nielsen.com",
           team: "User Experience",
           location: "Cincinnati, OH",
           dateRange: ["Nov 2012 - Dec 2017"],
@@ -214,7 +205,6 @@ export const workshopCard = () => {
         job={{
           title: "Freelance Web Developer",
           companyName: "Maria Szubski Digital, LLC",
-          companyUrl: "/",
           location: "Cincinnati, OH",
           dateRange: ["Jan 2018 - Present"],
           desc:

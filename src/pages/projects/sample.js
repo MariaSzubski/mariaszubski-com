@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { Grid, Row, Col } from "react-flexbox-grid"
+import { Container, Row, Col } from "react-grid-system"
 
 import Layout from "../../components/layout"
 import HTML from "../../components/utilities/html"
@@ -11,6 +11,7 @@ import { SkillList, SkillTag } from "../../components/skill/list"
 const Hero = styled.img`
   width: 100%;
   object-fit: contain;
+  margin-bottom: 6rem;
 `
 
 const Aside = styled.aside`
@@ -20,9 +21,9 @@ const Aside = styled.aside`
 
 const ProjectTemplate = props => (
   <Layout>
-    <Grid fluid>
-      <Row around="md">
-        <Col xl={10}>
+    <Container style={{ padding: "0rem" }}>
+      <Row justify="center">
+        <Col xxl={10.5}>
           <section className="element">
             <hgroup>
               <h1>{props.title}</h1>
@@ -30,23 +31,16 @@ const ProjectTemplate = props => (
             </hgroup>
             <Hero src={props.hero} alt={`${props.title} - ${props.summary}`} />
           </section>
+        </Col>
+      </Row>
+      <Row justify="center">
+        <Col xxl={8.5}>
           <section className="element">
-            <Row>
-              <Col lg={9} xl={9}>
+            <Row justify="between">
+              <Col lg={9} xl={8.25}>
                 <HTML content={props.desc} className="" />
               </Col>
-              <Col lg={3} xl={3}>
-                <Aside className="background">
-                  {props.links.map((link, idx) => (
-                    <Button
-                      to={link.url}
-                      target={link.targetBlank && "_blank"}
-                      key={`${props.title}-link-${idx}`}
-                    >
-                      {link.label}
-                    </Button>
-                  ))}
-                </Aside>
+              <Col lg={3} xl={3.25}>
                 <Aside className="background">
                   <h5>Technologies</h5>
                   <SkillList>
@@ -57,6 +51,17 @@ const ProjectTemplate = props => (
                       />
                     ))}
                   </SkillList>
+                </Aside>
+                <Aside className="background">
+                  {props.links.map((link, idx) => (
+                    <Button
+                      to={link.url}
+                      target={link.targetBlank && "_blank"}
+                      key={`${props.title}-link-${idx}`}
+                    >
+                      {link.label}
+                    </Button>
+                  ))}
                 </Aside>
                 <Aside className="background">
                   <h5>Presented At</h5>
@@ -72,7 +77,7 @@ const ProjectTemplate = props => (
           </section>
         </Col>
       </Row>
-    </Grid>
+    </Container>
   </Layout>
 )
 

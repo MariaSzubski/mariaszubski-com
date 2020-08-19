@@ -3,7 +3,6 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import { Row, Col } from "react-flexbox-grid"
 
-import Link from "../utilities/link"
 import { DateIcon, LocationIcon } from "./icons"
 import HTML from "../utilities/html"
 
@@ -11,7 +10,7 @@ import * as g from "../global/vars"
 
 const StyledExp = styled.article`
   padding: 3rem;
-  border-bottom: 1px solid ${g.colors.black + "99"};
+  border-bottom: 1px solid ${g.colors.gray200 + "33"};
   &:last-of-type {
     border-bottom: none;
   }
@@ -30,19 +29,19 @@ const StyledExp = styled.article`
 const Company = styled.h6`
   margin-bottom: ${props => (props.$toggle ? "1.6rem" : "0rem")};
   span {
-    color: ${g.colors.green300};
+    color: ${g.colors.green200};
   }
 `
 const Desc = styled(HTML)`
-  font-size: 1.8rem;
-  font-weight: 400;
-  margin: 1.6rem 0rem 2rem;
+  color: ${g.colors.gray100};
+  margin: 3.2rem 0rem 3.2rem;
   display: ${props => (props.$toggle ? "block" : "none")};
 `
 const Meta = styled(Row)`
   * {
-    font-weight: 400 !important;
+    font-weight: 600 !important;
     font-size: 1.2rem;
+    letter-spacing: 1px;
     ${"" /* color: ${g.colors.gray500}; */}
   }
   svg {
@@ -51,10 +50,10 @@ const Meta = styled(Row)`
     margin-right: 0.5rem;
   }
   &:not(:last-of-type) {
-    margin-bottom: ${props => props.$toggle ? "1rem" : "0rem"};
+    margin-bottom: ${props => (props.$toggle ? "1rem" : "0rem")};
   }
   &:not(:first-of-type) {
-    display: ${props => props.$toggle ? "flex" : "none"};
+    display: ${props => (props.$toggle ? "flex" : "none")};
   }
 `
 const StyledCol = styled(Col)`
@@ -70,18 +69,12 @@ const ExpCard = props => (
           <h4>{props.job.title}</h4>
           <Company $toggle={props.toggle}>
             <span>
-            {props.job.companyUrl ? (
-              <Link to={props.job.companyUrl} target="_blank">
                 {props.job.companyName}
-              </Link>
-            ) : (
-              props.job.companyName
-            )}
-          </span>
+            </span>
             {props.job.team && `\u00A0\u00A0//\u00A0 ${props.job.team}`}
           </Company>
 
-          <Desc content={props.job.desc} $toggle={props.toggle} />
+          <Desc content={props.job.desc} $toggle={props.toggle} className="text-md" />
         </Col>
 
         <Col md={props.toggle ? 12 : 3}>
@@ -126,7 +119,6 @@ ExpCard.propTypes = {
   job: PropTypes.shape({
     title: PropTypes.string.isRequired,
     companyName: PropTypes.string.isRequired,
-    companyUrl: PropTypes.string,
     team: PropTypes.string,
     location: PropTypes.string,
     dateRange: PropTypes.arrayOf(PropTypes.string).isRequired,
