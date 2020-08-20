@@ -14,7 +14,12 @@ import Button from "../components/button"
 import ExpCard from "../components/experience/expCard"
 import WorkshopCard from "../components/experience/workshop"
 import HTML from "../components/utilities/html"
+
 import Email from "../components/social/email"
+import Twitter from "../components/social/twitter"
+import LinkedIn from "../components/social/linkedin"
+import Github from "../components/social/github"
+import Resume from "../components/social/resume"
 
 import { colors, screen } from "../components/global/vars"
 
@@ -185,9 +190,10 @@ const AboutPage = () => {
               <StyledH4>- Maria </StyledH4>
               <div>
                 <Email />
-                <Email />
-                <Email />
-                <Email /> CV
+                <Github />
+                <LinkedIn />
+                <Twitter />
+                <Resume />
               </div>
             </Col>
           </Row>
@@ -247,6 +253,7 @@ const AboutPage = () => {
                   <h5 className="pad">Recent Tech Talks I&#39;ve Led</h5>
                   {data.volunteering.content[0].content
                     .filter(c => c.__typename === "ContentfulTechTalk")
+                    .reverse()
                     .map(workshop => (
                       <WorkshopCard
                         workshop={workshop}
@@ -267,10 +274,16 @@ const AboutPage = () => {
 
               {/* Co-Ops */}
               <section className="element">
-                <h3>{data.coop.title}</h3>
-                <Expand onClick={() => setToggle([toggle[0], !toggle[1]])}>
-                  Expand Details
-                </Expand>
+                <Row justify="between" align="end">
+                  <Col>
+                    <h3>{data.coop.title}</h3>
+                  </Col>
+                  <Col md={3}>
+                    <Expand onClick={() => setToggle([toggle[0], !toggle[1]])}>
+                      {toggle[0] ? "Collapse" : "Expand"} Details
+                    </Expand>
+                  </Col>
+                </Row>
                 <div className="background">
                   {data.coop.content.map(job => (
                     <ExpCard

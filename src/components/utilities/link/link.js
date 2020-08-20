@@ -15,7 +15,7 @@ const Link = ({ children, to, activeClassName, target, ...props }) => {
     <a
       href={to}
       target={target}
-      rel={target === "_blank" ? "noopener" : ""}
+      rel={target === "_blank" ? "noreferrer" : ""}
       {...props}
     >
       {children}

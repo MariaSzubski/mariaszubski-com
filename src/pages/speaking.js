@@ -140,6 +140,7 @@ const SpeakingPage = props => {
                       <h5 className="pad">{section.subtitle}</h5>
                       {section.content
                         .filter(c => c.__typename === "ContentfulTechTalk")
+                        .reverse()
                         .map(talk => (
                           <WorkshopCard
                             compact
