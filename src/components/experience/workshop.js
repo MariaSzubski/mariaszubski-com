@@ -27,8 +27,8 @@ const StyledWorkshop = styled.article`
 
 const Details = styled.div`
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
   padding-top: ${props => (props.$compact ? "0.6rem" : "1.2rem")};
   padding-bottom: ${props => (props.$compact ? "0.6rem" : "1.2rem")};
   padding-left: 2rem;
@@ -47,11 +47,13 @@ const Details = styled.div`
 
 const BaseCol = styled.div`
   display: flex;
+  flex: 0 0 10rem;
   align-items: center;
   font-weight: 600;
 `
 
 const DateCol = styled(BaseCol)`
+  flex: 0 0 10rem;
   width: 12rem;
   @media ${g.screen.max.lg} {
     order: 2;
@@ -59,7 +61,7 @@ const DateCol = styled(BaseCol)`
 `
 
 const Label = styled(BaseCol)`
-  flex: 1 0 auto;
+  flex: 1 1 auto;
   padding-left: 1.6rem;
   padding-right: 1.6rem;
 
@@ -72,7 +74,7 @@ const Label = styled(BaseCol)`
 `
 
 const Company = styled(BaseCol)`
-  width: 15rem;
+  flex: 0 0 15rem;
   @media ${g.screen.max.lg} {
     order: 3;
     flex-basis: 100%;
@@ -85,10 +87,7 @@ const WorkshopCard = props => (
       <DateCol>
         <div className="h6">
           <DateIcon />
-          {Intl.DateTimeFormat("en-US", {
-            month: "short",
-            year: "numeric",
-          }).format(new Date(props.workshop.date))}
+          {props.workshop.date}
         </div>
       </DateCol>
       <Label>

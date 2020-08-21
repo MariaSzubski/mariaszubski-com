@@ -1,7 +1,6 @@
 ---
 - skills:
-    - icon: reactjs
-      label: react
+    - icon: react
     - icon: gatsby
     - icon: graphql
     - icon: netlify

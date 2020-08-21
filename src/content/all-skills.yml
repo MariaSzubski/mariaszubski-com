@@ -3,7 +3,7 @@
   skills:
     - icon: javascript
       label: JavaScript / ES6+
-    - icon: reactjs
+    - icon: react
       label: react
     - icon: vue
     - icon: gatsby
@@ -26,7 +26,7 @@
       label: CSS3
     - icon: scss
       label: SCSS
-    - icon: styledcomp
+    - icon: "styled components"
       label: Styled Components
     - icon: yaml
       label: YAML

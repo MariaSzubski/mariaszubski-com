@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-// import Img from "gatsby-image/withIEPolyfill"
+import Img from "gatsby-image/withIEPolyfill"
 import styled, { css } from "styled-components"
 
 import * as g from "../global/vars"
@@ -17,6 +17,7 @@ const Wrapper = styled(Link)`
   transform: scale(1) translateY(0rem);
   transition: all 0.1s ease-in;
 
+  background: ${g.colors.white + "EE"};
   &:hover {
     transform: scale(1.03) translateY(-0.5rem);
     z-index: 1000000;
@@ -24,11 +25,8 @@ const Wrapper = styled(Link)`
   }
 `
 
-const Hero = styled.img`
-  padding: 3rem 0.5rem;
-  object-fit: contain;
-  width: 100%;
-  background: ${g.colors.white + "EE"};
+const Hero = styled.div`
+  padding: 3rem 1rem;
 `
 
 const Details = styled.div`
@@ -69,11 +67,11 @@ const Skills = props => (
   <SkillGroup>
     {props.skills.splice(0, 3).map((tag, idx) => (
       <SkillTag
-        icon={tag}
-        key={`${props.title}-tag-${idx}`}
+        icon={tag.toLowerCase()}
         simple={true}
         size="1.8rem"
         light={true}
+        key={`${props.title}-tag-${idx}`}
       />
     ))}
   </SkillGroup>
@@ -81,8 +79,9 @@ const Skills = props => (
 
 const ProjectCard = props => (
   <Wrapper to={props.permalink}>
-    {/* <Img fluid={hero.fluid} objectFit="cover" objectPosition="50% 50%" /> */}
-    <Hero src={props.hero} />
+    <Hero>
+      <Img fluid={props.hero.fluid} alt={props.title} objectFit="contain" />
+    </Hero>
     <Details>
       <span>
         <h4>{props.title}</h4>
@@ -99,15 +98,13 @@ Skills.propTypes = {
 }
 
 ProjectCard.propTypes = {
-  // hero: PropTypes.shape({
-  //   title: PropTypes.string.isRequired,
-  //   fluid: PropTypes.object.isRequired, // base64, tracedSVG, srcWebp, srcSetWebp
-  // }),
+  hero: PropTypes.shape({
+    fluid: PropTypes.object.isRequired,
+  }),
   permalink: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   summary: PropTypes.string.isRequired,
   skills: PropTypes.array,
-  hero: PropTypes.string.isRequired,
 }
 
 ProjectCard.defaultProps = {

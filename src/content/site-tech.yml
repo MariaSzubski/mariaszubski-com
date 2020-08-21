@@ -2,8 +2,7 @@
 - title: Handcrafted with
   skills:
     - icon: gatsby
-    - icon: reactjs
-      label: react
+    - icon: react
     - icon: contentful
     - icon: graphql
     - icon: netlify

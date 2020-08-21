@@ -2,8 +2,8 @@ import React from "react"
 import styled from "styled-components"
 import { Container, Row, Col } from "react-grid-system"
 
-import Layout from "../../components/layout"
-import ProjectCard from "../../components/projects"
+import Layout from "../components/layout"
+import ProjectCard from "../components/projects"
 
 const ProjectsLandingPage = () => (
   <Layout>

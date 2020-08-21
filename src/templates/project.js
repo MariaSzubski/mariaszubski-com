@@ -1,16 +1,16 @@
 import React from "react"
 import PropTypes from "prop-types"
+import { graphql } from "gatsby"
 import styled from "styled-components"
+import Img from "gatsby-image/withIEPolyfill"
 import { Container, Row, Col } from "react-grid-system"
 
-import Layout from "../../components/layout"
-import HTML from "../../components/utilities/html"
-import Button from "../../components/button"
-import { SkillList, SkillTag } from "../../components/skill/list"
+import Layout from "../components/layout"
+import HTML from "../components/utilities/html"
+import Button from "../components/button"
+import { SkillList, SkillTag } from "../components/skill/list"
 
-const Hero = styled.img`
-  width: 100%;
-  object-fit: contain;
+const Hero = styled(Img)`
   margin-bottom: 6rem;
 `
 
@@ -19,67 +19,69 @@ const Aside = styled.aside`
   margin-bottom: 2rem;
 `
 
-const ProjectTemplate = props => (
-  <Layout>
-    <Container style={{ padding: "0rem" }}>
-      <Row justify="center">
-        <Col xxl={10.5}>
-          <section className="element">
-            <hgroup>
-              <h1>{props.title}</h1>
-              <h2>{props.summary}</h2>
-            </hgroup>
-            <Hero src={props.hero} alt={`${props.title} - ${props.summary}`} />
-          </section>
-        </Col>
-      </Row>
-      <Row justify="center">
-        <Col xxl={8.5}>
-          <section className="element">
-            <Row justify="between">
-              <Col lg={9} xl={8.25}>
-                <HTML content={props.desc} className="" />
-              </Col>
-              <Col lg={3} xl={3.25}>
-                <Aside className="background">
-                  <h5>Technologies</h5>
-                  <SkillList>
-                    {props.skills.map((skill, idx) => (
-                      <SkillTag
-                        icon={skill}
-                        key={`${props.title}-skill-${idx}`}
-                      />
+const ProjectTemplate = props => {
+  const post = props.data.contentfulProject
+  return (
+    <Layout>
+      <Container style={{ padding: "0rem" }}>
+        <Row justify="center">
+          <Col xxl={10.5}>
+            <section className="element">
+              <hgroup>
+                <h1>{post.summary}</h1>
+                <h2>{post.title}</h2>
+              </hgroup>
+              <Hero
+                fluid={post.hero.fluid}
+                alt={`${post.summary} - ${post.title}`}
+                object-fit="containe"
+              />
+            </section>
+          </Col>
+        </Row>
+        <Row justify="center">
+          <Col xxl={8.5}>
+            <section className="element">
+              <Row justify="between">
+                <Col lg={9} xl={8.25}>
+                  <HTML content={post.desc} className="" />
+                </Col>
+                <Col lg={3} xl={3.25}>
+                  <Aside className="background">
+                    {post.skills[0].displayLabel && (
+                      <h5>{post.skills[0].title}</h5>
+                    )}
+                    <SkillList>
+                      {post.skills[0].skill.map((skill, i) => (
+                        <SkillTag
+                          icon={skill.toLowerCase()}
+                          label={skill}
+                          key={`${post.skills[0].contentful_id}-${i}`}
+                        />
+                      ))}
+                    </SkillList>
+                  </Aside>
+                  <Aside className="background">
+                    {post.links.map(link => (
+                      <Button
+                        to={link.url}
+                        target={link.targetBlank && "_blank"}
+                        key={link.contentful_id}
+                        $stacked
+                      >
+                        {link.label}
+                      </Button>
                     ))}
-                  </SkillList>
-                </Aside>
-                <Aside className="background">
-                  {props.links.map((link, idx) => (
-                    <Button
-                      to={link.url}
-                      target={link.targetBlank && "_blank"}
-                      key={`${props.title}-link-${idx}`}
-                    >
-                      {link.label}
-                    </Button>
-                  ))}
-                </Aside>
-                <Aside className="background">
-                  <h5>Presented At</h5>
-                  <p>
-                    {props.org} <br />
-                    June 2019
-                  </p>
-                  <h5>Workshop Duration</h5>
-                  <p>⏱ 60 - 90 minutes</p>
-                </Aside>
-              </Col>
-            </Row>
-          </section>
-        </Col>
-      </Row>
-    </Container>
-  </Layout>
-)
+                  </Aside>
+                </Col>
+              </Row>
+            </section>
+          </Col>
+        </Row>
+      </Container>
+    </Layout>
+  )
+}
 
 ProjectTemplate.propTypes = {
   summary: PropTypes.string.isRequired,
@@ -89,6 +91,7 @@ ProjectTemplate.propTypes = {
   skills: PropTypes.array,
   desc: PropTypes.object,
   hero: PropTypes.string,
+  data: PropTypes.object,
 }
 
 ProjectTemplate.defaultProps = {
@@ -111,3 +114,38 @@ ProjectTemplate.defaultProps = {
 }
 
 export default ProjectTemplate
+
+export const pageQuery = graphql`
+  query ProjectPostBySlug($slug: String!) {
+    contentfulProject(slug: { eq: $slug }) {
+      contentful_id
+      category
+      summary
+      title
+      org
+      links {
+        contentful_id
+        label
+        url
+        targetBlank
+      }
+      skills {
+        contentful_id
+        title
+        displayLabel
+        darkMode
+        skill
+      }
+      desc {
+        childMarkdownRemark {
+          html
+        }
+      }
+      hero {
+        fluid {
+          ...GatsbyContentfulFluid_withWebp_noBase64
+        }
+      }
+    }
+  }
+`
