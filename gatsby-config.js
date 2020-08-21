@@ -8,6 +8,11 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-transformer-yaml`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-styled-components`,
+    "gatsby-plugin-eslint",
+    "gatsby-plugin-offline",
+    "gatsby-plugin-remove-trailing-slashes",
     {
       resolve: "gatsby-transformer-remark",
       options: {
@@ -15,10 +20,6 @@ module.exports = {
         plugins: [],
       },
     },
-    `gatsby-plugin-sharp`,
-    `gatsby-plugin-styled-components`,
-    "gatsby-plugin-eslint",
-    "gatsby-plugin-offline",
     {
       resolve: `gatsby-source-filesystem`,
       options: {

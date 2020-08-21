@@ -5,7 +5,7 @@ import Link from "../utilities/link"
 import { IconMixin } from "./styles"
 
 const Resume = props => (
-  <Link to="/assets/MariaSzubski_Resume.pdf" target="_blank">
+  <Link to="/" target="_blank">
     <svg
       width="4.8rem"
       height="4.8rem"
