@@ -24,7 +24,7 @@ const FutureIndexPage = () => {
   `)
 
   return (
-    <Layout>
+    <Layout fluid>
       <SEO title="Home" />
       <h1>{data.title}</h1>
       <p>Welcome to your new Gatsby site.</p>

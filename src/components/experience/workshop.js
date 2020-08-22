@@ -1,8 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { Row, Col } from "react-grid-system"
 
+import { Row, Col } from "../grid-system"
 import Link from "../utilities/link"
 import { DateIcon, WorkshopIcon, LocationIcon } from "./icons"
 

@@ -1,8 +1,8 @@
 import React, { useState } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { Row, Col } from "react-grid-system"
 
+import { Row, Col } from "../grid-system"
 import { DateIcon, LocationIcon } from "./icons"
 import HTML from "../utilities/html"
 
@@ -64,7 +64,7 @@ const StyledCol = styled(Col)`
 const ExpCard = props => (
   <>
     <StyledExp>
-      <Row middle="md">
+      <Row align="center">
         <Col md={props.toggle ? 12 : 9}>
           <h4>{props.job.title}</h4>
           <Company $toggle={props.toggle}>

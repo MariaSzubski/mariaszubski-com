@@ -4,9 +4,7 @@ import styled from "styled-components"
 
 import endorsements from "../content/endorsements.yml"
 
-import { Container } from "../components/demo-grid/container"
-import { Row } from "../components/demo-grid/row"
-import { Col } from "../components/demo-grid/col"
+import { Container, Row, Col, Show } from "../components/grid-system"
 import Layout from "../components/layout"
 import SEO from "../components/layout/seo"
 
@@ -20,14 +18,13 @@ import { colors, screen } from "../components/global/vars"
 
 const Hero = styled(Row)`
   min-height: 50vh;
-  background-color: white;
   @media ${screen.min.xl} {
     min-height: 95vh;
   }
 `
 
 const Headshot = styled(Col)`
-  ${"" /* background-repeat: no-repeat;
+  background-repeat: no-repeat;
   background-size: 100%;
   background-position: bottom left;
   opacity: 0.8;
@@ -37,7 +34,7 @@ const Headshot = styled(Col)`
     background-position: center top;
     opacity: 1;
     height: 12rem;
-  } */}
+  }
 `
 
 const Content = styled(Col)`
@@ -99,10 +96,12 @@ const Num = styled.div`
 `
 
 const IndexPage = () => (
-  <Layout>
+  <Layout fluid>
     <SEO title="Home" />
     <Hero>
-      <Headshot xs={12} lg={3.5} xl={4} />
+      <Show lg>
+        <Headshot xs={12} lg={3.5} xl={4} />
+      </Show>
       <Content xs={12} lg={7.5} xl={6.8} xxl={6.2} offset={{ xxl: 1 }}>
         <p>
           Hi, I&#39;m Maria and I work remotely as a{" "}

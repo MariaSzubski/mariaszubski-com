@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 
-import { Container } from "../demo-grid/container"
+import { Container } from "../grid-system"
 import { screen } from "../global/vars"
 import GlobalStyles from "../global/styles"
 import SEO from "./seo"
@@ -37,7 +37,7 @@ Layout.propTypes = {
 
 Layout.defaultProps = {
   title: "",
-  fluid: true,
+  fluid: false,
 }
 
 export default Layout

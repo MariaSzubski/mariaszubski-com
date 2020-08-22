@@ -2,7 +2,6 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-// import { Container, Row, Col } from "react-grid-system"
 import Img from "gatsby-image/withIEPolyfill"
 
 import Layout from "../components/layout"
@@ -10,10 +9,7 @@ import HTML from "../components/utilities/html"
 import Link from "../components/utilities/link"
 import WorkshopCard from "../components/experience/workshop"
 
-import { Container } from "../components/demo-grid/container"
-import { Row } from "../components/demo-grid/row"
-import { Col } from "../components/demo-grid/col"
-
+import { Container, Row, Col } from "../components/grid-system"
 import { colors, screen } from "../components/global/vars"
 
 const Aside = styled.aside`
@@ -91,7 +87,7 @@ const SpeakingPage = props => {
             content {
               ... on ContentfulTechTalk {
                 contentful_id
-                date
+                date(formatString: "MMM YYYY")
                 label
                 duration
                 detailsLink
@@ -104,66 +100,65 @@ const SpeakingPage = props => {
   `)
   return (
     <Layout>
-      <Container>
-            <hgroup className="element">
-              <h1>{data.sections.title}</h1>
-            </hgroup>
+      <Row justify="center">
+        <Col xl={10}>
+          <hgroup className="element">
+            <h1>{data.sections.title}</h1>
+          </hgroup>
 
-            <section className="element">
-              <Row>
-                <Col>
-              <ImageGroup className="element-minor">
-                {data.images.content.map(img => (
-                  <Img
-                    fluid={img.image.fluid}
-                    alt={img.alt}
-                    objectFit="cover"
-                    objectPosition="14% 50%"
-                    key={img.contentful_id}
-                  />
-                ))}
-              </ImageGroup>
-            </Col>
-            </Row>
-            </section>
-            {data.sections.modules.map((section, i) => (
-              <section className="element" key={section.contentful_id}>
-                <Row>
-                  <Col lg={12}>
-                    <Headline>{section.title}</Headline>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col lg={9} xl={4}>
-                    <HTML content={section.copy} className="text-md" />
-                  </Col>
-                  <Col xl={7} offset={{ xl: 1 }}>
-                    <div
-                      className="background"
-                      style={{ padding: "2rem 0rem" }}
-                    >
-                      <h5 className="pad">{section.subtitle}</h5>
-                      {section.content
-                        .filter(c => c.__typename === "ContentfulTechTalk")
-                        .reverse()
-                        .map(talk => (
-                          <WorkshopCard
-                            compact
-                            workshop={talk}
-                            key={talk.contentful_id}
-                          />
-                        ))}
-                    </div>
-                  </Col>
-                </Row>
-              </section>
-            ))}
-            <Row justify="center">
-              <Col md={4}>
-                <Link to="/contact">💁🏻‍♀️ Book me to speak at your event</Link>
+          <section className="element">
+            <Row>
+              <Col>
+                <ImageGroup className="element-minor">
+                  {data.images.content.map(img => (
+                    <Img
+                      fluid={img.image.fluid}
+                      alt={img.alt}
+                      objectFit="cover"
+                      objectPosition="14% 50%"
+                      key={img.contentful_id}
+                    />
+                  ))}
+                </ImageGroup>
               </Col>
             </Row>
-      </Container>
+          </section>
+          {data.sections.modules.map((section, i) => (
+            <section className="element" key={section.contentful_id}>
+              <Row>
+                <Col lg={12}>
+                  <Headline>{section.title}</Headline>
+                </Col>
+              </Row>
+              <Row>
+                <Col lg={9} xl={4}>
+                  <HTML content={section.copy} className="text-md" />
+                </Col>
+                <Col xl={7} offset={{ xl: 1 }}>
+                  <div className="background" style={{ padding: "2rem 0rem" }}>
+                    <h5 className="pad">{section.subtitle}</h5>
+                    {section.content
+                      .filter(c => c.__typename === "ContentfulTechTalk")
+                      .reverse()
+                      .map(talk => (
+                        <WorkshopCard
+                          compact
+                          workshop={talk}
+                          key={talk.contentful_id}
+                        />
+                      ))}
+                  </div>
+                </Col>
+              </Row>
+            </section>
+          ))}
+          <Row justify="center">
+            <Col md={4}>
+              <Link to="/contact">💁🏻‍♀️ Book me to speak at your event</Link>
+            </Col>
+          </Row>
+        </Col>
+      </Row>
     </Layout>
   )
 }

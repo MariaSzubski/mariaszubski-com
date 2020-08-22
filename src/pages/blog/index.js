@@ -1,8 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { Container, Row, Col } from "react-grid-system"
 
+import { Row, Col } from "../../components/grid-system"
 import Layout from "../../components/layout"
 import HTML from "../../components/utilities/html"
 import Button from "../../components/button"
@@ -31,25 +31,23 @@ const BlogPostTemplate = props => {
   let trans = blogDate.toDateString()
   return (
     <Layout>
-      <Container style={{ padding: "0rem" }}>
-        <Row justify="center">
-          <Col xl={8.5} xxl={7.5}>
-            <Section className="element">
-              <hgroup>
-                <h1>{props.title}</h1>
-                <h6>Maria Szubski</h6>
-                <h6>{trans}</h6>
-              </hgroup>
-              <HTML content={props.content} className="" />
-            </Section>
-            <section className="element">🔗 Share Links</section>
-            <section className="element">
-              🏷 Tags, Workshop, Gatsby, React, JavaScript
-            </section>
-            <section className="element">💁🏻‍♀️ Book me for a talk</section>
-          </Col>
-        </Row>
-      </Container>
+      <Row justify="center">
+        <Col xl={8.5} xxl={7.5}>
+          <Section className="element">
+            <hgroup>
+              <h1>{props.title}</h1>
+              <h6>Maria Szubski</h6>
+              <h6>{trans}</h6>
+            </hgroup>
+            <HTML content={props.content} className="" />
+          </Section>
+          <section className="element">🔗 Share Links</section>
+          <section className="element">
+            🏷 Tags, Workshop, Gatsby, React, JavaScript
+          </section>
+          <section className="element">💁🏻‍♀️ Book me for a talk</section>
+        </Col>
+      </Row>
     </Layout>
   )
 }

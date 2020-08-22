@@ -5,9 +5,7 @@ import Img from "gatsby-image"
 
 import data from "../content/all-skills.yml"
 
-import { Container } from "../components/demo-grid/container"
-import { Row } from "../components/demo-grid/row"
-import { Col } from "../components/demo-grid/col"
+import { Container, Row, Col } from "../components/grid-system"
 import Layout from "../components/layout"
 import { SkillGroup } from "../components/skill"
 import { SkillList, SkillTag } from "../components/skill/list"
@@ -109,7 +107,7 @@ const AboutPage = () => {
             content {
               ... on ContentfulTechTalk {
                 contentful_id
-                date
+                date(formatString: "MMM YYYY")
                 label
                 org
                 detailsLink
@@ -180,7 +178,7 @@ const AboutPage = () => {
   `)
   let [toggle, setToggle] = useState([false, false])
   return (
-    <Layout>
+    <Layout fluid>
       <Container>
         <section className="element">
           <hgroup>

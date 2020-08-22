@@ -2,9 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 
-import { Container } from "../components/demo-grid/container"
-import { Row } from "../components/demo-grid/row"
-import { Col } from "../components/demo-grid/col"
+import { Container, Row, Col } from "../components/grid-system"
 import Layout from "../components/layout"
 import ProjectCard from "../components/projects"
 
@@ -33,7 +31,7 @@ const ProjectsLandingPage = () => {
   `)
   const cards = data.allContentfulProject.edges
   return (
-    <Layout>
+    <Layout fluid>
       <Container>
             <section className="element">
               <hgroup>

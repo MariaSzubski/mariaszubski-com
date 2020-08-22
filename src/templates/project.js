@@ -3,8 +3,8 @@ import PropTypes from "prop-types"
 import { graphql } from "gatsby"
 import styled from "styled-components"
 import Img from "gatsby-image/withIEPolyfill"
-import { Container, Row, Col } from "react-grid-system"
 
+import { Row, Col } from "../components/grid-system"
 import Layout from "../components/layout"
 import HTML from "../components/utilities/html"
 import Button from "../components/button"
@@ -23,62 +23,60 @@ const ProjectTemplate = props => {
   const post = props.data.contentfulProject
   return (
     <Layout>
-      <Container style={{ padding: "0rem" }}>
-        <Row justify="center">
-          <Col xxl={10.5}>
-            <section className="element">
-              <hgroup>
-                <h1>{post.summary}</h1>
-                <h2>{post.title}</h2>
-              </hgroup>
-              <Hero
-                fluid={post.hero.fluid}
-                alt={`${post.summary} - ${post.title}`}
-                object-fit="containe"
-              />
-            </section>
-          </Col>
-        </Row>
-        <Row justify="center">
-          <Col xxl={8.5}>
-            <section className="element">
-              <Row justify="between">
-                <Col lg={9} xl={8.25}>
-                  <HTML content={post.desc} className="" />
-                </Col>
-                <Col lg={3} xl={3.25}>
-                  <Aside className="background">
-                    {post.skills[0].displayLabel && (
-                      <h5>{post.skills[0].title}</h5>
-                    )}
-                    <SkillList>
-                      {post.skills[0].skill.map((skill, i) => (
-                        <SkillTag
-                          icon={skill.toLowerCase()}
-                          label={skill}
-                          key={`${post.skills[0].contentful_id}-${i}`}
-                        />
-                      ))}
-                    </SkillList>
-                  </Aside>
-                  <Aside className="background">
-                    {post.links.map(link => (
-                      <Button
-                        to={link.url}
-                        target={link.targetBlank && "_blank"}
-                        key={link.contentful_id}
-                        $stacked
-                      >
-                        {link.label}
-                      </Button>
+      <Row justify="center">
+        <Col xxl={10.5}>
+          <section className="element">
+            <hgroup>
+              <h1>{post.summary}</h1>
+              <h2>{post.title}</h2>
+            </hgroup>
+            <Hero
+              fluid={post.hero.fluid}
+              alt={`${post.summary} - ${post.title}`}
+              object-fit="containe"
+            />
+          </section>
+        </Col>
+      </Row>
+      <Row justify="center">
+        <Col xxl={8.5}>
+          <section className="element">
+            <Row justify="between">
+              <Col lg={9} xl={8.25}>
+                <HTML content={post.desc} className="" />
+              </Col>
+              <Col lg={3} xl={3.25}>
+                <Aside className="background">
+                  {post.skills[0].displayLabel && (
+                    <h5>{post.skills[0].title}</h5>
+                  )}
+                  <SkillList>
+                    {post.skills[0].skill.map((skill, i) => (
+                      <SkillTag
+                        icon={skill.toLowerCase()}
+                        label={skill}
+                        key={`${post.skills[0].contentful_id}-${i}`}
+                      />
                     ))}
-                  </Aside>
-                </Col>
-              </Row>
-            </section>
-          </Col>
-        </Row>
-      </Container>
+                  </SkillList>
+                </Aside>
+                <Aside className="background">
+                  {post.links.map(link => (
+                    <Button
+                      to={link.url}
+                      target={link.targetBlank && "_blank"}
+                      key={link.contentful_id}
+                      $stacked
+                    >
+                      {link.label}
+                    </Button>
+                  ))}
+                </Aside>
+              </Col>
+            </Row>
+          </section>
+        </Col>
+      </Row>
     </Layout>
   )
 }
