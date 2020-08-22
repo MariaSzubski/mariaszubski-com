@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { Row, Col } from "react-flexbox-grid"
+import { Row, Col } from "react-grid-system"
 
 import { DateIcon, LocationIcon } from "./icons"
 import HTML from "../utilities/html"

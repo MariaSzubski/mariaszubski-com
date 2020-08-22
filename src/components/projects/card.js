@@ -63,9 +63,11 @@ const SkillGroup = styled.div`
   display: flex;
 `
 
-const Skills = props => (
+const Skills = props => {
+  const arr = [].concat(props.skills)
+  return (
   <SkillGroup>
-    {props.skills.splice(0, 3).map((tag, idx) => (
+    {arr.slice(0,3).map((tag, idx) => (
       <SkillTag
         icon={tag.toLowerCase()}
         simple={true}
@@ -75,7 +77,7 @@ const Skills = props => (
       />
     ))}
   </SkillGroup>
-)
+)}
 
 const ProjectCard = props => (
   <Wrapper to={props.permalink}>

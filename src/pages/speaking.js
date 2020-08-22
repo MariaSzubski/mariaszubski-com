@@ -2,13 +2,17 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { Container, Row, Col } from "react-grid-system"
+// import { Container, Row, Col } from "react-grid-system"
 import Img from "gatsby-image/withIEPolyfill"
 
 import Layout from "../components/layout"
 import HTML from "../components/utilities/html"
 import Link from "../components/utilities/link"
 import WorkshopCard from "../components/experience/workshop"
+
+import { Container } from "../components/demo-grid/container"
+import { Row } from "../components/demo-grid/row"
+import { Col } from "../components/demo-grid/col"
 
 import { colors, screen } from "../components/global/vars"
 
@@ -28,7 +32,6 @@ const Section = styled.section`
 const ImageGroup = styled.aside`
   display: flex;
   flex-wrap: wrap;
-  padding: 0.4rem;
   .gatsby-image-wrapper {
     border: 0.4rem solid transparent;
     border-radius: 1rem;
@@ -101,14 +104,14 @@ const SpeakingPage = props => {
   `)
   return (
     <Layout>
-      <Container style={{ padding: "0rem" }}>
-        <Row justify="center">
-          <Col xxl={10}>
+      <Container>
             <hgroup className="element">
               <h1>{data.sections.title}</h1>
             </hgroup>
 
             <section className="element">
+              <Row>
+                <Col>
               <ImageGroup className="element-minor">
                 {data.images.content.map(img => (
                   <Img
@@ -120,6 +123,8 @@ const SpeakingPage = props => {
                   />
                 ))}
               </ImageGroup>
+            </Col>
+            </Row>
             </section>
             {data.sections.modules.map((section, i) => (
               <section className="element" key={section.contentful_id}>
@@ -158,8 +163,6 @@ const SpeakingPage = props => {
                 <Link to="/contact">💁🏻‍♀️ Book me to speak at your event</Link>
               </Col>
             </Row>
-          </Col>
-        </Row>
       </Container>
     </Layout>
   )

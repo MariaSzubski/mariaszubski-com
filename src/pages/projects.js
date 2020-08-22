@@ -1,8 +1,10 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
-import { Container, Row, Col } from "react-grid-system"
 
+import { Container } from "../components/demo-grid/container"
+import { Row } from "../components/demo-grid/row"
+import { Col } from "../components/demo-grid/col"
 import Layout from "../components/layout"
 import ProjectCard from "../components/projects"
 
@@ -29,32 +31,30 @@ const ProjectsLandingPage = () => {
       }
     }
   `)
-  let cards = data.allContentfulProject.edges
+  const cards = data.allContentfulProject.edges
   return (
     <Layout>
-      <Container style={{ padding: "0rem" }}>
-        <Row>
-          <Col>
+      <Container>
             <section className="element">
               <hgroup>
                 <h1>Recent Projects</h1>
               </hgroup>
-              <Row gutterWidth={24}>
+              <Row>
                 {cards.map(card => (
                   <Col md={6} xl={4} key={card.node.contentful_id}>
+
+                    {console.table(card.node.skills[0])}
                     <ProjectCard
                       title={card.node.title}
                       summary={card.node.summary}
                       skills={card.node.skills[0].skill}
                       hero={card.node.hero}
-                      permalink={card.node.slug}
+                      permalink={`/projects/${card.node.slug}`}
                     />
                   </Col>
                 ))}
               </Row>
             </section>
-          </Col>
-        </Row>
       </Container>
     </Layout>
   )

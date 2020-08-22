@@ -2,10 +2,12 @@ import React, { useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import styled, { css } from "styled-components"
 import Img from "gatsby-image"
-import { Container, Row, Col } from "react-grid-system"
 
 import data from "../content/all-skills.yml"
 
+import { Container } from "../components/demo-grid/container"
+import { Row } from "../components/demo-grid/row"
+import { Col } from "../components/demo-grid/col"
 import Layout from "../components/layout"
 import { SkillGroup } from "../components/skill"
 import { SkillList, SkillTag } from "../components/skill/list"
@@ -179,7 +181,7 @@ const AboutPage = () => {
   let [toggle, setToggle] = useState([false, false])
   return (
     <Layout>
-      <Container style={{ padding: "0rem" }}>
+      <Container>
         <section className="element">
           <hgroup>
             <h1>{data.about.title}</h1>
@@ -274,7 +276,7 @@ const AboutPage = () => {
 
               {/* Co-Ops */}
               <section className="element">
-                <Row justify="between" align="end">
+                <Row justify="space-between" align="flex-end">
                   <Col>
                     <h3>{data.coop.title}</h3>
                   </Col>

@@ -2,7 +2,10 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { Row, Col, Visible } from "react-grid-system"
+
+import { Container } from "../demo-grid/container"
+import { Row } from "../demo-grid/row"
+import { Col } from "../demo-grid/col"
 
 import HTML from "../utilities/html"
 import Form from "../form"
@@ -61,36 +64,38 @@ const ContactSection = props => {
 
   return (
     <section className="element">
-      <Row align="center" style={{ minHeight: "80vh" }}>
-        <Col
-          md={10}
-          lg={5.5}
-          xl={5}
-          xxl={4}
-          offset={{ md: 1, lg: 0.5, xl: 0.5, xxl: 1.5 }}
-        >
-          <hgroup>
-            <h3>Let&#39;s Work Together!</h3>
-          </hgroup>
-          <Desc content={data.form.desc} />
-          <Email />
-          <Github />
-          <LinkedIn />
-          <Twitter />
-        </Col>
-        <Col
-          md={10}
-          lg={5}
-          xl={5}
-          xxl={3.75}
-          offset={{ md: 1, lg: 0.25, xl: 0.5, xxl: 1 }}
-        >
-          <Visible xs sm md>
-            <ContactH3>Contact Form</ContactH3>
-          </Visible>
-          <Form config={data.form} source="Contact Page" />
-        </Col>
-      </Row>
+      <Container fluid>
+        <Row align="center" style={{ minHeight: "80vh" }}>
+          <Col
+            md={10}
+            lg={5.5}
+            xl={5}
+            xxl={4}
+            offset={{ md: 1, lg: 0.5, xl: 0.5, xxl: 1.5 }}
+          >
+            <hgroup>
+              <h3>Let&#39;s Work Together!</h3>
+            </hgroup>
+            <Desc content={data.form.desc} />
+            <Email />
+            <Github />
+            <LinkedIn />
+            <Twitter />
+          </Col>
+          <Col
+            md={10}
+            lg={5}
+            xl={5}
+            xxl={3.75}
+            offset={{ md: 1, lg: 0.25, xl: 0.5, xxl: 1 }}
+          >
+            <Col xs sm md>
+              <ContactH3>Contact Form</ContactH3>
+            </Col>
+            <Form config={data.form} source="Contact Page" />
+          </Col>
+        </Row>
+      </Container>
     </section>
   )
 }

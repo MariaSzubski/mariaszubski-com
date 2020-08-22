@@ -1,10 +1,13 @@
 import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
-import { Row, Col, Visible, Hidden } from "react-grid-system"
+import { Visible, Hidden } from "react-grid-system"
 
 import endorsements from "../content/endorsements.yml"
 
+import { Container } from "../components/demo-grid/container"
+import { Row } from "../components/demo-grid/row"
+import { Col } from "../components/demo-grid/col"
 import Layout from "../components/layout"
 import SEO from "../components/layout/seo"
 
@@ -97,47 +100,58 @@ const Num = styled.div`
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
-    <Hero>
-      <Hidden xs sm md>
-        <Headshot xs={12} lg={3.5} xl={4} />
-      </Hidden>
-      <Content xs={12} lg={7.5} xl={6.8} xxl={6.2} offset={{ xxl: 1 }}>
-        <p>
-          Hi, I&#39;m Maria and I work remotely as a{" "}
-          <strong>Freelance Frontend Developer</strong> based in Cincinnati, OH.
-          I specialize in...
-        </p>
-        <SkillGroup data={skills} size="3.8rem" center theme="transparent" />
-        {/* <Button to="/contact" $color="green">
+    <Container fluid>
+      <Row>
+        <Col>
+          <SEO title="Home" />
+          <Hero>
+            <Hidden xs sm md>
+              <Headshot xs={12} lg={3.5} xl={4} />
+            </Hidden>
+            <Content xs={12} lg={7.5} xl={6.8} xxl={6.2} offset={{ xxl: 1 }}>
+              <p>
+                Hi, I&#39;m Maria and I work remotely as a{" "}
+                <strong>Freelance Frontend Developer</strong> based in
+                Cincinnati, OH. I specialize in...
+              </p>
+              <SkillGroup
+                data={skills}
+                size="3.8rem"
+                center
+                theme="transparent"
+              />
+              {/* <Button to="/contact" $color="green">
             Let&#39;s work together
           </Button> */}
-      </Content>
-    </Hero>
-    <Other justify="center" align="start" className="background">
-      <Stats xs={11} md={9.5} lg={8} xl={6.75} xxl={5}>
-        <Row>
-          <Col md={3}>
-            <Num>2.5 yrs</Num>
-            <h6>in business</h6>
-          </Col>
-          <Col md={2.4}>
-            <Num>7</Num>
-            <h6>clients</h6>
-          </Col>
-          <Col md={2.6}>
-            <Num>28+</Num>
-            <h6>projects</h6>
-          </Col>
-          <Col md={4}>
-            <Num>11 yrs</Num>
-            <h6>industry experience</h6>
-          </Col>
-        </Row>
-      </Stats>
-    </Other>
-    ^ Appear/hide on scroll
-    <Contact />
+            </Content>
+          </Hero>
+        </Col>
+      </Row>
+      <Other justify="center" align="flex-start" className="background">
+        <Stats xs={11} md={9.5} lg={8} xl={6.75} xxl={5}>
+          <Row>
+            <Col md={3}>
+              <Num>2.5 yrs</Num>
+              <h6>in business</h6>
+            </Col>
+            <Col md={2.4}>
+              <Num>7</Num>
+              <h6>clients</h6>
+            </Col>
+            <Col md={2.6}>
+              <Num>28+</Num>
+              <h6>projects</h6>
+            </Col>
+            <Col md={4}>
+              <Num>11 yrs</Num>
+              <h6>industry experience</h6>
+            </Col>
+          </Row>
+        </Stats>
+      </Other>
+      ^ Appear/hide on scroll
+      <Contact />
+    </Container>
     {/* <Testimonials data={endorsements} /> */}
   </Layout>
 )
