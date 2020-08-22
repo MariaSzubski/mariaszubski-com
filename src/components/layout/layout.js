@@ -13,29 +13,16 @@ const Content = styled.div`
   min-height: 100vh;
 `
 
-const Main = styled.main`
-  ${"" /* width: 100%; */}
-  ${"" /* max-width: 144rem; */}
-  ${"" /* margin: 0 auto; */}
-  ${"" /* padding: 0rem 4rem; */}
-  ${"" /* display: flex;
-  justify-content: center;
-  align-items: center; */}
-  @media ${screen.max.md} {
-    ${"" /* padding: 0rem 2rem; */}
-  }
-`
-
-const Layout = ({ title, children }) => {
+const Layout = ({ title, children, fluid }) => {
   return (
     <>
       <SEO title={title} />
       <GlobalStyles />
       <Content>
         <Nav />
-        <Main>
-          <Container fluid>{children}</Container>
-        </Main>
+        <main>
+          <Container fluid={fluid}>{children}</Container>
+        </main>
         <Footer />
       </Content>
     </>
@@ -44,11 +31,13 @@ const Layout = ({ title, children }) => {
 
 Layout.propTypes = {
   title: PropTypes.string,
+  fluid: PropTypes.bool,
   children: PropTypes.node.isRequired,
 }
 
 Layout.defaultProps = {
   title: "",
+  fluid: true,
 }
 
 export default Layout

@@ -5,16 +5,13 @@ import styled from "styled-components"
 import { screen } from "../global/vars"
 
 const SRow = styled.div`
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  margin: 0rem -1.5rem;
   display: flex;
   flex-wrap: ${props => (props.$nowrap ? "nowrap" : "wrap")};
   justify-content: ${props => props.$justify};
   align-items: ${props => props.$align};
   flex-grow: 0;
   flex-shrink: 0;
-  flex-basis: 100%;
-  max-width: 100%;
 `
 
 const Row = ({ children, ...props }) => (
@@ -38,7 +35,7 @@ Row.propTypes = {
 Row.defaultProps = {
   nowrap: false,
   justify: "flex-start",
-  align: "flex-start",
+  align: "normal",
 }
 
 export { Row }

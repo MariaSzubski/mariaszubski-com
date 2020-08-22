@@ -3,9 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 
-import { Container } from "../demo-grid/container"
-import { Row } from "../demo-grid/row"
-import { Col } from "../demo-grid/col"
+import { Container, Row, Col, Hide } from "../grid-system"
 
 import HTML from "../utilities/html"
 import Form from "../form"
@@ -64,7 +62,6 @@ const ContactSection = props => {
 
   return (
     <section className="element">
-      <Container fluid>
         <Row align="center" style={{ minHeight: "80vh" }}>
           <Col
             md={10}
@@ -89,13 +86,12 @@ const ContactSection = props => {
             xxl={3.75}
             offset={{ md: 1, lg: 0.25, xl: 0.5, xxl: 1 }}
           >
-            <Col xs sm md>
+            <Hide lg>
               <ContactH3>Contact Form</ContactH3>
-            </Col>
+            </Hide>
             <Form config={data.form} source="Contact Page" />
           </Col>
         </Row>
-      </Container>
     </section>
   )
 }
