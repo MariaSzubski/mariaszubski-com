@@ -40,8 +40,6 @@ const ProjectsLandingPage = () => {
               <Row>
                 {cards.map(card => (
                   <Col md={6} xl={4} key={card.node.contentful_id}>
-
-                    {console.table(card.node.skills[0])}
                     <ProjectCard
                       title={card.node.title}
                       summary={card.node.summary}

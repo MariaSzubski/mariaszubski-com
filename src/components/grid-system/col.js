@@ -94,7 +94,7 @@ Col.propTypes = {
   nowrap: PropTypes.bool,
   justify: PropTypes.string,
   align: PropTypes.string,
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   offset: PropTypes.object,
   xs: PropTypes.number,
   sm: PropTypes.number,

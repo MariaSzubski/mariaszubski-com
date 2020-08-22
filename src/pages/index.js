@@ -67,7 +67,6 @@ const Content = styled(Col)`
 `
 
 const Other = styled(Row)`
-  ${"" /* background-color: ${colors.white}; */}
   height: 600px;
 `
 
