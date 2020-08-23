@@ -20,7 +20,7 @@ const StyledButton = styled(Link)`
   &:not(:last-of-type) {
     margin-right: 1rem;
   }
-  transition: color 0.12s ease-in;
+  transition: color 0.15s ease-in;
 
   color: ${colors.white};
   font-size: 1.5rem;
@@ -56,7 +56,7 @@ const StyledButton = styled(Link)`
     height: 100%;
     opacity: 0;
     background: ${props => props.$bg_before};
-    transition: opacity 0.12s ease-out;
+    transition: opacity 0.15s ease-out;
   }
 
   &:hover {
@@ -64,7 +64,7 @@ const StyledButton = styled(Link)`
     background: ${props => props.$hover};
     &:before {
       opacity: 1;
-      transition: opacity 0.12s ease-out;
+      transition: opacity 0.15s ease-out;
     }
   }
 `

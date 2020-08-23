@@ -14,7 +14,7 @@ const StyledNav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 4rem;
+  padding: 2rem 2.4rem;
 
   @media ${screen.max.md} {
     padding: 1.6rem 2.4rem;
@@ -22,7 +22,7 @@ const StyledNav = styled.nav`
   }
 `
 
-const PageLinks = styled.section`
+const Desktop = styled.section`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -43,18 +43,14 @@ const PageLinks = styled.section`
       left: 0.8rem;
       background: ${colors.blue500};
       opacity: 0;
-      transform: scaleX(1);
+      transform: scaleX(0.85);
       transform-origin: bottom center;
-      transition: all 0.2s ease-out;
+      transition: opacity 0.15s ease-out;
     }
     &:hover:after {
-      ${"" /* transform: scaleX(0.85); */}
-
-      transform: scaleX(1);
       opacity: 1;
     }
     &.active:after {
-      ${"" /* transform: scaleX(0.85); */}
       opacity: 1;
       background: ${colors.blue300};
     }
@@ -83,41 +79,37 @@ const MobileMenu = styled.div`
     props.$open ? "ease .6s scaled-2 forwards" : "ease .6s scaled-3 forwards"};
 `
 
-const Nav = () => {
-  return (
-    <StyledNav>
-      <Link to="/">
-        <StyledLogo />
-      </Link>
-      <PageLinks aria-label="pages">
-        <Show md>
-          <div className="text-sm">
-            <StyledLink to="/type-spec" activeClassName="active">
-              Type Spec
-            </StyledLink>
-            <StyledLink to="/blog" activeClassName="active">
-              Blog
-            </StyledLink>
-            <StyledLink to="/about" activeClassName="active">
-              About
-            </StyledLink>
-            <StyledLink to="/projects" activeClassName="active">
-              Code
-            </StyledLink>
-            <StyledLink to="/speaking" activeClassName="active">
-              Speaking
-            </StyledLink>
-            <Button to="/contact" color="green" activeClassName="active">
-              Contact
-            </Button>
-          </div>
-        </Show>
-        <Hide md>
-          <MenuIcon />
-        </Hide>
-      </PageLinks>
-    </StyledNav>
-  )
-}
+const Nav = () => (
+  <StyledNav>
+    <Link to="/">
+      <StyledLogo />
+    </Link>
+    <Show md>
+      <Desktop className="text-sm">
+        <StyledLink to="/type-spec" activeClassName="active">
+          Type Spec
+        </StyledLink>
+        <StyledLink to="/blog" activeClassName="active">
+          Blog
+        </StyledLink>
+        <StyledLink to="/about" activeClassName="active">
+          About
+        </StyledLink>
+        <StyledLink to="/projects" activeClassName="active">
+          Code
+        </StyledLink>
+        <StyledLink to="/speaking" activeClassName="active">
+          Speaking
+        </StyledLink>
+        <Button to="/contact" color="blue" activeClassName="active">
+          Contact
+        </Button>
+      </Desktop>
+    </Show>
+    <Hide md>
+      <MenuIcon />
+    </Hide>
+  </StyledNav>
+)
 
 export default Nav
