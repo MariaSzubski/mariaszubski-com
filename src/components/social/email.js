@@ -5,7 +5,7 @@ import Link from "../utilities/link"
 import { IconMixin } from "./styles"
 
 const Email = props => (
-  <Link to="mailto:hello@mariaszubski.com" target="_blank">
+  <Link to="mailto:hello@mariaszubski.com" target="_blank" title="Email me">
     <svg
       width="4.8rem"
       height="4.8rem"

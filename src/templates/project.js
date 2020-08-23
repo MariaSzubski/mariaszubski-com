@@ -66,7 +66,7 @@ const ProjectTemplate = props => {
                       to={link.url}
                       target={link.targetBlank && "_blank"}
                       key={link.contentful_id}
-                      $stacked
+                      stacked
                     >
                       {link.label}
                     </Button>

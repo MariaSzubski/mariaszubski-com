@@ -107,7 +107,7 @@ const Nav = () => {
             <StyledLink to="/speaking" activeClassName="active">
               Speaking
             </StyledLink>
-            <Button to="/contact" $color="green" activeClassName="active">
+            <Button to="/contact" color="green" activeClassName="active">
               Contact
             </Button>
           </div>

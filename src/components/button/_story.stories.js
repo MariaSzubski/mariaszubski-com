@@ -10,7 +10,7 @@ export default {
 export const button = () => {
   let color = select("Color", ["green", "plum", "white"], "green")
   return (
-    <Component to="/" $color={color} activeClassName="active">
+    <Component to="/" color={color} activeClassName="active">
       Let&apos;s Connect
     </Component>
   )

@@ -266,7 +266,7 @@ const AboutPage = () => {
                   <Link to="/speaking">
                     <h4>{"🙋🏻See other Tech Events I've volunteered with >"}</h4>
                   </Link>
-                  <Button to="/contact" $color="green">
+                  <Button to="/contact" color="green">
                     Book Me to Speak at an Event
                   </Button>
                 </div>

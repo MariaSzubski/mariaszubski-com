@@ -73,7 +73,6 @@ const SpeakingPage = props => {
       ) {
         contentful_id
         title
-        subtitle
         modules {
           ... on ContentfulSection {
             contentful_id

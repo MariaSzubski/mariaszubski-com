@@ -166,7 +166,7 @@ const global_styles = css`
     margin-bottom: 3rem;
 
     @media ${screen.max.lg} {
-      font-size: 3.2rem;
+      font-size: 3.4rem;
     }
 
     @keyframes grow {

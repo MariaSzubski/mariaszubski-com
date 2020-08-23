@@ -35,6 +35,10 @@ const formStyles = css`
     }
   }
 
+  button {
+    margin-top: 1rem;
+  }
+
   label, legend {
     font-size: 1.2rem;
     text-transform: uppercase;
@@ -54,7 +58,7 @@ const formStyles = css`
   fieldset.toggle {
     border: none;
     padding: 0rem;
-    margin: 2rem 0rem 1rem 0rem;
+    margin: 2rem 0rem 2rem 0rem;
     font-size: 2rem;
     outline: none;
 
@@ -105,7 +109,7 @@ const formStyles = css`
           text-transform: capitalize;
           letter-spacing: normal;
           outline: none;
-          padding: 0.5rem 1.5rem;
+          padding: 0.8rem 1.5rem;
           display: flex;
           flex-direction: column;
           justify-content: center;

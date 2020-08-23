@@ -108,7 +108,7 @@ const IndexPage = () => (
           I specialize in...
         </p>
         <SkillGroup data={skills} size="3.8rem" center theme="transparent" />
-        {/* <Button to="/contact" $color="green">
+        {/* <Button to="/contact" color="green">
             Let&#39;s work together
           </Button> */}
       </Content>

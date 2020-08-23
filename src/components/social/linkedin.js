@@ -5,7 +5,11 @@ import Link from "../utilities/link"
 import { IconMixin } from "./styles"
 
 const LinkedIn = props => (
-  <Link to="https://linkedin.com/in/mariaszubski" target="_blank">
+  <Link
+    to="https://linkedin.com/in/mariaszubski"
+    target="_blank"
+    title="LinkedIn"
+  >
     <svg
       width="4.8rem"
       height="4.8rem"

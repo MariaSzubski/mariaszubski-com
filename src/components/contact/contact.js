@@ -15,6 +15,10 @@ import Github from "../social/github"
 
 import { colors, screen } from "../global/vars"
 
+const Wrapper = styled.div`
+  margin: 5rem 1.2rem;
+`
+
 const Desc = styled(HTML)`
   font-size: 2.3rem;
   p:last-of-type {
@@ -29,7 +33,7 @@ const Desc = styled(HTML)`
 `
 
 const ContactH3 = styled.h3`
-  margin-top: 6rem;
+  margin-top: 8rem;
   &:after {
     background-color: ${colors.green300};
     animation-delay: 1.8s;
@@ -62,6 +66,7 @@ const ContactSection = props => {
 
   return (
     <section className="element">
+      <Wrapper>
         <Row align="center" style={{ minHeight: "80vh" }}>
           <Col
             md={10}
@@ -92,6 +97,7 @@ const ContactSection = props => {
             <Form config={data.form} source="Contact Page" />
           </Col>
         </Row>
+      </Wrapper>
     </section>
   )
 }

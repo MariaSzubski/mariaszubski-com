@@ -5,7 +5,7 @@ import Link from "../utilities/link"
 import { IconMixin } from "./styles"
 
 const Github = props => (
-  <Link to="https://github.com/mariaszubski" target="_blank">
+  <Link to="https://github.com/mariaszubski" target="_blank" title="github">
     <svg
       width="4.8rem"
       height="4.8rem"

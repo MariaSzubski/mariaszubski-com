@@ -1,8 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { Link } from "gatsby"
 import styled from "styled-components"
 
+import Link from "../utilities/link"
 import { colors } from "../global/vars"
 
 const StyledButton = styled(Link)`
@@ -10,16 +10,20 @@ const StyledButton = styled(Link)`
   display: inline-flex;
   vertical-align: top;
   justify-content: center;
-  border-radius: 0.4rem;
-  border: 1px solid ${props => props.$color};
-  background-color: transparent;
+  border-radius: 0.3rem;
+  border: 1px solid ${props => props.$border};
+
+  background:${props => props.$fill};
+  cursor: pointer;
+  line-height: 1.8;
+  letter-spacing: 0.06rem;
   &:not(:last-of-type) {
     margin-right: 1rem;
   }
   transition: color 0.12s ease-in;
 
   color: ${colors.white};
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
@@ -55,11 +59,6 @@ const StyledButton = styled(Link)`
     transition: opacity 0.12s ease-out;
   }
 
-  ${"" /* Underline */}
-  &:after {
-    background: ${props => props.$bg_after};
-  }
-
   &:hover {
     color: ${colors.white};
     background: ${props => props.$hover};
@@ -70,43 +69,45 @@ const StyledButton = styled(Link)`
   }
 `
 
-const wtf = styled.div``
-
 const color_list = {
   border: {
     plum: colors.plum,
-    green: colors.green,
+    green: colors.green500,
     white: colors.gray500,
+    blue: colors.blue300,
+  },
+  fill: {
+    plum: colors.plum,
+    green: colors.green500,
+    white: colors.gray500,
+    blue: colors.blue400,
   },
   bg_before: {
     plum: `linear-gradient(
     30deg, ${colors.plum300} 20%, ${colors.plum700} 100% )`,
     white: colors.gray700,
     green: `linear-gradient(
-    30deg, ${colors.green} 20%, ${colors.green300} 100% )`,
-  },
-  bg_after: {
-    plum: `linear-gradient(
-    90deg, ${colors.plum} 0%, ${colors.plum300} 50%, ${colors.plum} 100% );`,
-    white: "none",
-    green: `linear-gradient(
-    90deg, ${colors.green} 0%, ${colors.blue} 50%, ${colors.green} 100% );`,
+    30deg, ${colors.green500} 20%, ${colors.green300} 100% )`,
+    blue: `linear-gradient(
+    30deg, ${colors.blue500} 20%, ${colors.blue200} 100% )`,
   },
   hover: {
     plum: "none",
     white: colors.gray700,
     green: "none",
+    blue: `linear-gradient(
+    30deg, ${colors.blue400} 20%, ${colors.blue300} 100% )`,
   },
 }
 
-const Button = ({ children, $stacked, ...props }) => (
+const Button = ({ children, stacked, color, fill, ...props }) => (
   <StyledButton
     as={!props.to ? "button" : Link}
-    $border={color_list.border[props.$color]}
-    $bg_before={color_list.bg_before[props.$color]}
-    $bg_after={color_list.bg_after[props.$color]}
-    $hover={color_list.hover[props.$color]}
-    $stacked={$stacked ? 1 : 0}
+    $border={color_list.border[color]}
+    $bg_before={color_list.bg_before[color]}
+    $hover={color_list.hover[color]}
+    $stacked={stacked ? 1 : 0}
+    $fill={fill ? color_list.fill[color] : "#00000044"}
     {...props}
   >
     {children}
@@ -116,14 +117,15 @@ const Button = ({ children, $stacked, ...props }) => (
 Button.propTypes = {
   children: PropTypes.node.isRequired,
   to: PropTypes.string,
-  $color: PropTypes.string, // 'green', 'plum'
-  $stacked: PropTypes.bool,
+  color: PropTypes.string, // 'green', 'plum'
+  stacked: PropTypes.bool,
+  fill: PropTypes.bool,
   layout: PropTypes.string, // vertical
 }
 
 Button.defaultProps = {
-  $color: "white",
-  $stacked: false,
+  color: "white",
+  stacked: false,
 }
 
 export default Button
