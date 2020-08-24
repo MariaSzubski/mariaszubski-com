@@ -24,12 +24,16 @@ import Resume from "../components/social/resume"
 import { colors, screen } from "../components/global/vars"
 
 const Expand = styled.h5`
-  text-align: right;
+  text-align: left;
   user-select: none;
   margin-bottom: 3.6rem;
   color: ${colors.blue200};
   &:hover {
     cursor: pointer;
+  }
+
+  @media ${screen.min.md} {
+    text-align: right;
   }
 `
 
@@ -215,8 +219,8 @@ const AboutPage = () => {
             <Col sm={12} md={11} lg={10} xl={9} xxl={7.25}>
               {/* Professional Experience */}
               <section className="element">
-                <Row justify="between" align="end">
-                  <Col>
+                <Row justify="space-between" align="flex-end">
+                  <Col md={9}>
                     <h3>{data.professional.title}</h3>
                   </Col>
                   <Col md={3}>
@@ -266,7 +270,7 @@ const AboutPage = () => {
                   <Link to="/speaking">
                     <h4>{"🙋🏻See other Tech Events I've volunteered with >"}</h4>
                   </Link>
-                  <Button to="/contact" color="green">
+                  <Button to="/contact" color="green" fill>
                     Book Me to Speak at an Event
                   </Button>
                 </div>
@@ -275,7 +279,7 @@ const AboutPage = () => {
               {/* Co-Ops */}
               <section className="element">
                 <Row justify="space-between" align="flex-end">
-                  <Col>
+                  <Col md={9}>
                     <h3>{data.coop.title}</h3>
                   </Col>
                   <Col md={3}>

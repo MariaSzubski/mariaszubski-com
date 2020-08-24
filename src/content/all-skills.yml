@@ -39,6 +39,7 @@
     - icon: ruby
     - icon: php
       label: PHP
+    - icon: coffeescript
 
 - title: Tools & Concepts
   skills:

@@ -48,9 +48,9 @@ const global_styles = css`
 
   body {
     font-size: 23px;
-    font-size: 2.3rem;
+    font-size: 2.1rem;
     font-weight: 400;
-    line-height: 1.6;
+    line-height: 1.55;
     ${"" /* color: ${colors.gray700}; */}
     ${"" /* color: ${"#FFFFFF" + "EE"}; */}
     color: ${ colors.gray100};
@@ -72,11 +72,13 @@ const global_styles = css`
 
   a {
     text-decoration: none;
-    position: relative;
-    color: ${colors.white};
-    font-weight: 600;
+    ${"" /* position: relative; */}
+    color: ${colors.blue200};
+    &:hover {
+      text-decoration: underline;
+    }
 
-    p &:before,
+    ${"" /* p &:before,
     p &:after {
       content: '';
       position: absolute;
@@ -100,7 +102,7 @@ const global_styles = css`
 
     p &:hover:after {
       transform: scaleX(1);
-    }
+    } */}
   }
 
   img,
@@ -162,7 +164,6 @@ const global_styles = css`
     text-align: left;
     font-weight: 400;
     color: white;
-
     margin-bottom: 3rem;
 
     @media ${screen.max.lg} {
@@ -183,7 +184,7 @@ const global_styles = css`
       display: block;
       width: 0rem;
       height: 5px;
-      background-color: ${colors.pink500};
+      background-color: ${colors.green300};
       border-radius: 0.2rem;
       overflow: hidden;
 
@@ -196,8 +197,9 @@ const global_styles = css`
   }
 
   h4 {
-    font-weight: 800;
+    font-weight: 700;
     font-size: 2.2rem;
+    color: ${colors.yellow};
   }
 
   h5 {

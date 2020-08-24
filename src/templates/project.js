@@ -27,14 +27,16 @@ const ProjectTemplate = props => {
         <Col xxl={10.5}>
           <section className="element">
             <hgroup>
-              <h1>{post.summary}</h1>
-              <h2>{post.title}</h2>
+              <h1>{post.title}</h1>
+              <h2>{post.summary}</h2>
             </hgroup>
-            <Hero
-              fluid={post.hero.fluid}
-              alt={`${post.summary} - ${post.title}`}
-              object-fit="containe"
-            />
+            {post.hero &&
+              <Hero
+                fluid={post.hero.fluid}
+                alt={`${post.summary} - ${post.title}`}
+                object-fit="containe"
+              />
+            }
           </section>
         </Col>
       </Row>
@@ -66,6 +68,7 @@ const ProjectTemplate = props => {
                       to={link.url}
                       target={link.targetBlank && "_blank"}
                       key={link.contentful_id}
+                      color="green"
                       stacked
                     >
                       {link.label}

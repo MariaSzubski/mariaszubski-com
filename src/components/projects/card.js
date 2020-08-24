@@ -16,12 +16,13 @@ const Wrapper = styled(Link)`
   margin: 1.2rem 0rem;
   transform: scale(1) translateY(0rem);
   transition: all 0.1s ease-in;
-
   background: ${g.colors.white + "EE"};
   &:hover {
     transform: scale(1.03) translateY(-0.5rem);
     z-index: 1000000;
+    text-decoration: none;
     transition: all 0.1s ease-in;
+
   }
 `
 
@@ -45,6 +46,8 @@ const Details = styled.div`
   }
 
   h4 {
+
+    color: ${g.colors.blue700};
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -66,30 +69,33 @@ const SkillGroup = styled.div`
 const Skills = props => {
   const arr = [].concat(props.skills)
   return (
-  <SkillGroup>
-    {arr.slice(0,3).map((tag, idx) => (
-      <SkillTag
-        icon={tag.toLowerCase()}
-        simple={true}
-        size="1.8rem"
-        light={true}
-        key={`${props.title}-tag-${idx}`}
-      />
-    ))}
-  </SkillGroup>
-)}
+    <SkillGroup>
+      {arr.slice(0, 3).map((tag, idx) => (
+        <SkillTag
+          icon={tag.toLowerCase()}
+          simple={true}
+          size="1.8rem"
+          light={true}
+          key={`${props.title}-tag-${idx}`}
+        />
+      ))}
+    </SkillGroup>
+  )
+}
 
 const ProjectCard = props => (
   <Wrapper to={props.permalink}>
-    <Hero>
-      <Img fluid={props.hero.fluid} alt={props.title} objectFit="contain" />
-    </Hero>
+    {props.hero && (
+      <Hero>
+        <Img fluid={props.hero.fluid} alt={props.title} objectFit="contain" />
+      </Hero>
+    )}
     <Details>
       <span>
-        <h4>{props.title}</h4>
+        <h4 title={props.title}>{props.title}</h4>
         <h6>{props.summary}</h6>
       </span>
-      <Skills skills={props.skills} title={props.title} />
+      <Skills skills={props.skills} title={props.title} theme="light" />
     </Details>
   </Wrapper>
 )
@@ -106,7 +112,7 @@ ProjectCard.propTypes = {
   permalink: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   summary: PropTypes.string.isRequired,
-  skills: PropTypes.array,
+  skills: PropTypes.array.isRequired,
 }
 
 ProjectCard.defaultProps = {

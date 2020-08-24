@@ -28,11 +28,15 @@ const Desktop = styled.section`
   justify-content: center;
   align-items: flex-start;
   ${StyledLink} {
+    color: ${colors.white};
     font-weight: bold;
     text-transform: uppercase;
     position: relative;
     &:not(:last-child) {
       padding: 1rem 2rem;
+    }
+    &:hover {
+      text-decoration: none;
     }
     &:after {
       content: "";
@@ -59,6 +63,22 @@ const Desktop = styled.section`
 
 const StyledLogo = styled(Logo)`
   font-size: 4.8rem;
+
+  &:hover {
+    ${"" /* animation: ease .5s grow forwards; */}
+  }
+    ${"" /* @keyframes grow {
+      0% {
+        transform: scale(1);
+      }
+      25% {
+        transform: scale(1.05);
+      }
+      100% {
+        transform: scale(1);
+      }
+    } */}
+
 `
 
 const MobileMenu = styled.div`

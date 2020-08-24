@@ -1,7 +1,8 @@
 import Atom from "./atom"
 import Bootstrap from "./bootstrap"
-import Css3 from "./css3"
+import Coffeescript from "./coffeescript"
 import Contentful from "./contentful"
+import Css3 from "./css3"
 import Dato from "./dato"
 import Gatsby from "./gatsby"
 import Git from "./git"
@@ -42,8 +43,9 @@ const icons = {
   invision: Invision,
   atom: Atom,
   bootstrap: Bootstrap,
-  css3: Css3,
   contentful: Contentful,
+  coffeescript: Coffeescript,
+  css3: Css3,
   dato: Dato,
   gatsby: Gatsby,
   git: Git,
@@ -69,6 +71,7 @@ const icons = {
   react: Reactjs,
   reveal: Reveal,
   ruby: Ruby,
+  "ruby on rails": Ruby,
   scss: Scss,
   shopify: Shopify,
   storybook: Storybook,

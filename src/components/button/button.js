@@ -61,6 +61,7 @@ const StyledButton = styled(Link)`
 
   &:hover {
     color: ${colors.white};
+    text-decoration: none;
     background: ${props => props.$hover};
     &:before {
       opacity: 1;
