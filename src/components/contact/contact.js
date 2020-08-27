@@ -16,7 +16,7 @@ import Github from "../social/github"
 import { colors, screen } from "../global/vars"
 
 const Wrapper = styled.div`
-  margin: 5rem 1.2rem;
+  margin: 5rem 0rem;
 `
 
 const Desc = styled(HTML)`

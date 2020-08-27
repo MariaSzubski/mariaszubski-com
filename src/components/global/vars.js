@@ -3,8 +3,9 @@ export const colors = {
   gray100:  '#D1D3E7',
   gray200:  '#BABDCF',
   gray300:  '#979BB0',
-  gray500:  '#707488',
-  gray700:  '#2B2E3C',
+  gray400:  '#8D91A6',
+  gray500:  '#767991', // 707488
+  gray700:  '#282D42',
   black:    '#121D28',
 
   yellow:   '#FEC52E',

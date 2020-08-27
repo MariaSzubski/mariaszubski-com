@@ -13,7 +13,7 @@ const Wrapper = styled(Link)`
   box-shadow: 0px 0.4rem 1rem rgba(0, 0, 20, 0.5);
   border-radius: 0.5rem;
   overflow: hidden;
-  margin: 1.2rem 0rem;
+  margin: 1.4rem 0rem;
   transform: scale(1) translateY(0rem);
   transition: all 0.1s ease-in;
   background: ${g.colors.white + "EE"};
@@ -22,12 +22,14 @@ const Wrapper = styled(Link)`
     z-index: 1000000;
     text-decoration: none;
     transition: all 0.1s ease-in;
-
+  }
+  @media ${g.screen.min.sm} {
+    margin: 1.4rem 0rem;
   }
 `
 
 const Hero = styled.div`
-  padding: 3rem 1rem;
+  padding: 4.8rem 0.4rem;
 `
 
 const Details = styled.div`
@@ -46,7 +48,6 @@ const Details = styled.div`
   }
 
   h4 {
-
     color: ${g.colors.blue700};
     white-space: nowrap;
     overflow: hidden;

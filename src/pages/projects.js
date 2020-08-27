@@ -31,27 +31,23 @@ const ProjectsLandingPage = () => {
   `)
   const cards = data.allContentfulProject.edges
   return (
-    <Layout fluid>
-      <Container>
-            <section className="element">
-              <hgroup>
-                <h1>Recent Projects</h1>
-              </hgroup>
-              <Row>
-                {cards.map(card => (
-                  <Col md={6} xl={4} key={card.node.contentful_id}>
-                    <ProjectCard
-                      title={card.node.title}
-                      summary={card.node.summary}
-                      skills={card.node.skills[0].skill}
-                      hero={card.node.hero}
-                      permalink={`/projects/${card.node.slug}`}
-                    />
-                  </Col>
-                ))}
-              </Row>
-            </section>
-      </Container>
+    <Layout>
+      <hgroup>
+        <h1>Recent Projects</h1>
+      </hgroup>
+      <Row>
+        {cards.map(card => (
+          <Col md={6} xl={4} key={card.node.contentful_id}>
+            <ProjectCard
+              title={card.node.title}
+              summary={card.node.summary}
+              skills={card.node.skills[0].skill}
+              hero={card.node.hero}
+              permalink={`/projects/${card.node.slug}`}
+            />
+          </Col>
+        ))}
+      </Row>
     </Layout>
   )
 }

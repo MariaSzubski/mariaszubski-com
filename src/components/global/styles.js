@@ -31,6 +31,7 @@ const global_styles = css`
       background-size: cover;
       background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.gray700} 100% );
       ${"" /* background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.green500}  100% ); */}
+      ${"" /* background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.green700}  100% ); */}
       ${"" /* background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.blue500} 100% ); */}
       ${"" /* background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.grape500} 100% ); */}
       ${"" /* background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.plum500} 100% ); */}
@@ -199,13 +200,13 @@ const global_styles = css`
   h4 {
     font-weight: 700;
     font-size: 2.2rem;
-    color: ${colors.yellow};
+    ${"" /* color: ${colors.yellow}; */}
   }
 
   h5 {
     font-weight: 800;
     font-size: 1.5rem;
-    color: ${colors.yellow};
+    ${"" /* color: ${colors.yellow}; */}
     text-transform: uppercase;
     letter-spacing: 0.02rem;
     text-align: center;
@@ -216,14 +217,14 @@ const global_styles = css`
     font-weight: 700;
     font-size: 1.3rem;
     line-height: 1.6rem;
-    color: ${colors.gray00};
+    color: ${colors.gray200};
     text-transform: uppercase;
     letter-spacing: 0.02rem;
   }
 
   p {
-    margin-top: 0;
-    margin-bottom: 3rem;
+    margin: 0;
+      margin-bottom: 2.8rem;
     ${"" /* line-height: 140%; */}
   }
 
@@ -235,15 +236,16 @@ const global_styles = css`
   }
 
   *.element-minor{
-    margin: 4rem 0rem;
+    ${"" /* margin: 4rem 0rem; */}
   }
 
   .background {
-    ${"" /* background-color: #ffffff11; */}
+    background-color: ${colors.white};
+    color: ${colors.blue700};
 
-    background-color: #00000044;
+    ${"" /* background-color: #00000033; */}
     ${"" /* background-color: ${colors.blue900 + ""}; */}
-    ${"" /* box-shadow: 0px 0.4rem 1rem rgba(0,0,20,.2); */}
+    box-shadow: 0px 0.4rem 1rem rgba(0,0,20,.2);
     border-radius: 0.4rem;
     * {
       ${"" /* text-shadow: 1px 1px 2px #000000DD; */}
@@ -261,7 +263,7 @@ const global_styles = css`
 
   *.text-md,
   *.text-md * {
-    font-size: 2.1rem;
+    font-size: 1.7rem;
     line-height: 1.5;
   }
 
@@ -293,6 +295,13 @@ const global_styles = css`
       font-size: 1.6rem;
       line-height: 1.45;
     }
+    *.text-md,
+    *.text-md * {
+      font-weight: 400;
+      font-size: 1.55rem;
+      line-height: 1.4;
+    }
+
     .highlighted p:first-of-type,
     *.text-lg,
     .highlighted p:first-of-type,

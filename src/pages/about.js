@@ -189,7 +189,7 @@ const AboutPage = () => {
             <h1>{data.about.title}</h1>
           </hgroup>
           <Row justify="center">
-            <Col md={10} xl={8} xxl={6.25}>
+            <Col md={10} lg={9.5} xl={8} xxl={6.25}>
               <HTML content={data.about.copy} className="text-md" />
               <StyledH4>- Maria </StyledH4>
               <div>
@@ -216,14 +216,14 @@ const AboutPage = () => {
 
         <section className="element">
           <Row justify="center">
-            <Col sm={12} md={11} lg={10} xl={9} xxl={7.25}>
+            <Col sm={12} md={11} lg={9.5} xl={8} xxl={6.25}>
               {/* Professional Experience */}
               <section className="element">
                 <Row justify="space-between" align="flex-end">
-                  <Col md={9}>
+                  <Col md={8.75}>
                     <h3>{data.professional.title}</h3>
                   </Col>
-                  <Col md={3}>
+                  <Col md={3.25}>
                     <Expand onClick={() => setToggle([!toggle[0], toggle[1]])}>
                       {toggle[0] ? "Collapse" : "Expand"} Details
                     </Expand>
@@ -279,12 +279,12 @@ const AboutPage = () => {
               {/* Co-Ops */}
               <section className="element">
                 <Row justify="space-between" align="flex-end">
-                  <Col md={9}>
+                  <Col md={8.75}>
                     <h3>{data.coop.title}</h3>
                   </Col>
-                  <Col md={3}>
+                  <Col md={3.25}>
                     <Expand onClick={() => setToggle([toggle[0], !toggle[1]])}>
-                      {toggle[0] ? "Collapse" : "Expand"} Details
+                      {toggle[1] ? "Collapse" : "Expand"} Details
                     </Expand>
                   </Col>
                 </Row>

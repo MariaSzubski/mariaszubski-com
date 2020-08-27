@@ -10,7 +10,7 @@ const SContainer = styled.div`
   margin-right: auto;
   position: relative;
 
-  padding: 0rem 1.5rem;
+  padding: ${props => props.$fluid ? "0rem" : "0rem 1.4rem"};
   max-width: auto;
   @media ${screen.min.sm} { max-width: ${props => props.$fluid ? "auto" : "54rem"}; }
   @media ${screen.min.md} { max-width: ${props => props.$fluid ? "auto" : "75rem"}; }

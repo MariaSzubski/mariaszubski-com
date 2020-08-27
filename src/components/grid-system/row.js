@@ -5,7 +5,7 @@ import styled from "styled-components"
 import { screen } from "../global/vars"
 
 const SRow = styled.div`
-  margin: 0rem -1.5rem;
+  margin: 0rem -1.4rem;
   display: flex;
   flex-wrap: ${props => (props.$nowrap ? "nowrap" : "wrap")};
   justify-content: ${props => props.$justify};

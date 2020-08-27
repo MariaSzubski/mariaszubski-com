@@ -5,7 +5,7 @@ import styled from "styled-components"
 import { screen } from "../global/vars"
 
 const SCol = styled.div`
-  padding: 0rem 1.5rem;
+  padding: 0rem 1.4rem;
   flex-grow: 0;
   flex-shrink: 0;
   min-height: 1px;
@@ -18,6 +18,7 @@ const SCol = styled.div`
   max-width: ${props => props.$xs[0]};
   flex-basis: ${props => props.$xs[0]};
   margin-left: ${props => props.$xs[1]};
+  
   @media ${screen.min.sm} {
     width: ${props => props.$sm[0]};
     width: ${props => props.$sm[0]};
@@ -48,7 +49,6 @@ const SCol = styled.div`
     flex-basis: ${props => props.$xxl[0]};
     margin-left: ${props => props.$xxl[1]};
   }
-
 `
 
 const Col = ({ children, offset, ...props }) => {
@@ -57,7 +57,8 @@ const Col = ({ children, offset, ...props }) => {
   let md = props.md || props.sm || props.xs || 12
   let lg = props.lg || props.md || props.sm || props.xs || 12
   let xl = props.xl || props.lg || props.md || props.sm || props.xs || 12
-  let xxl = props.xxl || props.xl || props.lg || props.md || props.sm || props.xs || 12
+  let xxl =
+    props.xxl || props.xl || props.lg || props.md || props.sm || props.xs || 12
 
   let $offset = {
     xs: offset.xs || 0,
@@ -65,12 +66,17 @@ const Col = ({ children, offset, ...props }) => {
     md: offset.md || offset.sm || offset.xs || 0,
     lg: offset.lg || offset.md || offset.sm || offset.xs || 0,
     xl: offset.xl || offset.lg || offset.md || offset.sm || offset.xs || 0,
-    xxl: offset.xxl || offset.xl || offset.lg || offset.md || offset.sm || offset.xs || 0,
+    xxl:
+      offset.xxl ||
+      offset.xl ||
+      offset.lg ||
+      offset.md ||
+      offset.sm ||
+      offset.xs ||
+      0,
   }
 
   const calculate = val => ((val / 12) * 100).toString().concat("%")
-
-
 
   return (
     <SCol

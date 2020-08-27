@@ -106,56 +106,59 @@ const SpeakingPage = props => {
           </hgroup>
 
           <section className="element">
-            <Row>
-              <Col>
-                <ImageGroup className="element-minor">
-                  {data.images.content.map(img => (
-                    <Img
-                      fluid={img.image.fluid}
-                      alt={img.alt}
-                      objectFit="cover"
-                      objectPosition="14% 50%"
-                      key={img.contentful_id}
-                    />
-                  ))}
-                </ImageGroup>
-              </Col>
-            </Row>
+            <ImageGroup className="element-minor">
+              {data.images.content.map(img => (
+                <Img
+                  fluid={img.image.fluid}
+                  alt={img.alt}
+                  objectFit="cover"
+                  objectPosition="14% 50%"
+                  key={img.contentful_id}
+                />
+              ))}
+            </ImageGroup>
           </section>
           {data.sections.modules.map((section, i) => (
             <section className="element" key={section.contentful_id}>
-              <Row>
-                <Col lg={12}>
-                  <Headline>{section.title}</Headline>
-                </Col>
-              </Row>
-              <Row>
-                <Col lg={9} xl={4}>
-                  <HTML content={section.copy} className="text-md" />
-                </Col>
-                <Col xl={7} offset={{ xl: 1 }}>
-                  <div className="background" style={{ padding: "2rem 0rem" }}>
-                    <h5 className="pad">{section.subtitle}</h5>
-                    {section.content
-                      .filter(c => c.__typename === "ContentfulTechTalk")
-                      .reverse()
-                      .map(talk => (
-                        <WorkshopCard
-                          compact
-                          workshop={talk}
-                          key={talk.contentful_id}
-                        />
-                      ))}
-                  </div>
-                </Col>
-              </Row>
+              <Container>
+                <Row>
+                  <Col lg={12}>
+                    <Headline>{section.title}</Headline>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col lg={9} xl={4}>
+                    <HTML content={section.copy} className="text-md" />
+                  </Col>
+                  <Col xl={7} offset={{ xl: 1 }}>
+                    <div
+                      className="background"
+                      style={{ padding: "2rem 0rem" }}
+                    >
+                      <h5 className="pad">{section.subtitle}</h5>
+                      {section.content
+                        .filter(c => c.__typename === "ContentfulTechTalk")
+                        .reverse()
+                        .map(talk => (
+                          <WorkshopCard
+                            compact
+                            workshop={talk}
+                            key={talk.contentful_id}
+                          />
+                        ))}
+                    </div>
+                  </Col>
+                </Row>
+              </Container>
             </section>
           ))}
-          <Row justify="center">
-            <Col md={4}>
-              <Link to="/contact">💁🏻‍♀️ Book me to speak at your event</Link>
-            </Col>
-          </Row>
+          <Container>
+            <Row justify="center">
+              <Col md={4}>
+                <Link to="/contact">💁🏻‍♀️ Book me to speak at your event</Link>
+              </Col>
+            </Row>
+          </Container>
         </Col>
       </Row>
     </Layout>
