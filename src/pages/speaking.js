@@ -120,7 +120,7 @@ const SpeakingPage = props => {
           </section>
           {data.sections.modules.map((section, i) => (
             <section className="element" key={section.contentful_id}>
-              <Container>
+              <Container fluid>
                 <Row>
                   <Col lg={12}>
                     <Headline>{section.title}</Headline>
@@ -133,15 +133,14 @@ const SpeakingPage = props => {
                   <Col xl={7} offset={{ xl: 1 }}>
                     <div
                       className="background"
-                      style={{ padding: "2rem 0rem" }}
+                      style={{ paddingTop: "2rem" }}
                     >
-                      <h5 className="pad">{section.subtitle}</h5>
+                      <h5 className="pad" style={{ color: colors.grape300 }}>{section.subtitle}</h5>
                       {section.content
                         .filter(c => c.__typename === "ContentfulTechTalk")
                         .reverse()
                         .map(talk => (
                           <WorkshopCard
-                            compact
                             workshop={talk}
                             key={talk.contentful_id}
                           />

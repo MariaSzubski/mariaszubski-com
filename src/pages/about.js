@@ -185,9 +185,11 @@ const AboutPage = () => {
     <Layout fluid>
       <Container>
         <section className="element">
-          <hgroup>
-            <h1>{data.about.title}</h1>
-          </hgroup>
+          <Row justify="center">
+            <hgroup>
+              <h1>{data.about.title}</h1>
+            </hgroup>
+          </Row>
           <Row justify="center">
             <Col md={10} lg={9.5} xl={8} xxl={6.25}>
               <HTML content={data.about.copy} className="text-md" />
@@ -201,7 +203,7 @@ const AboutPage = () => {
               </div>
             </Col>
           </Row>
-          <Row justify="center">
+          {/* <Row justify="center">
             <Col xs={5} md={3} xl={2}>
               <Img
                 fluid={data.about.content[0].image.fluid}
@@ -211,12 +213,12 @@ const AboutPage = () => {
                 `}
               />
             </Col>
-          </Row>
+          </Row> */}
         </section>
 
         <section className="element">
           <Row justify="center">
-            <Col sm={12} md={11} lg={9.5} xl={8} xxl={6.25}>
+            <Col sm={12} md={12} lg={9.5} xl={8} xxl={6.25}>
               {/* Professional Experience */}
               <section className="element">
                 <Row justify="space-between" align="flex-end">
@@ -253,8 +255,8 @@ const AboutPage = () => {
                     )}
                   </Col>
                 </Row>
-                <div className="background" style={{ padding: "2rem 0rem" }}>
-                  <h5 className="pad">Recent Tech Talks I&#39;ve Led</h5>
+                <div className="background" style={{ paddingTop: "2rem" }}>
+                  <h5 className="pad" style={{ color: colors.grape300 }}>Recent Tech Talks I&#39;ve Led</h5>
                   {data.volunteering.content[0].content
                     .filter(c => c.__typename === "ContentfulTechTalk")
                     .reverse()
@@ -262,7 +264,6 @@ const AboutPage = () => {
                       <WorkshopCard
                         workshop={workshop}
                         key={workshop.contentful_id}
-                        compact={false}
                       />
                     ))}
                 </div>
