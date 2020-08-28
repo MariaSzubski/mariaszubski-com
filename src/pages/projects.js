@@ -17,7 +17,7 @@ const ProjectsLandingPage = () => {
             title
             slug
             skills {
-              skill
+              skills
             }
             hero {
               fluid(maxWidth: 420, maxHeight: 200) {
@@ -41,7 +41,7 @@ const ProjectsLandingPage = () => {
             <ProjectCard
               title={card.node.title}
               summary={card.node.summary}
-              skills={card.node.skills[0].skill}
+              skills={card.node.skills[0].skills}
               hero={card.node.hero}
               permalink={`/projects/${card.node.slug}`}
             />

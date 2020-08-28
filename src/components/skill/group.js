@@ -25,7 +25,8 @@ const Skills = styled.div`
   flex-wrap: wrap;
   justify-content: ${props => (props.$center ? "center" : "flex-start")};
   > span {
-    width: ${props => (props.$simple || props.$transparent) ? "100%" : "calc(50% - 0.6rem)"};
+    width: ${props =>
+      props.$simple || props.$transparent ? "100%" : "calc(50% - 0.6rem)"};
     @media ${screen.min.sm} {
       width: auto;
     }
@@ -37,41 +38,53 @@ const SkillGroup = ({ children, ...props }) => (
     className={`
       ${props.simple ? "element-minor " : "element "}
       ${(props.theme === "transparent" || props.simple) && "tr"}
-      ${(props.theme === "light") && "lt"}
-      ${(props.theme === "dark") && "dk"}
+      ${props.theme === "light" && "lt"}
+      ${props.theme === "dark" && "dk"}
     `}
   >
-    {props.title && <h3 className="pad">{props.title}</h3>}
+    {!props.data ? (
+      <Skills
+        $center={props.center ? 1 : 0}
+        $simple={props.simple ? 1 : 0}
+        $transparent={props.theme === "transparent" ? 1 : 0}
+      >
+        {children}
+      </Skills>
+    ) : (
+      <>
+        {props.title && <h3 className="pad">{props.title}</h3>}
 
-    <Groups $simple={props.simple ? 1 : 0}>
-      {props.data &&
-        props.data.map((group, g_idx) => (
-          <div key={`${group.title}-skills-${g_idx}`}>
-            {props.simple ? (
-              <h2>{group.title}</h2>
-            ) : (
-              <h5 className="pad">{group.title}</h5>
-            )}
+        <Groups $simple={props.simple ? 1 : 0}>
+          {props.data &&
+            props.data.map((group, g_idx) => (
+              <div key={`${group.title}-skills-${g_idx}`}>
+                {props.simple ? (
+                  <h2>{group.title}</h2>
+                ) : (
+                  <h5 className="pad">{group.title}</h5>
+                )}
 
-            <Skills
-              $center={props.center ? 1 : 0}
-              $simple={props.simple ? 1 : 0}
-              $transparent={props.theme === "transparent" ? 1 : 0}
-            >
-              {group.skills.map((skill, s_idx) => (
-                <SkillTag
-                  key={`${group.title}-skill-${s_idx}`}
-                  icon={skill.icon && skill.icon}
-                  label={skill.label && skill.label}
-                  theme={props.theme}
-                  simple={props.simple}
-                  size={props.size}
-                />
-              ))}
-            </Skills>
-          </div>
-        ))}
-    </Groups>
+                <Skills
+                  $center={props.center ? 1 : 0}
+                  $simple={props.simple ? 1 : 0}
+                  $transparent={props.theme === "transparent" ? 1 : 0}
+                >
+                  {group.skills.map((skill, s_idx) => (
+                    <SkillTag
+                      key={`${group.title}-skill-${s_idx}`}
+                      icon={skill.icon && skill.icon}
+                      label={skill.label && skill.label}
+                      theme={props.theme}
+                      simple={props.simple}
+                      size={props.size}
+                    />
+                  ))}
+                </Skills>
+              </div>
+            ))}
+        </Groups>
+      </>
+    )}
   </section>
 )
 
@@ -83,7 +96,7 @@ SkillGroup.propTypes = {
   center: PropTypes.bool,
   children: PropTypes.node,
   simple: PropTypes.bool,
-  size: PropTypes.string
+  size: PropTypes.string,
 }
 
 SkillGroup.defaultProps = {

@@ -5,7 +5,7 @@ import styled from "styled-components"
 import { screen } from "../global/vars"
 
 const SCol = styled.div`
-  padding: 0rem 1.4rem;
+  padding: ${props => (props.$fluid ? "0rem" : "0rem 1.4rem")};
   flex-grow: 0;
   flex-shrink: 0;
   min-height: 1px;
@@ -18,7 +18,7 @@ const SCol = styled.div`
   max-width: ${props => props.$xs[0]};
   flex-basis: ${props => props.$xs[0]};
   margin-left: ${props => props.$xs[1]};
-  
+
   @media ${screen.min.sm} {
     width: ${props => props.$sm[0]};
     width: ${props => props.$sm[0]};
@@ -83,6 +83,7 @@ const Col = ({ children, offset, ...props }) => {
       $nowrap={props.nowrap ? 1 : 0}
       $justify={props.justify}
       $align={props.align}
+      $fluid={props.fluid ? 1 : 0}
       $xs={[calculate(xs), calculate($offset.xs)]}
       $sm={[calculate(sm), calculate($offset.sm)]}
       $md={[calculate(md), calculate($offset.md)]}
@@ -102,6 +103,7 @@ Col.propTypes = {
   align: PropTypes.string,
   children: PropTypes.node,
   offset: PropTypes.object,
+  fluid: PropTypes.bool,
   xs: PropTypes.number,
   sm: PropTypes.number,
   md: PropTypes.number,
@@ -114,6 +116,7 @@ Col.defaultProps = {
   nowrap: false,
   justify: "flex-start",
   align: "flex-start",
+  fluid: false,
   offset: {
     xs: null,
     sm: null,

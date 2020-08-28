@@ -5,7 +5,7 @@ import styled from "styled-components"
 import { screen } from "../global/vars"
 
 const SRow = styled.div`
-  margin: 0rem -1.4rem;
+  margin: ${props => (props.$fluid ? "0rem" : "0rem -1.4rem")};
   display: flex;
   flex-wrap: ${props => (props.$nowrap ? "nowrap" : "wrap")};
   justify-content: ${props => props.$justify};
@@ -19,6 +19,7 @@ const Row = ({ children, ...props }) => (
     $nowrap={props.nowrap ? 1 : 0}
     $justify={props.justify}
     $align={props.align}
+    $fluid={props.fluid ? 1 : 0}
     {...props}
   >
     {children}
@@ -30,12 +31,14 @@ Row.propTypes = {
   justify: PropTypes.string,
   align: PropTypes.string,
   children: PropTypes.node.isRequired,
+  fluid: PropTypes.bool,
 }
 
 Row.defaultProps = {
   nowrap: false,
   justify: "flex-start",
   align: "normal",
+  fluid: false,
 }
 
 export { Row }

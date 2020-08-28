@@ -53,7 +53,7 @@ const ProjectTemplate = props => {
                     <h5>{post.skills[0].title}</h5>
                   )}
                   <SkillList>
-                    {post.skills[0].skill.map((skill, i) => (
+                    {post.skills[0].skills.map((skill, i) => (
                       <SkillTag
                         icon={skill.toLowerCase()}
                         label={skill}
@@ -116,7 +116,7 @@ export const pageQuery = graphql`
         title
         displayLabel
         darkMode
-        skill
+        skills
       }
       desc {
         childMarkdownRemark {
