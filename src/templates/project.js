@@ -129,7 +129,7 @@ export const pageQuery = graphql`
         }
       }
       hero {
-        fluid(maxWidth: 1320, quality: 20) {
+        fluid(maxWidth: 980, quality: 75) {
           ...GatsbyContentfulFluid_withWebp_noBase64
         }
       }
