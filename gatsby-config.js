@@ -1,9 +1,18 @@
+const {
+  NODE_ENV,
+  URL: NETLIFY_SITE_URL = 'https://www.mariaszubski.com',
+  DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
+  CONTEXT: NETLIFY_ENV = NODE_ENV
+} = process.env;
+const isNetlifyProduction = NETLIFY_ENV === 'production';
+const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
+
 module.exports = {
   siteMetadata: {
     title: `Maria Szubski - Freelance Frontend Developer - Cincinnati, OH`,
     description: `Cincinnati, OH - Web Development Contractor - Available For Hire`,
     author: `Maria Szubski`,
-    siteUrl: "https://mariaszubski.com"
+    siteUrl: siteUrl
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -84,5 +93,26 @@ module.exports = {
         defer: true,
       },
     },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        resolveEnv: () => NETLIFY_ENV,
+        env: {
+          production: {
+            policy: [{ userAgent: '*', disallow: ['/projects', "/projects/**"]}]
+          },
+          'branch-deploy': {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+            sitemap: null,
+            host: null
+          },
+          'deploy-preview': {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+            sitemap: null,
+            host: null
+          }
+        }
+      }
+    }
   ],
 }
