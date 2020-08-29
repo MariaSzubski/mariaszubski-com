@@ -28,7 +28,7 @@ const SCol = styled(Col)`
     border-radius: 100%;
   }
 
-  @media ${screen.min.md} {
+  @media ${screen.min.lg} {
     &:not(first-of-type) {
       margin-top: 0rem;
     }
@@ -82,7 +82,7 @@ const CalloutsSection = props => {
             {data.callouts.content.map((callout, idx) => (
               <SCol
                 xs={10}
-                md={7}
+                sm={7}
                 lg={3.2}
                 offset={{ lg: idx === 0 ? 0 : 0.75 }}
                 key={callout.contentful_id}

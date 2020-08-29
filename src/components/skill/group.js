@@ -26,7 +26,7 @@ const Skills = styled.div`
   justify-content: ${props => (props.$center ? "center" : "flex-start")};
   > span {
     width: ${props =>
-      props.$simple || props.$transparent ? "100%" : "calc(50% - 0.6rem)"};
+      props.$simple ? "auto" : "calc(50% - 0.6rem)"};
     @media ${screen.min.sm} {
       width: auto;
     }

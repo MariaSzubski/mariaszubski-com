@@ -5,6 +5,10 @@ import styled from "styled-components"
 import { Container, Row, Col } from "../grid-system"
 import ProjectCard from "../projects"
 import Link from "../utilities/link"
+import WorkshopCard from "../experience/workshop"
+import Button from "../button"
+
+import { colors } from "../global/vars"
 
 const SRow = styled(Row)`
   padding-top: 8rem;
@@ -13,6 +17,10 @@ const SRow = styled(Row)`
 
 const ExpandCol = styled(Col)`
   text-align: center;
+  padding-top: 7rem;
+  font-size: 3.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
 `
 
 const FeaturedSection = () => {
@@ -34,6 +42,33 @@ const FeaturedSection = () => {
             hero {
               fluid(maxWidth: 420, maxHeight: 200) {
                 ...GatsbyContentfulFluid_withWebp_noBase64
+              }
+            }
+          }
+        }
+      }
+
+      talks: contentfulSection(
+        contentful_id: { eq: "6mmf8cY0iOAoc5KAWvSj79" }
+      ) {
+        title
+        contentful_id
+        copy {
+          childMarkdownRemark {
+            html
+          }
+        }
+        content {
+          ... on ContentfulSection {
+            contentful_id
+            subtitle
+            content {
+              ... on ContentfulTechTalk {
+                contentful_id
+                date(formatString: "MMM YYYY")
+                label
+                org
+                detailsLink
               }
             }
           }
@@ -61,7 +96,7 @@ const FeaturedSection = () => {
               </Col>
             ))}
             <ExpandCol md={12}>
-              <Link to="/projects">View More Projects</Link>
+              <Link to="/projects">View More</Link>
             </ExpandCol>
           </Row>
         </Container>

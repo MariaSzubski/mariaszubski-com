@@ -30,7 +30,8 @@ const global_styles = css`
       -webkit-background-size: cover;
       background-size: cover;
       background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.gray700} 100% );
-      ${"" /* background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.green500}  100% ); */}
+      background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.green500}  100% );
+      ${"" /* background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.green600}  100% ); */}
       ${"" /* background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.green700}  100% ); */}
       ${"" /* background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.blue500} 100% ); */}
       ${"" /* background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.grape500} 100% ); */}
@@ -75,6 +76,7 @@ const global_styles = css`
     text-decoration: none;
     ${"" /* position: relative; */}
     color: ${colors.blue200};
+    text-shadow: 1px 1px 3px ${colors.blue900};
     &:hover {
       text-decoration: underline;
     }
@@ -271,7 +273,7 @@ const global_styles = css`
   *.text-lg,
   .highlighted p:first-of-type,
   *.text-lg * {
-    font-size: 3.4rem;
+    font-size: 3rem;
     font-weight: 400;
     line-height: 145%;
   }

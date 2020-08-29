@@ -11,28 +11,28 @@ import Button from "../button"
 import { colors, screen } from "../global/vars"
 
 const SRow = styled(Row)`
-  min-height: 50vh;
+  min-height: 60vh;
+  padding-top: 5rem;
+  padding-bottom: 8rem;
   @media ${screen.min.xl} {
     min-height: 92vh;
   }
 `
 
 const HeadshotCol = styled(Col)`
-  opacity: 0.8;
+  opacity: 0.9;
 `
 
 const ContentCol = styled(Col)`
-  align-self: center;
-  margin-top: 5rem;
   max-width: 96rem;
   p {
     font-size: 2.4rem;
     line-height: 1.6;
     max-width: 80rem;
-    text-align: center;
-    margin: auto;
   }
   @media ${screen.min.md} {
+    align-self: center;
+    margin-top: 5rem;
     p {
       font-size: 3.8rem;
     }
@@ -47,7 +47,7 @@ const ContentCol = styled(Col)`
   }
   @media ${screen.min.xxl} {
     p {
-      font-size: 4.6rem;
+      font-size: 4.2rem;
     }
   }
 `
@@ -92,7 +92,7 @@ const HeroSection = props => {
   return (
     <SRow align="center" justify="center" fluid>
       <Show lg>
-        <HeadshotCol xs={12} lg={1} xl={3.5} xxl={3} fluid>
+        <HeadshotCol xs={12} lg={3} xl={3.5} xxl={3} fluid>
           <Img
             object-fit="contain"
             fluid={data.image.image.fluid}
@@ -103,10 +103,12 @@ const HeroSection = props => {
       </Show>
       <ContentCol
         xs={12}
+        sm={11}
+        md={10}
         lg={7.5}
         xl={6.8}
         xxl={6.5}
-        offset={{ xl: 0.5, xxl: 1 }}
+        offset={{ lg: 0.5, xl: 0.5, xxl: 1 }}
       >
         <HTML content={data.copy.copy} />
         <SkillGroup size="3.8rem" theme="transparent">

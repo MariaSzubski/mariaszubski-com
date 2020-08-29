@@ -6,7 +6,7 @@ import Img from "gatsby-image/withIEPolyfill"
 
 import Layout from "../components/layout"
 import HTML from "../components/utilities/html"
-import Link from "../components/utilities/link"
+import Button from "../components/button"
 import WorkshopCard from "../components/experience/workshop"
 
 import { Container, Row, Col } from "../components/grid-system"
@@ -118,6 +118,29 @@ const SpeakingPage = props => {
               ))}
             </ImageGroup>
           </section>
+          <Container>
+            <Row justify="center" style={{marginTop: "8rem"}}>
+              <Col xl={8.5}>
+                <p className="text-lg">
+                  I&#39;ve volunteered to speak at and organize non-profit
+                  events in the local tech community. These events tend to be
+                  beginner workshops on various topics related to web
+                  development.
+                </p>
+                <Button
+                  to="/contact"
+                  color="green"
+                  style={{
+                    display: "flex",
+                    width: "400px",
+                    margin: "3rem auto 0rem",
+                  }}
+                >
+                  Book Me to Speak at an Event
+                </Button>
+              </Col>
+            </Row>
+          </Container>
           {data.sections.modules.map((section, i) => (
             <section className="element" key={section.contentful_id}>
               <Container fluid>
@@ -131,11 +154,10 @@ const SpeakingPage = props => {
                     <HTML content={section.copy} className="text-md" />
                   </Col>
                   <Col xl={7} offset={{ xl: 1 }}>
-                    <div
-                      className="background"
-                      style={{ paddingTop: "2rem" }}
-                    >
-                      <h5 className="pad" style={{ color: colors.grape300 }}>{section.subtitle}</h5>
+                    <div className="background" style={{ paddingTop: "2rem" }}>
+                      <h5 className="pad" style={{ color: colors.grape300 }}>
+                        {section.subtitle}
+                      </h5>
                       {section.content
                         .filter(c => c.__typename === "ContentfulTechTalk")
                         .reverse()
@@ -151,13 +173,6 @@ const SpeakingPage = props => {
               </Container>
             </section>
           ))}
-          <Container>
-            <Row justify="center">
-              <Col md={4}>
-                <Link to="/contact">💁🏻‍♀️ Book me to speak at your event</Link>
-              </Col>
-            </Row>
-          </Container>
         </Col>
       </Row>
     </Layout>

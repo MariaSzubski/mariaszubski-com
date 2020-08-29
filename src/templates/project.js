@@ -10,6 +10,8 @@ import HTML from "../components/utilities/html"
 import Button from "../components/button"
 import { SkillList, SkillTag } from "../components/skill/list"
 
+import { colors } from "../components/global/vars"
+
 const Hero = styled(Img)`
   margin-bottom: 6rem;
 `
@@ -17,6 +19,7 @@ const Hero = styled(Img)`
 const Aside = styled.aside`
   padding: 2rem 2rem;
   margin-bottom: 2rem;
+  background-color: ${colors.black + "55"};
 `
 
 const ProjectTemplate = props => {
@@ -30,13 +33,13 @@ const ProjectTemplate = props => {
               <h1>{post.title}</h1>
               <h2>{post.summary}</h2>
             </hgroup>
-            {post.hero &&
+            {post.hero && (
               <Hero
                 fluid={post.hero.fluid}
                 alt={`${post.summary} - ${post.title}`}
                 object-fit="containe"
               />
-            }
+            )}
           </section>
         </Col>
       </Row>
@@ -48,9 +51,11 @@ const ProjectTemplate = props => {
                 <HTML content={post.desc} className="" />
               </Col>
               <Col lg={3} xl={3.25}>
-                <Aside className="background">
+                <Aside>
                   {post.skills[0].displayLabel && (
-                    <h5>{post.skills[0].title}</h5>
+                    <h5 style={{ color: colors.yellow }}>
+                      {post.skills[0].title}
+                    </h5>
                   )}
                   <SkillList>
                     {post.skills[0].skills.map((skill, i) => (
@@ -62,7 +67,7 @@ const ProjectTemplate = props => {
                     ))}
                   </SkillList>
                 </Aside>
-                <Aside className="background">
+                <Aside>
                   {post.links.map(link => (
                     <Button
                       to={link.url}

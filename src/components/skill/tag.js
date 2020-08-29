@@ -21,7 +21,6 @@ const StyledTag = styled.span`
 
   .tr & {
     padding: 0.5rem 1.2rem;
-    letter-spacing: 0.1rem;
     text-transform: uppercase;
     letter-spacing: 0.19rem;
     font-size: 1.7rem;
@@ -29,16 +28,18 @@ const StyledTag = styled.span`
   }
 
   .lt & {
-    background-color: ${props => props.$simple ? "transparent" : `${colors.white}EE`};
+    background-color: ${props =>
+      props.$simple ? "transparent" : `${colors.white}EE`};
     color: ${colors.black};
     padding: 1.8rem 1.4rem;
     height: 3rem;
   }
 
   .dk & {
-    background-color: ${colors.blue900 + "80"};
+    background-color: ${colors.blue900 + "88"};
     padding: 2rem 1.2rem;
     height: 3.4rem;
+    letter-spacing: 0.05rem;
   }
 
   &:hover {
@@ -53,7 +54,7 @@ const StyledTag = styled.span`
 
   @media ${screen.min.md} {
     font-size: 1.4rem;
-    margin: 0.3rem 0.6rem 0.3rem 0rem;
+    margin: 0.3rem 0.7rem 0.3rem 0rem;
 
     &:first-of-type {
       margin-left: 0rem;
@@ -76,7 +77,7 @@ const SkillTag = props => {
     <StyledTag title={props.label} $simple={props.simple} $size={props.size}>
       {Icon && (
         <StyledIcon>
-          <Icon light={(props.theme === "light" || props.theme === "transparent") ? 1 : 0} />
+          <Icon light={props.theme === "light" ? 1 : 0} />
         </StyledIcon>
       )}
       {!props.simple && <div className="text">{props.label || props.icon}</div>}
@@ -95,7 +96,7 @@ SkillTag.propTypes = {
 SkillTag.defaultProps = {
   theme: "dark",
   simple: false,
-  size: "2.2rem"
+  size: "2.2rem",
 }
 
 export default SkillTag

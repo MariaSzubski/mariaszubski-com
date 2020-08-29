@@ -39,9 +39,9 @@ const Expand = styled.h5`
 
 const StyledH4 = styled.h4`
   font-family: Milkshake;
-  margin-left: 28%;
+  margin-left: 20%;
   font-size: 4rem;
-  color: ${colors.pink500};
+  color: ${colors.gray100};
   font-weight: 300;
 `
 
@@ -192,15 +192,16 @@ const AboutPage = () => {
           </Row>
           <Row justify="center">
             <Col md={10} lg={9.5} xl={8} xxl={6.25}>
-              <HTML content={data.about.copy} className="text-md" />
-              <StyledH4>- Maria </StyledH4>
-              <div>
+              <HTML content={data.about.copy} className="" />
+              <StyledH4>
+                - Maria
+                <br />
                 <Email />
                 <Github />
                 <LinkedIn />
                 <Twitter />
                 <Resume />
-              </div>
+              </StyledH4>
             </Col>
           </Row>
           {/* <Row justify="center">
@@ -256,7 +257,9 @@ const AboutPage = () => {
                   </Col>
                 </Row>
                 <div className="background" style={{ paddingTop: "2rem" }}>
-                  <h5 className="pad" style={{ color: colors.grape300 }}>Recent Tech Talks I&#39;ve Led</h5>
+                  <h5 className="pad" style={{ color: colors.grape300 }}>
+                    Recent Tech Talks I&#39;ve Led
+                  </h5>
                   {data.volunteering.content[0].content
                     .filter(c => c.__typename === "ContentfulTechTalk")
                     .reverse()
@@ -267,11 +270,15 @@ const AboutPage = () => {
                       />
                     ))}
                 </div>
-                <div className="element" style={{ textAlign: "center" }}>
+                <div style={{ textAlign: "center", marginTop: "5rem" }}>
                   <Link to="/speaking">
-                    <h4>{"🙋🏻See other Tech Events I've volunteered with >"}</h4>
+                    <h4>{"View More ->"}</h4>
                   </Link>
-                  <Button to="/contact" color="green" fill>
+                  <Button
+                    to="/contact"
+                    color="green"
+                    style={{ marginTop: "2rem" }}
+                  >
                     Book Me to Speak at an Event
                   </Button>
                 </div>

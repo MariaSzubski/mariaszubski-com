@@ -14,6 +14,7 @@ const Wrapper = styled(Link)`
   border-radius: 0.5rem;
   overflow: hidden;
   margin: 1.4rem 0rem;
+  text-shadow: none;
   transform: scale(1) translateY(0rem);
   transition: all 0.1s ease-in;
   background: ${g.colors.white + "EE"};
@@ -76,7 +77,7 @@ const Skills = props => {
           icon={tag.toLowerCase()}
           simple={true}
           size="1.8rem"
-          light={true}
+          theme={props.theme}
           key={`${props.title}-tag-${idx}`}
         />
       ))}
@@ -104,6 +105,7 @@ const ProjectCard = props => (
 Skills.propTypes = {
   title: PropTypes.string.isRequired,
   skills: PropTypes.array,
+  theme: PropTypes.string,
 }
 
 ProjectCard.propTypes = {
