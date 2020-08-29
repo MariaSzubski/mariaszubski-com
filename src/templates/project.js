@@ -90,13 +90,6 @@ const ProjectTemplate = props => {
 }
 
 ProjectTemplate.propTypes = {
-  summary: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  org: PropTypes.string,
-  links: PropTypes.array,
-  skills: PropTypes.array,
-  desc: PropTypes.object,
-  hero: PropTypes.string,
   data: PropTypes.object,
 }
 

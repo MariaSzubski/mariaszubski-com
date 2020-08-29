@@ -53,7 +53,7 @@ const ExpCard = props => (
         <Col md={props.toggle ? 12 : 3.9}>
           {props.job.dateRange.map((date, idx) => (
             <Meta
-              key={`${props.key}-${idx}`}
+              key={`${props.job.title}-${idx}`}
               toggle={props.toggle}
               date={date}
               idx={idx}
@@ -68,7 +68,6 @@ const ExpCard = props => (
 
 ExpCard.propTypes = {
   toggle: PropTypes.bool,
-  key: PropTypes.string.isRequired,
   job: PropTypes.shape({
     title: PropTypes.string.isRequired,
     companyName: PropTypes.string.isRequired,

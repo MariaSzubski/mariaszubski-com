@@ -26,8 +26,9 @@ import { colors, screen } from "../components/global/vars"
 const Expand = styled.h5`
   text-align: left;
   user-select: none;
-  margin-bottom: 3.6rem;
+  margin-bottom: 4.2rem;
   color: ${colors.blue200};
+  text-shadow: 1px 1px 3px ${colors.blue900};
   &:hover {
     cursor: pointer;
   }
@@ -200,11 +201,11 @@ const AboutPage = () => {
                 <Github />
                 <LinkedIn />
                 <Twitter />
-                <Resume />
+                {/* <Resume /> */}
               </StyledH4>
             </Col>
           </Row>
-          {/* <Row justify="center">
+          <Row justify="center">
             <Col xs={5} md={3} xl={2}>
               <Img
                 fluid={data.about.content[0].image.fluid}
@@ -214,7 +215,7 @@ const AboutPage = () => {
                 `}
               />
             </Col>
-          </Row> */}
+          </Row>
         </section>
 
         <section className="element">
