@@ -25,6 +25,9 @@ import { colors, screen } from "../components/global/vars"
 
 // NEW SECTIONS
 import HeroSection from "../components/home/hero"
+import StatsSection from "../components/home/stats"
+import CalloutsSection from "../components/home/callouts"
+import FeaturedSection from "../components/home/featured"
 
 
 
@@ -34,6 +37,11 @@ const IndexPage = () => (
   <Layout fluid>
     <SEO title="Home" />
     <HeroSection />
+    <StatsSection />
+    <p className="text-lg">This is a short blurb about what I offer and who I work with.</p>
+    <CalloutsSection />
+    <FeaturedSection />
+    <Contact />
 
 
     {/* <Row justify="center" align="flex-start">
