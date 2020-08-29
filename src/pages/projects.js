@@ -31,7 +31,7 @@ const ProjectsLandingPage = () => {
   `)
   const cards = data.allContentfulProject.edges
   return (
-    <Layout>
+    <Layout title="Example Projects & Case Studies">
       <hgroup>
         <h1>Recent Projects</h1>
       </hgroup>

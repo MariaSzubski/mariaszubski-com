@@ -98,7 +98,7 @@ const SpeakingPage = props => {
     }
   `)
   return (
-    <Layout>
+    <Layout title="Guest Speaking, Panels, & Workshops">
       <Row justify="center">
         <Col xl={10}>
           <hgroup className="element">

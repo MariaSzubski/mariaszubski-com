@@ -182,7 +182,7 @@ const AboutPage = () => {
   `)
   let [toggle, setToggle] = useState([false, false])
   return (
-    <Layout fluid>
+    <Layout fluid title="About Me - Bio">
       <Container>
         <section className="element">
           <Row justify="center">

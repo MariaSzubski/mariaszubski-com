@@ -1,8 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Maria Szubski - Freelance Front End Developer - Cincinnati, OH`,
-    description: `Cincinnati, OH - Web Development Contractor`,
-    author: `Maria Szubski Digital, LLC`,
+    title: `Maria Szubski - Freelance Frontend Developer - Cincinnati, OH`,
+    description: `Cincinnati, OH - Web Development Contractor - Available For Hire`,
+    author: `Maria Szubski`,
+    siteUrl: "https://mariaszubski.com"
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
