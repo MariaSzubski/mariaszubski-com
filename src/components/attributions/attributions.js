@@ -15,7 +15,7 @@ const Desc = styled.ul`
 
 `
 
-const ContactSection = props => {
+const AttributionsSection = props => {
   return (
     <Row
       align="center"
@@ -92,4 +92,4 @@ const ContactSection = props => {
   )
 }
 
-export default ContactSection
+export default AttributionsSection

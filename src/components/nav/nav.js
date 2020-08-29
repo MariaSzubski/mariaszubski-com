@@ -106,12 +106,6 @@ const Nav = () => (
     </Link>
     <Show md>
       <Desktop className="text-sm">
-        <StyledLink to="/type-spec" activeClassName="active">
-          Type Spec
-        </StyledLink>
-        <StyledLink to="/blog" activeClassName="active">
-          Blog
-        </StyledLink>
         <StyledLink to="/about" activeClassName="active">
           About
         </StyledLink>
