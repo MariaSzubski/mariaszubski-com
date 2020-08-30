@@ -11,12 +11,12 @@ const SContainer = styled.div`
   position: relative;
 
   padding: ${props => props.$fluid ? "0rem" : "0rem 1.4rem"};
-  max-width: auto;
-  @media ${screen.min.sm} { max-width: ${props => props.$fluid ? "auto" : "54rem"}; }
-  @media ${screen.min.md} { max-width: ${props => props.$fluid ? "auto" : "75rem"}; }
-  @media ${screen.min.lg} { max-width: ${props => props.$fluid ? "auto" : "96rem"}; }
-  @media ${screen.min.xl} { max-width: ${props => props.$fluid ? "auto" : "114rem"}; }
-  @media ${screen.min.xxl} { max-width: ${props => props.$fluid ? "auto" : "154rem"}; }
+  max-width: none;
+  @media ${screen.min.sm} { max-width: ${props => props.$fluid ? "none" : "54rem"}; }
+  @media ${screen.min.md} { max-width: ${props => props.$fluid ? "none" : "75rem"}; }
+  @media ${screen.min.lg} { max-width: ${props => props.$fluid ? "none" : "96rem"}; }
+  @media ${screen.min.xl} { max-width: ${props => props.$fluid ? "none" : "114rem"}; }
+  @media ${screen.min.xxl} { max-width: ${props => props.$fluid ? "none" : "154rem"}; }
 `
 
 const Container = ({ children, ...props }) => (

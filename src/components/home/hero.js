@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import Img from "gatsby-image/withIEPolyfill"
 
-import { Row, Col, Show } from "../grid-system"
+import { Row, Col } from "../grid-system"
 import HTML from "../utilities/html"
 import { SkillGroup, SkillTag } from "../skill"
 import Button from "../button"
@@ -20,7 +20,12 @@ const SRow = styled(Row)`
 `
 
 const HeadshotCol = styled(Col)`
+  display: none;
   opacity: 0.85;
+
+  @media ${screen.min.lg} {
+    display: block;
+  }
 `
 
 const ContentCol = styled(Col)`

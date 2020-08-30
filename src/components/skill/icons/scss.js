@@ -1,6 +1,6 @@
 import React from "react"
 
-const Scss = props => (
+const Scss = ({light, ...props}) => (
   <svg
     width="1em"
     height="1em"

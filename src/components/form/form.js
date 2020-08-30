@@ -16,7 +16,7 @@ const Form = ({ config, source, ...props }) => {
     <label htmlFor={opts.name} key={opts.contentful_id}>
       {opts.placeholder}
       <input
-        type={opts.type}
+        type={opts.type === "input" ? "text" : opts.type}
         name={opts.name}
         required={opts.required}
         placeholder=" "

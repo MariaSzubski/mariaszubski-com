@@ -1,6 +1,6 @@
 import React from "react"
 
-const Graphql = props => (
+const Graphql = ({ light, ...props })  => (
   <svg
     width="1em"
     height="1em"
