@@ -9,10 +9,14 @@ import ProjectCard from "../components/projects"
 const ProjectsLandingPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulProject(sort: { order: DESC, fields: date }) {
-        edges {
-          node {
+      project: contentfulSection(
+        contentful_id: { eq: "4m08XL6AKd6Shb8rtGoiYH" }
+      ) {
+        contentful_id
+        content {
+          ... on ContentfulProject {
             contentful_id
+            password
             summary
             title
             slug
@@ -20,7 +24,7 @@ const ProjectsLandingPage = () => {
               skills
             }
             hero {
-              fluid(maxWidth: 420, maxHeight: 200) {
+              fluid(maxWidth: 470, maxHeight: 220, quality: 80) {
                 ...GatsbyContentfulFluid_withWebp_noBase64
               }
             }
@@ -29,24 +33,26 @@ const ProjectsLandingPage = () => {
       }
     }
   `)
-  const cards = data.allContentfulProject.edges
   return (
-    <Layout>
+    <Layout title="Example Projects & Case Studies">
       <hgroup>
         <h1>Recent Projects</h1>
       </hgroup>
       <Row>
-        {cards.map(card => (
-          <Col md={6} xl={4} key={card.node.contentful_id}>
-            <ProjectCard
-              title={card.node.title}
-              summary={card.node.summary}
-              skills={card.node.skills[0].skills}
-              hero={card.node.hero}
-              permalink={`/projects/${card.node.slug}`}
-            />
-          </Col>
-        ))}
+        {data.project.content.map(card => {
+          if (card.password) return null
+          return (
+            <Col md={6} xl={4} key={card.contentful_id}>
+              <ProjectCard
+                title={card.title}
+                summary={card.summary}
+                skills={card.skills[0].skills}
+                hero={card.hero}
+                permalink={`/projects/${card.slug}`}
+              />
+            </Col>
+          )
+        })}
       </Row>
     </Layout>
   )

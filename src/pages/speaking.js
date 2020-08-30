@@ -61,7 +61,7 @@ const SpeakingPage = props => {
             contentful_id
             alt
             image {
-              fluid(maxWidth: 400, maxHeight: 400, quality: 100) {
+              fluid(maxWidth: 240, maxHeight: 240, quality: 70) {
                 ...GatsbyContentfulFluid_withWebp
               }
             }
@@ -98,7 +98,7 @@ const SpeakingPage = props => {
     }
   `)
   return (
-    <Layout>
+    <Layout title="Guest Speaking, Panels, & Workshops">
       <Row justify="center">
         <Col xl={10}>
           <hgroup className="element">

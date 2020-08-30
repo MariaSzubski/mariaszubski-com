@@ -25,7 +25,7 @@ const Aside = styled.aside`
 const ProjectTemplate = props => {
   const post = props.data.contentfulProject
   return (
-    <Layout>
+    <Layout title={`${post.title} - ${post.summary}`}>
       <Row justify="center">
         <Col xxl={10.5}>
           <section className="element">
@@ -90,13 +90,6 @@ const ProjectTemplate = props => {
 }
 
 ProjectTemplate.propTypes = {
-  summary: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  org: PropTypes.string,
-  links: PropTypes.array,
-  skills: PropTypes.array,
-  desc: PropTypes.object,
-  hero: PropTypes.string,
   data: PropTypes.object,
 }
 
@@ -129,7 +122,7 @@ export const pageQuery = graphql`
         }
       }
       hero {
-        fluid {
+        fluid(maxWidth: 980, quality: 75) {
           ...GatsbyContentfulFluid_withWebp_noBase64
         }
       }

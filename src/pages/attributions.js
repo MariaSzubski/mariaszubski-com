@@ -6,7 +6,7 @@ import Layout from "../components/layout"
 import Attributions from "../components/attributions"
 
 const AttributionsPage = props => (
-  <Layout fluid>
+  <Layout fluid title="Asset Credits">
     <Attributions />
   </Layout>
 )

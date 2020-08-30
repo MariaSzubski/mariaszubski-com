@@ -26,8 +26,9 @@ import { colors, screen } from "../components/global/vars"
 const Expand = styled.h5`
   text-align: left;
   user-select: none;
-  margin-bottom: 3.6rem;
+  margin-bottom: 4.2rem;
   color: ${colors.blue200};
+  text-shadow: 1px 1px 3px ${colors.blue900};
   &:hover {
     cursor: pointer;
   }
@@ -56,17 +57,6 @@ const AboutPage = () => {
         copy {
           childMarkdownRemark {
             html
-          }
-        }
-        content {
-          ... on ContentfulImage {
-            id
-            alt
-            image {
-              fluid(maxWidth: 2400, quality: 100) {
-                ...GatsbyContentfulFluid_withWebp
-              }
-            }
           }
         }
       }
@@ -182,7 +172,7 @@ const AboutPage = () => {
   `)
   let [toggle, setToggle] = useState([false, false])
   return (
-    <Layout fluid>
+    <Layout fluid title="About Me - Bio">
       <Container>
         <section className="element">
           <Row justify="center">
@@ -200,7 +190,7 @@ const AboutPage = () => {
                 <Github />
                 <LinkedIn />
                 <Twitter />
-                <Resume />
+                {/* <Resume /> */}
               </StyledH4>
             </Col>
           </Row>

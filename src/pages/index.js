@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components"
 
 import Layout from "../components/layout"
-import SEO from "../components/layout/seo"
 // import { SkillGroup } from "../components/skill"
 // import Testimonials from "../components/testimonials"
 
@@ -18,8 +17,7 @@ import FeaturedSection from "../components/home/featured"
 import Contact from "../components/contact"
 
 const IndexPage = () => (
-  <Layout fluid>
-    <SEO title="Home" />
+  <Layout fluid title="Home Page - Available For Hire">
     <HeroSection />
     <div style={{ background: colors.black + "33" }}>
       <StatsSection />

@@ -8,7 +8,7 @@ import Contact from "../components/contact"
 const ContactPage = props => {
 
   return (
-    <Layout fluid>
+    <Layout fluid title="Contact Form">
       <Contact />
     </Layout>
   )

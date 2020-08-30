@@ -6,8 +6,7 @@ import { Row, Col } from "../components/grid-system"
 import Link from "../components/utilities/link"
 
 const NotFoundPage = () => (
-  <Layout fluid>
-    <SEO title="404: Not found" />
+  <Layout fluid title="404: Page Not Found">
     <Row
       align="center"
       justify="center"
