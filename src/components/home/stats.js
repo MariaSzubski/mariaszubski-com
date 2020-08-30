@@ -20,7 +20,7 @@ const BioCol = styled(Col)`
 const StatsCol = styled(Col)`
   margin-top: 3rem;
   z-index: 100;
-  background-color: ${colors.black};
+  background-color: #0C151D;
   padding: 3rem 2rem 4rem 2rem;
   border-radius: 0.6rem;
   text-align: center;
@@ -73,7 +73,7 @@ const StatsSection = props => {
   `)
   return (
     <Row justify="center" fluid>
-      <StatsCol xs={10} sm={8} md={9.5} lg={8} xl={6.75} xxl={5.8} fluid>
+      <StatsCol xs={9.5} sm={8} md={9.5} lg={8} xl={6.75} xxl={5.8} fluid>
         <Container>
           <Row>
             {data.stats.content.map((stat, idx) => (
@@ -95,10 +95,10 @@ const StatsSection = props => {
         </Container>
       </StatsCol>
 
-      <BioCol className="element">
+      <BioCol>
         <Container>
-          <Row justify="center" style={{ paddingBottom: "4rem" }}>
-            <Col xl={10} xxl={7}>
+          <Row justify="center" style={{ paddingTop: "8rem", paddingBottom: "10rem" }}>
+            <Col lg={10} xl={8.5} xxl={7}>
               <HTML content={data.stats.copy} className="highlighted" />
             </Col>
           </Row>

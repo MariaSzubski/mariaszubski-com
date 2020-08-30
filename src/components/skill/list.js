@@ -5,20 +5,6 @@ import styled from "styled-components"
 import { screen, colors } from "../global/vars"
 import SkillTag from "./tag"
 
-const Groups = styled.div`
-  padding: 4rem 1rem;
-  margin: 0rem -2rem;
-
-  > div:not(:last-of-type) {
-    margin-bottom: 4rem;
-  }
-
-  @media ${screen.min.md} {
-    padding: 4rem 3rem;
-    margin: 0rem;
-  }
-`
-
 const StyledList = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -27,10 +13,17 @@ const StyledList = styled.div`
   > span {
     margin-right: 0rem;
   }
+
+  @media ${screen.min.sm} and ${screen.max.lg} {
+    flex-direction: row;
+    > span {
+      margin-right: 0.6rem;
+    }
+  }
 `
 
 const SkillList = ({ children, ...props }) => (
-  <StyledList className={`element ${props.light ? "lt" : "dk"}`}>
+  <StyledList className={`${props.light ? "lt" : "dk"}`}>
     {children}
   </StyledList>
 )

@@ -13,7 +13,7 @@ import { colors, screen } from "../global/vars"
 const SRow = styled(Row)`
   padding-top: 8rem;
   padding-bottom: 8rem;
-  min-height: 100vh;
+  min-height: 80vh;
 `
 
 const SCol = styled(Col)`
@@ -82,7 +82,8 @@ const CalloutsSection = props => {
             {data.callouts.content.map((callout, idx) => (
               <SCol
                 xs={10}
-                sm={7}
+                sm={8.5}
+                md={7}
                 lg={3.2}
                 offset={{ lg: idx === 0 ? 0 : 0.75 }}
                 key={callout.contentful_id}

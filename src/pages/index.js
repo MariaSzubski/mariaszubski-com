@@ -19,11 +19,13 @@ import Contact from "../components/contact"
 const IndexPage = () => (
   <Layout fluid title="Home Page - Available For Hire">
     <HeroSection />
-    <div style={{ background: colors.black + "33" }}>
+    {/* <div style={{ background: colors.black + "33" }}> */}
+    <div style={{ background: colors.black + "99" }}>
       <StatsSection />
     </div>
     <CalloutsSection />
-    <div style={{ background: colors.black + "33" }}>
+    {/* <div style={{ background: colors.black + "33" }}> */}
+    <div style={{ background: colors.black + "99" }}>
       <FeaturedSection />
     </div>
     {/* <SkillGroup title="Skills" data={data} /> */}

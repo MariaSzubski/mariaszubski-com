@@ -100,7 +100,7 @@ const SpeakingPage = props => {
   return (
     <Layout title="Guest Speaking, Panels, & Workshops">
       <Row justify="center">
-        <Col xl={10}>
+        <Col xxl={10}>
           <hgroup className="element">
             <h1>{data.sections.title}</h1>
           </hgroup>
@@ -132,7 +132,7 @@ const SpeakingPage = props => {
                   color="green"
                   style={{
                     display: "flex",
-                    width: "400px",
+                    maxWidth: "400px",
                     margin: "3rem auto 0rem",
                   }}
                 >
@@ -150,10 +150,10 @@ const SpeakingPage = props => {
                   </Col>
                 </Row>
                 <Row>
-                  <Col lg={9} xl={4}>
+                  <Col lg={9} xl={4.1}>
                     <HTML content={section.copy} className="text-md" />
                   </Col>
-                  <Col xl={7} offset={{ xl: 1 }}>
+                  <Col xl={7.4} offset={{ xl: 0.5 }}>
                     <div className="background" style={{ paddingTop: "2rem" }}>
                       <h5 className="pad" style={{ color: colors.grape300 }}>
                         {section.subtitle}

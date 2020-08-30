@@ -16,7 +16,7 @@ import Github from "../social/github"
 import { colors, screen } from "../global/vars"
 
 const Wrapper = styled.div`
-  margin: 5rem 0rem;
+  margin: 8rem 0rem;
 `
 
 const Desc = styled(HTML)`
@@ -33,7 +33,7 @@ const Desc = styled(HTML)`
 `
 
 const ContactH3 = styled.h3`
-  margin-top: 8rem;
+  margin-top: 10rem;
   &:after {
     background-color: ${colors.green300};
     animation-delay: 1.8s;
@@ -70,11 +70,12 @@ const ContactSection = props => {
         <Container>
           <Row align="center" style={{ minHeight: "80vh" }}>
             <Col
+              xs={11.2}
               md={10}
               lg={5.5}
               xl={5}
               xxl={4}
-              offset={{ md: 1, lg: 0.5, xl: 0.5, xxl: 1.5 }}
+              offset={{ xs: 0.4, md: 1, lg: 0.5, xl: 0.5, xxl: 1.5 }}
             >
               <hgroup>
                 <h3>Let&#39;s Work Together!</h3>
@@ -86,11 +87,12 @@ const ContactSection = props => {
               <Twitter />
             </Col>
             <Col
+              xs={11.2}
               md={10}
               lg={5}
               xl={5}
               xxl={3.75}
-              offset={{ md: 1, lg: 0.25, xl: 0.5, xxl: 1 }}
+              offset={{ xs: 0.4, md: 1, lg: 0.25, xl: 0.5, xxl: 1 }}
             >
               <Hide lg>
                 <ContactH3>Contact Form</ContactH3>

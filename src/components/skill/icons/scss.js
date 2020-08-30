@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 
 const Scss = ({light, ...props}) => (
   <svg
@@ -14,5 +15,13 @@ const Scss = ({light, ...props}) => (
     />
   </svg>
 )
+
+Scss.propTypes = {
+  light: PropTypes.number,
+}
+
+Scss.defaultProps = {
+  light: 0,
+}
 
 export default Scss

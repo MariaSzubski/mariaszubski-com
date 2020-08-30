@@ -9,11 +9,11 @@ import SkillTag from "../skill/tag"
 import Link from "../utilities/link/link"
 
 const Wrapper = styled(Link)`
-  display: block;
+  display: flex;
   box-shadow: 0px 0.4rem 1rem rgba(0, 0, 20, 0.5);
   border-radius: 0.5rem;
   overflow: hidden;
-  margin: 1.4rem 0rem;
+  margin: 0.7rem 0rem;
   text-shadow: none;
   transform: scale(1) translateY(0rem);
   transition: all 0.1s ease-in;
@@ -27,40 +27,84 @@ const Wrapper = styled(Link)`
   @media ${g.screen.min.sm} {
     margin: 1.4rem 0rem;
   }
+  @media ${g.screen.min.lg} {
+    flex-direction: column;
+    margin: 1.4rem 0rem;
+  }
 `
 
 const Hero = styled.div`
-  padding: 4.8rem 0.4rem;
+  padding: 3rem 0rem;
+  height: 100%;
+  flex: 0 0 35%;
+  width: 35%;
+
+
+  @media ${g.screen.min.lg} {
+    padding: 4.8rem 0.4rem;
+    height: auto;
+    flex: 1 1 100%;
+    width: auto;
+  }
 `
 
 const Details = styled.div`
+  flex: 0 0 65%;
+  width: 65%;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   padding: 2rem;
   background: #ffffff;
 
-  > span {
-    display: inline-block;
-    margin-right: 0.5rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
   h4 {
     color: ${g.colors.blue700};
+    font-size: 1.9rem;
+    margin-bottom: 0.6rem;
+    line-height: 1.3;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: 1.9rem;
-    margin-bottom: 0.2rem;
   }
 
   &,
   h6 {
     color: ${g.colors.blue700};
     font-weight: 600;
+  }
+
+  h6 {
+    margin-bottom: 1.2rem;
+  }
+
+  @media ${g.screen.min.lg} {
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex: 1 1 auto;
+    width: auto;
+
+    > span {
+      display: inline-block;
+      margin-right: 0.5rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    h4 {
+      color: ${g.colors.blue700};
+      font-size: 1.9rem;
+      margin-bottom: 0.2rem;
+      line-height: 1.55;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    h6 {
+      margin-bottom: 0rem;
+    }
   }
 `
 
@@ -76,7 +120,7 @@ const Skills = props => {
         <SkillTag
           icon={tag.toLowerCase()}
           simple={true}
-          size="1.8rem"
+          size="2.4rem"
           theme={props.theme}
           key={`${props.title}-tag-${idx}`}
         />
@@ -97,7 +141,11 @@ const ProjectCard = props => (
         <h4 title={props.title}>{props.title}</h4>
         <h6>{props.summary}</h6>
       </span>
-      <Skills skills={props.skills} title={props.title} theme="light" />
+      <Skills
+        skills={props.skills}
+        title={props.title}
+        theme="light"
+      />
     </Details>
   </Wrapper>
 )

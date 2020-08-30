@@ -7,24 +7,30 @@ import icons from "./icons"
 import Github from "./icons/github"
 
 const StyledIcon = styled.span`
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
 `
 
 const StyledTag = styled.span`
   border-radius: 0.4rem;
   display: flex;
   align-items: center;
-  margin: 0.3rem;
+  margin: 0.3rem 0.3rem 0.3rem 0rem;
   font-weight: 700;
   text-transform: capitalize;
-  font-size: 1rem;
+  font-size: 1.4rem;
 
   .tr & {
-    padding: 0.5rem 1.2rem;
+    padding: 0.5rem 0rem;
     text-transform: uppercase;
     letter-spacing: 0.19rem;
     font-size: 1.7rem;
     color: ${colors.white};
+    margin-right: 2.6rem;
+  }
+
+  &:last-of-type {
+    margin-right: 0rem;
   }
 
   .lt & {
@@ -47,9 +53,10 @@ const StyledTag = styled.span`
   }
 
   ${StyledIcon} > * {
-    height: 2.4rem;
-    width: 2.4rem;
-    margin-right: ${props => (props.$simple ? "0rem" : "1.1rem")};
+    height: 2rem;
+    width: 2rem;
+    margin-right: ${props => (props.$simple ? "0.5rem" : "1.1rem")};
+    margin-left: 0rem;
   }
 
   @media ${screen.min.md} {
@@ -63,11 +70,14 @@ const StyledTag = styled.span`
       margin-right: 0rem;
     }
 
-    ${StyledIcon}:not(:last-of-type) > * {
-      margin-right: ${props => (props.$simple ? "0.2rem" : "0.9rem")};
+    ${StyledIcon} > * {
       height: ${props => props.$size};
       width: ${props => props.$size};
+
+      margin-left: ${props => (props.$simple ? "0rem" : "1.1rem")};
+      margin-right:${props => (props.$simple ? "0rem" : "0.7rem")};
     }
+
   }
 `
 

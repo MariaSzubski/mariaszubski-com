@@ -30,7 +30,7 @@ const global_styles = css`
       -webkit-background-size: cover;
       background-size: cover;
       background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.gray700} 100% );
-      background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.green500}  100% );
+      ${"" /* background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.green500}  100% ); */}
       ${"" /* background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.green600}  100% ); */}
       ${"" /* background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.green700}  100% ); */}
       ${"" /* background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.blue500} 100% ); */}
