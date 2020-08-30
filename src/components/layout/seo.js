@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-import { useStaticQuery, graphql } from 'gatsby'
+import React, { useState, useEffect } from "react"
+import PropTypes from "prop-types"
+import Helmet from "react-helmet"
+import { useStaticQuery, graphql } from "gatsby"
 
 function SEO({ description, lang, meta, title }) {
   const { site } = useStaticQuery(
@@ -31,7 +31,7 @@ function SEO({ description, lang, meta, title }) {
         lang,
       }}
       bodyAttributes={{
-        class: loaded ? 'loaded' : '',
+        class: loaded ? "loaded" : "",
       }}
       title={title}
       titleTemplate={`${site.siteMetadata.title}`}

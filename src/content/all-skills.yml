@@ -1,58 +1,30 @@
 ---
-- title: Technologies
+- title: Languages & Frameworks
   skills:
     - icon: javascript
-      label: JavaScript / ES6+
-    - icon: reactjs
-      label: react
+    - icon: react
     - icon: vue
     - icon: gatsby
     - icon: graphql
-      label: grapQL
-    - icon: git
     - icon: webpack
-    - icon: netlify
-    - icon: storybook
-      label: StorybookJS
     - icon: nuxt
     - icon: middleman
-    - icon: html5
-      label: HTML5
-    - icon: css3
-      label: CSS3
-    - icon: scss
-      label: SCSS
-    - icon: styledcomp
-      label: Styled Components
-    - icon: yaml
-      label: YAML
     - icon: bootstrap
-    - icon: jquery
-      label: jQuery
-    - icon: less
-      label: LESS
-    - icon: python
     - icon: ruby
-
-- title: Tools & Concepts
+- title: Platforms
   skills:
-    - icon: git
+    - icon: shopify
+    - icon: datocms
+    - icon: contentful
+    - icon: netlify
     - icon: github
-      label: GitHub
-    - icon: w3c
-      label: Accessibility
-    - icon: node
-    - icon: npm
-      label: NPM
+- title: Tools
+  skills:
+    - icon: scss
+    - icon: git
+    - icon: "styled components"
+    - icon: storybookjs
+    - icon: webpack
+    - icon: less
     - icon: yarn
-    - icon: grunt
-    - icon: gulp
-    - icon: invision
-      label: InVision
-    - icon: illustrator
-      label: Adobe Illustrator
-    - icon: photoshop
-      label: Adobe Photoshop
-    - label: Responsive Design
-    - label: Usability
-    - label: UX Testing
+    - icon: npm

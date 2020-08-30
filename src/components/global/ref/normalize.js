@@ -352,7 +352,6 @@ const normalize = css`
   [hidden] {
     display: none;
   }
-
 `
 
 export default normalize

@@ -1,0 +1,8 @@
+---
+- title: Handcrafted with
+  skills:
+    - icon: gatsby
+    - icon: react
+    - icon: contentful
+    - icon: graphql
+    - icon: netlify
