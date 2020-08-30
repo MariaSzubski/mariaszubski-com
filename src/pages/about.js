@@ -59,17 +59,6 @@ const AboutPage = () => {
             html
           }
         }
-        content {
-          ... on ContentfulImage {
-            id
-            alt
-            image {
-              fluid(maxWidth: 2400, quality: 100) {
-                ...GatsbyContentfulFluid_withWebp
-              }
-            }
-          }
-        }
       }
 
       professional: contentfulSection(
@@ -205,7 +194,7 @@ const AboutPage = () => {
               </StyledH4>
             </Col>
           </Row>
-          <Row justify="center">
+          {/* <Row justify="center">
             <Col xs={5} md={3} xl={2}>
               <Img
                 fluid={data.about.content[0].image.fluid}
@@ -215,7 +204,7 @@ const AboutPage = () => {
                 `}
               />
             </Col>
-          </Row>
+          </Row> */}
         </section>
 
         <section className="element">

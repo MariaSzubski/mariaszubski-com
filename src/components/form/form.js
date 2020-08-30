@@ -27,8 +27,8 @@ const Form = ({ config, source, ...props }) => {
 
   const renderRadio = opts => (
     <fieldset key={opts.contentful_id} className="toggle">
-      <span className="toggleField" aria-labelledby="group-label">
-        <legend id="#group-label">{opts.placeholder}</legend>
+      <span className="toggleField" aria-labelledby="groupLabel">
+        <legend id="#groupLabel">{opts.placeholder}</legend>
         <span className="toggleGrp" tabIndex="-1">
           <label tabIndex="-1">
             <input

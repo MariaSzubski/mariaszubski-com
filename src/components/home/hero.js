@@ -14,13 +14,13 @@ const SRow = styled(Row)`
   min-height: 60vh;
   padding-top: 5rem;
   padding-bottom: 8rem;
-  @media ${screen.min.xl} {
+  @media ${screen.min.md} {
     min-height: 92vh;
   }
 `
 
 const HeadshotCol = styled(Col)`
-  opacity: 0.9;
+  opacity: 0.85;
 `
 
 const ContentCol = styled(Col)`
@@ -62,7 +62,7 @@ const HeroSection = props => {
       image: contentfulImage(contentful_id: { eq: "1uTQnGtlm3g2I5UkC2AbA6" }) {
         contentful_id
         image {
-          fluid {
+          fluid(maxWidth: 400, maxHeight: 400, quality: 80) {
             ...GatsbyContentfulFluid_withWebp
           }
         }
@@ -91,16 +91,14 @@ const HeroSection = props => {
   `)
   return (
     <SRow align="center" justify="center" fluid>
-      <Show lg>
-        <HeadshotCol xs={12} lg={3} xl={3.5} xxl={3} fluid>
+      <HeadshotCol xs={12} lg={3} xl={3.5} xxl={3} fluid>
+        <div style={{ borderRadius: "100%", overflow: "hidden" }}>
           <Img
-            object-fit="contain"
             fluid={data.image.image.fluid}
             alt="Maria Szubski - Freelance Developer"
-            style={{ borderRadius: "100%" }}
           />
-        </HeadshotCol>
-      </Show>
+        </div>
+      </HeadshotCol>
       <ContentCol
         xs={12}
         sm={11}
