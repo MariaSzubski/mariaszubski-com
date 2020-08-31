@@ -41,12 +41,12 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Maria Szubski - Freelance Front End Developer - Cincinnati, OH - Web Development Contractor`,
-        short_name: `Maria Szubski Digital, LLC`,
         start_url: `/`,
         background_color: `#121D28`,
         theme_color: `#121D28`,
         display: `minimal-ui`,
         icon: `src/images/favicon.png`,
+        prefer_related_applications: false,
       },
     },
     {

@@ -59,6 +59,12 @@ const DescHTML = styled(HTML)`
   }
 `
 
+const LinkGroup = styled(Aside)`
+  @media ${screen.min.md} and ${screen.max.lg} {
+    max-width: 50%;
+  }
+`
+
 const ProjectTemplate = props => {
   const post = props.data.contentfulProject
   return (
@@ -106,7 +112,7 @@ const ProjectTemplate = props => {
                     ))}
                   </SkillList>
                 </Aside>
-                <Aside style={{ maxWidth: "30rem" }}>
+                <LinkGroup>
                   {post.links.map(link => (
                     <Button
                       to={link.url}
@@ -118,7 +124,7 @@ const ProjectTemplate = props => {
                       {link.label}
                     </Button>
                   ))}
-                </Aside>
+                </LinkGroup>
               </Col>
             </Row>
           </section>
