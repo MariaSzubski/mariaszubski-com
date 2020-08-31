@@ -34,6 +34,7 @@ const global_styles = css`
       ${"" /* background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.green600}  100% ); */}
       ${"" /* background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.green700}  100% ); */}
       ${"" /* background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.blue500} 100% ); */}
+      ${"" /* background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.blue700} 100% ); */}
       ${"" /* background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.grape500} 100% ); */}
       ${"" /* background: linear-gradient( 150deg, ${colors.black} 8%, ${colors.plum500} 100% ); */}
       ${"" /* background: linear-gradient( 150deg, ${colors.white} 8%, #FFFFFF 100% ); */}
@@ -142,7 +143,7 @@ const global_styles = css`
   h1 {
     font-family: ${fonts.milkshake};
     font-weight: 200;
-    font-size: 4.8rem;
+    font-size: 5.6rem;
     text-align: center;
     color: ${colors.green200};
     text-shadow: 0.2rem 0.2rem 0rem ${colors.black};

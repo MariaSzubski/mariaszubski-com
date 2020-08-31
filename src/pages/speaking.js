@@ -119,13 +119,13 @@ const SpeakingPage = props => {
             </ImageGroup>
           </section>
           <Container>
-            <Row justify="center" style={{marginTop: "8rem"}}>
+            <Row justify="center" style={{ marginTop: "8rem" }}>
               <Col xl={8.5}>
                 <p className="text-lg">
-                  I&#39;ve volunteered to speak at and organize non-profit
-                  events in the local tech community. These events tend to be
-                  beginner workshops on various topics related to web
-                  development.
+                  I regularly volunteer to lead and organize meetups in the tech
+                  community. If you’re looking for a guest speaker, I’m
+                  available to give talks on web development, javascript,
+                  accessibility, and small business ownership.
                 </p>
                 <Button
                   to="/contact"

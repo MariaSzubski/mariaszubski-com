@@ -26,6 +26,39 @@ const Aside = styled.aside`
   } */}
 `
 
+const DescHTML = styled(HTML)`
+  ol li {
+    list-style-type: decimal;
+  }
+
+  ol {
+    padding-left: 5rem;
+  }
+
+  ul,
+  ol {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+  }
+
+  ul {
+    padding-left: 3rem;
+  }
+
+  h4 {
+    margin-top: 5rem;
+    color: ${colors.green300};
+  }
+  h5 {
+    color: ${colors.gray200};
+    text-align: left;
+    padding-bottom: 0.5rem;
+    margin-top: 2rem;
+    padding-left: 3rem;
+  }
+`
+
 const ProjectTemplate = props => {
   const post = props.data.contentfulProject
   return (
@@ -52,12 +85,14 @@ const ProjectTemplate = props => {
           <section className="element">
             <Row justify="between">
               <Col lg={8.5} xl={8.25} xxl={7.75}>
-                <HTML content={post.desc} className="" />
+                <DescHTML content={post.desc} />
               </Col>
               <Col lg={3.5} xl={3.25} offset={{ xl: 0.5, xxl: 1 }}>
                 <Aside>
                   {post.skills[0].displayLabel && (
-                    <h5 style={{ color: colors.yellow, marginBottom: "1.4rem" }}>
+                    <h5
+                      style={{ color: colors.yellow, marginBottom: "1.4rem" }}
+                    >
                       {post.skills[0].title}
                     </h5>
                   )}
@@ -71,7 +106,7 @@ const ProjectTemplate = props => {
                     ))}
                   </SkillList>
                 </Aside>
-                <Aside style={{maxWidth: "30rem"}}>
+                <Aside style={{ maxWidth: "30rem" }}>
                   {post.links.map(link => (
                     <Button
                       to={link.url}
