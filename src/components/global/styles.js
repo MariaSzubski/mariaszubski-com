@@ -298,6 +298,10 @@ const global_styles = css`
       font-size: 1.6rem;
       line-height: 1.45;
     }
+
+    h1 {
+      font-size: 4.8rem;
+    }
     *.text-md,
     *.text-md * {
       font-weight: 400;
