@@ -20,7 +20,7 @@ const AttributionsSection = props => {
     <Row
       align="center"
       justify="center"
-      style={{ minHeight: "70vh" }}
+      style={{ minHeight: "80vh" }}
       className="element"
     >
       <Col md={10} lg={5.5} xl={8} xxl={9}>
@@ -68,7 +68,7 @@ const AttributionsSection = props => {
             </Link>
           </li>
           <li>
-            Flat device mockups made by{" "}
+            Blank device mockup PSDs made by{" "}
             <Link
               to="https://dribbble.com/shots/988673-Flat-Devices"
               target="_blank"

@@ -14,7 +14,7 @@ const Link = ({ children, to, activeClassName, target, ...props }) => {
   const external = (
     <a
       href={to}
-      target={target}
+      target={target ? target : null}
       rel={target === "_blank" ? "noreferrer" : ""}
       {...props}
     >

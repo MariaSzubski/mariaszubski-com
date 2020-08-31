@@ -10,7 +10,7 @@ import HTML from "../components/utilities/html"
 import Button from "../components/button"
 import { SkillList, SkillTag } from "../components/skill/list"
 
-import { colors } from "../components/global/vars"
+import { colors, screen } from "../components/global/vars"
 
 const Hero = styled(Img)`
   margin-bottom: 6rem;
@@ -19,7 +19,44 @@ const Hero = styled(Img)`
 const Aside = styled.aside`
   padding: 2rem 2rem;
   margin-bottom: 2rem;
-  background-color: ${colors.black + "55"};
+  background-color: ${colors.black + "99"};
+  ${"" /* max-width: 30rem;
+  @media ${screen.min.lg} {
+    max-width: none;
+  } */}
+`
+
+const DescHTML = styled(HTML)`
+  ol li {
+    list-style-type: decimal;
+  }
+
+  ol {
+    padding-left: 5rem;
+  }
+
+  ul,
+  ol {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+  }
+
+  ul {
+    padding-left: 3rem;
+  }
+
+  h4 {
+    margin-top: 5rem;
+    color: ${colors.green300};
+  }
+  h5 {
+    color: ${colors.gray200};
+    text-align: left;
+    padding-bottom: 0.5rem;
+    margin-top: 2rem;
+    padding-left: 3rem;
+  }
 `
 
 const ProjectTemplate = props => {
@@ -44,16 +81,18 @@ const ProjectTemplate = props => {
         </Col>
       </Row>
       <Row justify="center">
-        <Col xxl={8.5}>
+        <Col xl={11} xxl={9}>
           <section className="element">
             <Row justify="between">
-              <Col lg={9} xl={8.25}>
-                <HTML content={post.desc} className="" />
+              <Col lg={8.5} xl={8.25} xxl={7.75}>
+                <DescHTML content={post.desc} />
               </Col>
-              <Col lg={3} xl={3.25}>
+              <Col lg={3.5} xl={3.25} offset={{ xl: 0.5, xxl: 1 }}>
                 <Aside>
                   {post.skills[0].displayLabel && (
-                    <h5 style={{ color: colors.yellow }}>
+                    <h5
+                      style={{ color: colors.yellow, marginBottom: "1.4rem" }}
+                    >
                       {post.skills[0].title}
                     </h5>
                   )}
@@ -67,7 +106,7 @@ const ProjectTemplate = props => {
                     ))}
                   </SkillList>
                 </Aside>
-                <Aside>
+                <Aside style={{ maxWidth: "30rem" }}>
                   {post.links.map(link => (
                     <Button
                       to={link.url}

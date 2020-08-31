@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import Img from "gatsby-image/withIEPolyfill"
 
-import { Row, Col, Show } from "../grid-system"
+import { Row, Col } from "../grid-system"
 import HTML from "../utilities/html"
 import { SkillGroup, SkillTag } from "../skill"
 import Button from "../button"
@@ -11,7 +11,7 @@ import Button from "../button"
 import { colors, screen } from "../global/vars"
 
 const SRow = styled(Row)`
-  min-height: 60vh;
+  min-height: 82vh;
   padding-top: 5rem;
   padding-bottom: 8rem;
   @media ${screen.min.md} {
@@ -20,25 +20,36 @@ const SRow = styled(Row)`
 `
 
 const HeadshotCol = styled(Col)`
+  display: none;
   opacity: 0.85;
+
+  @media ${screen.min.lg} {
+    display: block;
+  }
 `
 
 const ContentCol = styled(Col)`
   max-width: 96rem;
   p {
-    font-size: 2.4rem;
-    line-height: 1.6;
+    font-size: 2.9rem;
+    line-height: 1.5;
     max-width: 80rem;
+    margin-bottom: 5rem;
+  }
+  @media ${screen.min.sm} {
+    align-self: center;
+    p {
+      font-size: 3.3rem;
+    }
   }
   @media ${screen.min.md} {
     align-self: center;
-    margin-top: 5rem;
     p {
-      font-size: 3.8rem;
+      font-size: 3.6rem;
     }
   }
   @media ${screen.min.lg} {
-    margin-top: 0rem;
+    margin-top: 3rem;
     p {
       margin-bottom: 4rem;
       max-width: none;
@@ -54,6 +65,13 @@ const ContentCol = styled(Col)`
 
 const SButton = styled(Button)`
   margin: 3rem auto 0rem;
+`
+
+const ImgRing = styled.div`
+  border-radius: 100%;
+  overflow: hidden;
+  ${"" /* border: 0.8rem solid ${colors.gray100 + "09"}; */}
+  ${"" /* box-shadow: 0px 0px 40px 0px ${colors.black + "66"}; */}
 `
 
 const HeroSection = props => {
@@ -92,17 +110,17 @@ const HeroSection = props => {
   return (
     <SRow align="center" justify="center" fluid>
       <HeadshotCol xs={12} lg={3} xl={3.5} xxl={3} fluid>
-        <div style={{ borderRadius: "100%", overflow: "hidden" }}>
+        <ImgRing>
           <Img
             fluid={data.image.image.fluid}
             alt="Maria Szubski - Freelance Developer"
           />
-        </div>
+        </ImgRing>
       </HeadshotCol>
       <ContentCol
-        xs={12}
-        sm={11}
-        md={10}
+        xs={10.2}
+        sm={8}
+        md={9.25}
         lg={7.5}
         xl={6.8}
         xxl={6.5}

@@ -33,7 +33,7 @@ const Desktop = styled.section`
     text-transform: uppercase;
     position: relative;
     &:not(:last-child) {
-      padding: 1rem 2rem;
+      padding: 1.25rem 2rem;
     }
     &:hover {
       text-decoration: none;
@@ -106,6 +106,9 @@ const Nav = () => (
     </Link>
     <Show md>
       <Desktop className="text-sm">
+        <StyledLink to="/" activeClassName="active">
+          Home
+        </StyledLink>
         <StyledLink to="/about" activeClassName="active">
           About
         </StyledLink>

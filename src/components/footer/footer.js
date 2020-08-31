@@ -16,7 +16,7 @@ const StyledFooter = styled.footer`
   text-align: center;
   font-weight: 600;
   color: ${colors.white};
-  background-color: ${colors.black + "dd"};
+  background-color: ${colors.blue900 + "88"};
 `
 
 const Credits = styled(Link)`

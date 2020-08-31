@@ -100,7 +100,7 @@ const SpeakingPage = props => {
   return (
     <Layout title="Guest Speaking, Panels, & Workshops">
       <Row justify="center">
-        <Col xl={10}>
+        <Col xxl={10}>
           <hgroup className="element">
             <h1>{data.sections.title}</h1>
           </hgroup>
@@ -119,20 +119,20 @@ const SpeakingPage = props => {
             </ImageGroup>
           </section>
           <Container>
-            <Row justify="center" style={{marginTop: "8rem"}}>
+            <Row justify="center" style={{ marginTop: "8rem" }}>
               <Col xl={8.5}>
                 <p className="text-lg">
-                  I&#39;ve volunteered to speak at and organize non-profit
-                  events in the local tech community. These events tend to be
-                  beginner workshops on various topics related to web
-                  development.
+                  I regularly volunteer to lead and organize meetups in the tech
+                  community. If you’re looking for a guest speaker, I’m
+                  available to give talks on web development, javascript,
+                  accessibility, and small business ownership.
                 </p>
                 <Button
                   to="/contact"
                   color="green"
                   style={{
                     display: "flex",
-                    width: "400px",
+                    maxWidth: "400px",
                     margin: "3rem auto 0rem",
                   }}
                 >
@@ -150,10 +150,10 @@ const SpeakingPage = props => {
                   </Col>
                 </Row>
                 <Row>
-                  <Col lg={9} xl={4}>
+                  <Col lg={9} xl={4.1}>
                     <HTML content={section.copy} className="text-md" />
                   </Col>
-                  <Col xl={7} offset={{ xl: 1 }}>
+                  <Col xl={7.4} offset={{ xl: 0.5 }}>
                     <div className="background" style={{ paddingTop: "2rem" }}>
                       <h5 className="pad" style={{ color: colors.grape300 }}>
                         {section.subtitle}

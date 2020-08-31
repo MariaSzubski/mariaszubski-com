@@ -8,6 +8,7 @@ const Netlify = props => (
     preserveAspectRatio="xMidYMid"
     {...props}
   >
+    <title>Netlify</title>
     <defs>
       <radialGradient
         cx="50%"

@@ -13,7 +13,7 @@ import { colors, screen } from "../global/vars"
 const SRow = styled(Row)`
   padding-top: 8rem;
   padding-bottom: 8rem;
-  min-height: 100vh;
+  min-height: 90vh;
 `
 
 const SCol = styled(Col)`
@@ -42,6 +42,17 @@ const Headline = styled.p`
   text-transform: uppercase;
   text-align: center;
   margin-top: 3rem;
+`
+
+const StyledH1 = styled.h1`
+  text-align: center;
+  margin-bottom: 8rem;
+  ${"" /* font-weight: 600; */}
+  ${"" /* font-size: 6rem; */}
+  color: ${colors.grape300};
+  &:after {
+    display: none;
+  }
 `
 
 const CalloutsSection = props => {
@@ -73,6 +84,7 @@ const CalloutsSection = props => {
   return (
     <SRow align="center" fluid>
       <Col fluid>
+        <StyledH1>What I Offer</StyledH1>
         <Container>
           <Row justify="center">
             {/* <Col xs={12}>
@@ -82,7 +94,8 @@ const CalloutsSection = props => {
             {data.callouts.content.map((callout, idx) => (
               <SCol
                 xs={10}
-                sm={7}
+                sm={8.5}
+                md={7}
                 lg={3.2}
                 offset={{ lg: idx === 0 ? 0 : 0.75 }}
                 key={callout.contentful_id}

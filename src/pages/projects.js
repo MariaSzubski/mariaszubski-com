@@ -36,13 +36,13 @@ const ProjectsLandingPage = () => {
   return (
     <Layout title="Example Projects & Case Studies">
       <hgroup>
-        <h1>Recent Projects</h1>
+        <h1>Projects</h1>
       </hgroup>
-      <Row>
+      <Row justify="center">
         {data.project.content.map(card => {
           if (card.password) return null
           return (
-            <Col md={6} xl={4} key={card.contentful_id}>
+            <Col md={10} lg={6} xl={4} xxl={3.8} key={card.contentful_id}>
               <ProjectCard
                 title={card.title}
                 summary={card.summary}

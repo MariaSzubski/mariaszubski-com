@@ -11,8 +11,8 @@ import Button from "../button"
 import { colors } from "../global/vars"
 
 const SRow = styled(Row)`
-  padding-top: 8rem;
-  padding-bottom: 8rem;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
 `
 
 const ExpandCol = styled(Col)`
@@ -85,7 +85,7 @@ const FeaturedSection = () => {
               <h1>{data.featured.title}</h1>
             </Col>
             {data.featured.content.map(card => (
-              <Col sm={10} md={6.2} lg={4} xxl={3.25} key={card.contentful_id}>
+              <Col xs={12} sm={10} md={10} lg={4} xxl={3.25} key={card.contentful_id}>
                 <ProjectCard
                   title={card.title}
                   summary={card.summary}
