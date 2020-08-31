@@ -38,6 +38,18 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: 'Maria Szubski - Freelance Developer',
+        start_url: `/`,
+        background_color: `#121D28`,
+        theme_color: `#121D28`,
+        display: `minimal-ui`,
+        icon: `src/images/favicon.png`,
+        prefer_related_applications: false,
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/content/`,
