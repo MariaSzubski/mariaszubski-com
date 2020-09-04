@@ -10,7 +10,7 @@ const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL
 module.exports = {
   siteMetadata: {
     title: `Maria Szubski - Freelance Frontend Developer - Cincinnati, OH`,
-    description: `Cincinnati, OH - Web Development Contractor - Available For Hire`,
+    description: `Web developer specializing in React, Gatsby, GraphQL, and Accessibility. Available for hire.`,
     author: `Maria Szubski`,
     siteUrl: siteUrl,
   },
@@ -40,7 +40,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'Maria Szubski - Freelance Developer',
+        name: "Maria Szubski - Freelance Developer",
         start_url: `/`,
         background_color: `#121D28`,
         theme_color: `#121D28`,

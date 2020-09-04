@@ -8,7 +8,7 @@ const LinkedIn = props => (
   <Link
     to="https://linkedin.com/in/mariaszubski"
     target="_blank"
-    title="LinkedIn"
+    title="LinkedIn Profile"
   >
     <svg
       width="4.8rem"

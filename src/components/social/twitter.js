@@ -5,7 +5,7 @@ import Link from "../utilities/link"
 import { IconMixin } from "./styles"
 
 const Twitter = props => (
-  <Link to="https://twitter.com/mariaszubski" target="_blank" title="twitter">
+  <Link to="https://twitter.com/mariaszubski" target="_blank" title="Twitter Profile">
     <svg
       width="4.8rem"
       height="4.8rem"
