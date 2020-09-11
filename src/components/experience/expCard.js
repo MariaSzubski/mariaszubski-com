@@ -29,6 +29,19 @@ const Company = styled.h6`
 `
 const Desc = styled(HTML)`
   display: ${props => (props.$toggle ? "block" : "none")};
+  strong {
+    color: ${colors.blue700};
+  }
+  ul {
+    padding: 0rem 0rem 1rem 4rem;
+    li {
+      list-style-type: circle;
+      margin-bottom: 0.7rem;
+
+    }
+
+  }
+
 `
 
 const ExpCard = props => (

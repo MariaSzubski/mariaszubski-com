@@ -67,20 +67,7 @@ const AboutPage = () => {
         title
         contentful_id
         content {
-          ... on ContentfulJob {
-            contentful_id
-            title
-            companyName
-            team
-            dateRange
-            jobTitles
-            location
-            desc {
-              childMarkdownRemark {
-                html
-              }
-            }
-          }
+          ...FragmentContentfulJob
         }
       }
 
@@ -108,20 +95,7 @@ const AboutPage = () => {
               }
             }
           }
-          ... on ContentfulJob {
-            contentful_id
-            title
-            companyName
-            team
-            dateRange
-            jobTitles
-            location
-            desc {
-              childMarkdownRemark {
-                html
-              }
-            }
-          }
+          ...FragmentContentfulJob
         }
       }
 
@@ -129,20 +103,7 @@ const AboutPage = () => {
         title
         contentful_id
         content {
-          ... on ContentfulJob {
-            contentful_id
-            title
-            companyName
-            team
-            dateRange
-            jobTitles
-            location
-            desc {
-              childMarkdownRemark {
-                html
-              }
-            }
-          }
+          ...FragmentContentfulJob
         }
       }
 
@@ -152,25 +113,12 @@ const AboutPage = () => {
         title
         contentful_id
         content {
-          ... on ContentfulJob {
-            contentful_id
-            title
-            companyName
-            team
-            dateRange
-            jobTitles
-            location
-            desc {
-              childMarkdownRemark {
-                html
-              }
-            }
-          }
+          ...FragmentContentfulJob
         }
       }
     }
   `)
-  let [toggle, setToggle] = useState([false, false])
+  let [toggle, setToggle] = useState([true, false])
   return (
     <Layout fluid title="About Me - Bio">
       <Container>
@@ -194,17 +142,6 @@ const AboutPage = () => {
               </StyledH4>
             </Col>
           </Row>
-          {/* <Row justify="center">
-            <Col xs={5} md={3} xl={2}>
-              <Img
-                fluid={data.about.content[0].image.fluid}
-                alt={data.about.content[0].alt}
-                css={`
-                  border-radius: 100%;
-                `}
-              />
-            </Col>
-          </Row> */}
         </section>
 
         <section className="element">

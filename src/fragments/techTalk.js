@@ -1,7 +1,7 @@
 import { graphql } from "gatsby"
 
-export const TechTalkAttr = graphql`
-  fragment TechTalkAttr on ContentfulSection {
+export const FragmentContentfulTechTalk = graphql`
+  fragment FragmentContentfulTechTalk on ContentfulSection {
     id
     date
     label
