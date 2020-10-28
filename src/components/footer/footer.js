@@ -29,18 +29,17 @@ const Credits = styled(Link)`
   margin: 2rem auto 3rem;
 
   @media ${screen.min.sm} {
-
-      position: absolute;
-      bottom: 2rem;
-      right: 2.4rem;
-      margin: 0rem;
+    position: absolute;
+    bottom: 2rem;
+    right: 2.4rem;
+    margin: 0rem;
   }
 `
 
 const Footer = () => (
   <StyledFooter text-sm text-center>
-    <SkillGroup data={data} center simple theme="transparent" />
-      <Credits to="/attributions">Attributions</Credits>
+    <SkillGroup data={data} center simple highlight theme="transparent" />
+    <Credits to="/attributions">Attributions</Credits>
     &copy; {new Date().getFullYear()} Maria Szubski Digital, LLC
   </StyledFooter>
 )
