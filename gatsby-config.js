@@ -63,15 +63,15 @@ module.exports = {
             {
               family: "Nunito",
               variants: ["300", "400", "600", "700", "800"],
-              //fontDisplay: 'swap',
-              //strategy: 'selfHosted' // 'base64' || 'cdn'
+              fontDisplay: "swap",
+              // strategy: "cdn",
             },
           ],
         },
         useMinify: true,
         usePreload: true,
         usePreconnect: true,
-        //formats: ['woff2', 'woff'],
+        // formats: ["woff2", "woff"],
       },
     },
     {

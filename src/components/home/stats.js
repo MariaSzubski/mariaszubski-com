@@ -74,7 +74,7 @@ const StatsSection = props => {
   return (
     <Row justify="center" fluid>
       <StatsCol xs={9.5} sm={8} md={9.5} lg={8} xl={6.75} xxl={5.8} fluid>
-        <Container>
+        <Container aria-label="Business Statistics">
           <Row>
             {data.stats.content.map((stat, idx) => (
               <Col
@@ -87,8 +87,8 @@ const StatsSection = props => {
                 })()}
                 key={stat.contentful_id}
               >
-                <Num style={{ color: colors.blue300 }}>{stat.value}</Num>
-                <h6>{stat.key}</h6>
+                <Num style={{ color: colors.blue300 }} aria-label={`${stat.value} ${stat.key}`}><span aria-hidden>{stat.value}</span></Num>
+                <h6 aria-hidden>{stat.key}</h6>
               </Col>
             ))}
           </Row>
@@ -96,7 +96,7 @@ const StatsSection = props => {
       </StatsCol>
 
       <BioCol>
-        <Container>
+        <Container aria-label="Freelance Services">
           <Row justify="center" style={{ paddingTop: "8rem", paddingBottom: "10rem" }}>
             <Col lg={10} xl={8.5} xxl={7}>
               <HTML content={data.stats.copy} className="highlighted" />

@@ -7,6 +7,7 @@ const fontfaces = css`
     font-family: "Milkshake";
     src: url(${milkshake}) format("truetype");
     font-weight: 300;
+    font-display: block;
   }
 `
 

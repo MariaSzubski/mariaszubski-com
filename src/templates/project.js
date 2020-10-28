@@ -94,7 +94,7 @@ const ProjectTemplate = props => {
                 <DescHTML content={post.desc} />
               </Col>
               <Col lg={3.5} xl={3.25} offset={{ xl: 0.5, xxl: 1 }}>
-                <Aside>
+                <Aside aria-label="Technologies used on this project">
                   {post.skills[0].displayLabel && (
                     <h5
                       style={{ color: colors.yellow, marginBottom: "1.4rem" }}
@@ -112,7 +112,7 @@ const ProjectTemplate = props => {
                     ))}
                   </SkillList>
                 </Aside>
-                <LinkGroup>
+                <LinkGroup aria-label="Project Links">
                   {post.links.map(link => (
                     <Button
                       to={link.url}

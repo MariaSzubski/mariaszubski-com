@@ -76,7 +76,7 @@ const Company = styled(SCol)`
 `
 
 const WorkshopCard = props => (
-  <SContainer>
+  <SContainer aria-label="Workshop Card">
     <SRow align="center">
       <DateCol xs={4} md={2.25}>
         <DateIcon />
