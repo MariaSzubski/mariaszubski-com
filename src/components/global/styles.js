@@ -2,6 +2,7 @@ import { css, createGlobalStyle } from "styled-components"
 
 import { fonts, colors, screen } from "./vars"
 import normalize from "./ref/normalize"
+import fontfaces from "./ref/fonts"
 
 const global_styles = css`
   html {
@@ -321,6 +322,7 @@ const global_styles = css`
 `
 const all_styles = css`
   ${normalize}
+  ${fontfaces}
   ${global_styles}
 `
 

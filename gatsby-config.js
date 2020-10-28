@@ -74,16 +74,6 @@ module.exports = {
         // formats: ["woff2", "woff"],
       },
     },
-    `gatsby-plugin-preload-fonts`,
-    {
-      resolve: "gatsby-plugin-web-font-loader",
-      options: {
-        custom: {
-          families: ["Milkshake"],
-          urls: ["/fonts/fonts.css"],
-        },
-      },
-    },
     {
       resolve: `gatsby-source-contentful`,
       options: {
