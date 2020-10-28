@@ -175,17 +175,19 @@ const global_styles = css`
 
     @keyframes grow {
       0% {
-        width: 0rem;
+        transform: scaleX(0);
       }
       100% {
-        width: 8rem;
+        transform: scaleX(1);
       }
     }
 
     &:after {
       content: "";
       display: block;
-      width: 0rem;
+      width: 8rem;
+      transform: scaleX(0);
+      transform-origin: left;
       height: 5px;
       background-color: ${colors.green300};
       border-radius: 0.2rem;
