@@ -35,7 +35,7 @@ const ProjectsLandingPage = () => {
   `)
   return (
     <Layout title="Example Projects & Case Studies">
-      <hgroup>
+      <hgroup className="element">
         <h1>Projects</h1>
       </hgroup>
       <Row justify="center">

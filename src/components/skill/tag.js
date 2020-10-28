@@ -49,7 +49,7 @@ const StyledTag = styled.span`
   }
 
   &:hover {
-    cursor: default;
+    cursor: inherit;
   }
 
   ${StyledIcon} > * {
@@ -75,16 +75,21 @@ const StyledTag = styled.span`
       width: ${props => props.$size};
 
       margin-left: ${props => (props.$simple ? "0rem" : "1.1rem")};
-      margin-right:${props => (props.$simple ? "0rem" : "0.7rem")};
+      margin-right: ${props => (props.$simple ? "0rem" : "0.7rem")};
     }
-
   }
 `
 
 const SkillTag = props => {
   let Icon = icons[props.icon]
+  const handleHover = () => props.handleHighlight(props.label || props.icon)
   return (
-    <StyledTag title={props.label} $simple={props.simple} $size={props.size}>
+    <StyledTag
+      title={props.label}
+      $simple={props.simple}
+      $size={props.size}
+      onMouseEnter={props.highlight ? handleHover : null}
+    >
       {Icon && (
         <StyledIcon>
           <Icon light={props.theme === "light" ? 1 : 0} />
@@ -101,6 +106,8 @@ SkillTag.propTypes = {
   label: PropTypes.string,
   simple: PropTypes.bool,
   size: PropTypes.string,
+  highlight: PropTypes.bool,
+  handleHighlight: PropTypes.func,
 }
 
 SkillTag.defaultProps = {
