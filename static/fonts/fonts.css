@@ -2,4 +2,5 @@
   font-family: "Milkshake";
   src: url("./milkshake.otf") format("truetype");
   font-weight: 300;
+  font-display: block;
 }
