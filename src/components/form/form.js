@@ -14,7 +14,7 @@ const StyledForm = styled.form`
 const Form = ({ config, source, ...props }) => {
   const renderInput = opts => (
     <label htmlFor={opts.name} key={opts.contentful_id}>
-      {opts.placeholder}
+      <span aria-hidden>{opts.placeholder}</span>
       <input
         type={opts.type === "input" ? "text" : opts.type}
         name={opts.name}
@@ -28,7 +28,7 @@ const Form = ({ config, source, ...props }) => {
   const renderRadio = opts => (
     <fieldset key={opts.contentful_id} className="toggle">
       <span className="toggleField" aria-labelledby="groupLabel">
-        <legend id="#groupLabel">{opts.placeholder}</legend>
+        <legend id="groupLabel" aria-hidden>{opts.placeholder}</legend>
         <span className="toggleGrp" tabIndex="-1">
           <label tabIndex="-1">
             <input
@@ -36,8 +36,6 @@ const Form = ({ config, source, ...props }) => {
               name={`${opts.name}`}
               value={opts.values[0]}
               required={opts.required}
-              placeholder={opts.placeholder}
-              aria-label={opts.placeholder}
               defaultChecked
             />
             <span role="radio" aria-checked="true" tabIndex="0" defaultChecked>
@@ -50,10 +48,8 @@ const Form = ({ config, source, ...props }) => {
               name={opts.name}
               value={opts.values[1]}
               required={opts.required}
-              placeholder={opts.placeholder}
             />
             <span
-              aria-label={opts.placeholder}
               role="radio"
               aria-checked="false"
               tabIndex="-1"
@@ -74,7 +70,7 @@ const Form = ({ config, source, ...props }) => {
 
   const renderTextarea = opts => (
     <label key={opts.contentful_id}>
-      {opts.name}
+      <span aria-hidden>{opts.name}</span>
       <textarea
         data-autoresize
         name={opts.name}
@@ -99,6 +95,7 @@ const Form = ({ config, source, ...props }) => {
   return (
     <StyledForm
       name={`${config.title}`.replace(/\s/g, "-").toLowerCase()}
+      aria-label={config.title}
       method="POST"
       autoComplete="off"
       data-netlify="true"

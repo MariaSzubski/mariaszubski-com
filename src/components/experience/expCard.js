@@ -8,7 +8,7 @@ import HTML from "../utilities/html"
 
 import { colors, screen } from "../global/vars"
 
-const Panel = styled.aside`
+const Panel = styled.div`
   padding: 2.8rem 3.2rem;
   border-bottom: 1px solid ${colors.gray100};
   &:last-of-type {
@@ -45,7 +45,7 @@ const Desc = styled(HTML)`
 `
 
 const ExpCard = props => (
-  <Panel>
+  <Panel aria-label="Experience Card">
     <Container fluid>
       <Row align="center">
         <Col md={props.toggle ? 12 : 8.1}>

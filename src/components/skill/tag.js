@@ -85,7 +85,7 @@ const SkillTag = props => {
   const handleHover = () => props.handleHighlight(props.label || props.icon)
   return (
     <StyledTag
-      title={props.label}
+      title={props.label || props.icon}
       $simple={props.simple}
       $size={props.size}
       onMouseEnter={props.highlight ? handleHover : null}

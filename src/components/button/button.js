@@ -22,13 +22,13 @@ const StyledButton = styled(Link)`
   }
   transition: color 0.15s ease-in;
 
-  color: ${colors.white};
+  color: white;
   font-size: 1.5rem;
   font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
   text-align: center;
-  text-shadow: 0rem 0.1rem 0.1rem ${colors.black + "C0"};
+  text-shadow: 0rem 0.15rem 0.1rem ${colors.black};
 
   ${"" /* Vertical Buttons */}
   &:not(:last-of-type) {
@@ -60,12 +60,12 @@ const StyledButton = styled(Link)`
   }
 
   &:hover {
-    color: ${colors.white};
+    color: white;
     text-decoration: none;
     background: ${props => props.$hover};
     &:before {
       opacity: 1;
-      transition: opacity 0.15s ease-out;
+      transition: opacity 0.25s ease-out;
     }
   }
 `

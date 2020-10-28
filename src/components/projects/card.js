@@ -133,12 +133,12 @@ const ProjectCard = props => (
   <Wrapper to={props.permalink}>
     {props.hero && (
       <Hero>
-        <Img fluid={props.hero.fluid} alt={props.title} objectFit="contain" />
+        <Img fluid={props.hero.fluid} alt="" objectFit="contain" />
       </Hero>
     )}
     <Details>
       <span>
-        <h4 title={props.title}>{props.title}</h4>
+        <h4>{props.title}</h4>
         <h6>{props.summary}</h6>
       </span>
       <Skills

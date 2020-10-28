@@ -101,7 +101,7 @@ const MobileMenu = styled.div`
 
 const Nav = () => (
   <StyledNav>
-    <Link to="/">
+    <Link to="/" aria-label="Site Logo - Home">
       <StyledLogo />
     </Link>
     <Show md>
