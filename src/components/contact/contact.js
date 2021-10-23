@@ -102,7 +102,11 @@ const ContactSection = () => {
               <Hide lg>
                 <ContactH3>Contact Form</ContactH3>
               </Hide>
-              <Form config={data.form} source="Contact Page" />
+              <Form
+                config={data.form}
+                action="/success"
+                source="Contact Page"
+              />
             </Col>
           </Row>
         </Container>
