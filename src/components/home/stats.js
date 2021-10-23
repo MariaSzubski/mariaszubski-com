@@ -3,24 +3,13 @@ import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 
 import { Container, Row, Col } from "../grid-system"
-import SkillTag from "../skill/tag"
-import HTML from "../utilities/html"
 
 import { colors, screen } from "../global/vars"
-
-const BioCol = styled(Col)`
-  ${"" /* min-height: 60vh; */}
-  display: flex;
-  align-items: center;
-  @media ${screen.min.xl} {
-    ${"" /* min-height: 60vh; */}
-  }
-`
 
 const StatsCol = styled(Col)`
   margin-top: 3rem;
   z-index: 100;
-  background-color: #0C151D;
+  background-color: #0c151d;
   padding: 3rem 2rem 4rem 2rem;
   border-radius: 0.6rem;
   text-align: center;
@@ -56,11 +45,6 @@ const StatsSection = props => {
     query {
       stats: contentfulSection(contentful_id: { eq: "Ocq2hDEarPzaUfunPe137" }) {
         contentful_id
-        copy {
-          childMarkdownRemark {
-            html
-          }
-        }
         content {
           ... on ContentfulKeyVal {
             contentful_id
@@ -87,23 +71,18 @@ const StatsSection = props => {
                 })()}
                 key={stat.contentful_id}
               >
-                <Num style={{ color: colors.blue300 }} aria-label={`${stat.value} ${stat.key}`}><span aria-hidden>{stat.value}</span></Num>
+                <Num
+                  style={{ color: colors.blue300 }}
+                  aria-label={`${stat.value} ${stat.key}`}
+                >
+                  <span aria-hidden>{stat.value}</span>
+                </Num>
                 <h6 aria-hidden>{stat.key}</h6>
               </Col>
             ))}
           </Row>
         </Container>
       </StatsCol>
-
-      <BioCol>
-        <Container aria-label="Freelance Services">
-          <Row justify="center" style={{ paddingTop: "8rem", paddingBottom: "10rem" }}>
-            <Col lg={10} xl={8.5} xxl={7}>
-              <HTML content={data.stats.copy} className="highlighted" />
-            </Col>
-          </Row>
-        </Container>
-      </BioCol>
     </Row>
   )
 }

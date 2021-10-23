@@ -1,11 +1,14 @@
 import React from "react"
-import { css } from "styled-components"
 
 import Link from "../utilities/link"
 import { IconMixin } from "./styles"
 
-const Resume = props => (
-  <Link to="/" target="_blank">
+export const Resume = props => (
+  <Link
+    to={`MariaSzubski_FrontEndDeveloper_Resume.pdf`}
+    target="_blank"
+    title="Resume"
+  >
     <svg
       width="4.8rem"
       height="4.8rem"
@@ -27,5 +30,3 @@ const Resume = props => (
     </svg>
   </Link>
 )
-
-export default Resume

@@ -4,10 +4,7 @@ import styled from "styled-components"
 
 import { Container, Row, Col } from "../grid-system"
 import HTML from "../utilities/html"
-import HighQuality from "../social/highQuality"
-import Streamline from "../social/streamline"
-import Teamwork from "../social/teamwork"
-
+import { HighQuality, Streamline, Teamwork } from "../social"
 import { colors, screen } from "../global/vars"
 
 const SRow = styled(Row)`
@@ -47,9 +44,7 @@ const Headline = styled.p`
 const StyledH1 = styled.h1`
   text-align: center;
   margin-bottom: 8rem;
-  ${"" /* font-weight: 600; */}
-  ${"" /* font-size: 6rem; */}
-  color: ${colors.grape300};
+  color: ${colors.pink};
   &:after {
     display: none;
   }

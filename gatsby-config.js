@@ -56,25 +56,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-webfonts`,
-      options: {
-        fonts: {
-          google: [
-            {
-              family: "Nunito",
-              variants: ["300", "400", "600", "700", "800"],
-              fontDisplay: "swap",
-              // strategy: "cdn",
-            },
-          ],
-        },
-        useMinify: true,
-        usePreload: true,
-        usePreconnect: true,
-        // formats: ["woff2", "woff"],
-      },
-    },
-    {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID,

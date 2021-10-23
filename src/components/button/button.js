@@ -10,19 +10,18 @@ const StyledButton = styled(Link)`
   display: inline-flex;
   vertical-align: top;
   justify-content: center;
-  border-radius: 0.3rem;
+  border-radius: ${props => (props.$rounded ? "3rem" : "0.3rem")};
   border: 1px solid ${props => props.$border};
 
-  background:${props => props.$fill};
+  background: ${props => props.$fill};
   cursor: pointer;
   line-height: 1.8;
   letter-spacing: 0.06rem;
   &:not(:last-of-type) {
     margin-right: 1rem;
   }
-  transition: color 0.15s ease-in;
 
-  color: white;
+  color: ${props => (props.$textColor ? "white" : props.$border)};
   font-size: 1.5rem;
   font-weight: bold;
   text-transform: uppercase;
@@ -35,7 +34,8 @@ const StyledButton = styled(Link)`
     margin-bottom: ${props => (props.$stacked ? "1.5rem" : "")};
   }
   width: ${props => (props.$stacked ? "100%" : "auto")};
-  padding: 1rem ${props => (props.$stacked ? "1rem" : "3rem")};
+  padding: 1rem
+    ${props => (props.$stacked ? "1rem" : props.$rounded ? "2rem" : "3rem")};
   align-items: flex-start;
 
   img {
@@ -56,6 +56,7 @@ const StyledButton = styled(Link)`
     height: 100%;
     opacity: 0;
     background: ${props => props.$bg_before};
+    border-radius: ${props => (props.$rounded ? "3rem" : "0.3rem")};
     transition: opacity 0.15s ease-out;
   }
 
@@ -63,6 +64,7 @@ const StyledButton = styled(Link)`
     color: white;
     text-decoration: none;
     background: ${props => props.$hover};
+    border-radius: ${props => (props.$rounded ? "3rem" : "0.3rem")};
     &:before {
       opacity: 1;
       transition: opacity 0.25s ease-out;
@@ -72,36 +74,43 @@ const StyledButton = styled(Link)`
 
 const color_list = {
   border: {
-    plum: colors.plum,
-    green: colors.green500,
+    plum: colors.plum300,
+    green: colors.green300,
     white: colors.gray500,
     blue: colors.blue300,
+    pink: colors.pink,
   },
   fill: {
-    plum: colors.plum,
-    green: colors.green500,
+    plum: colors.plum300,
+    green: colors.green300,
     white: colors.gray500,
     blue: colors.blue400,
+    pink: colors.pink500,
   },
   bg_before: {
     plum: `linear-gradient(
     30deg, ${colors.plum300} 20%, ${colors.plum700} 100% )`,
     white: colors.gray700,
     green: `linear-gradient(
-    30deg, ${colors.green500} 20%, ${colors.green300} 100% )`,
+    30deg, ${colors.green300} 20%, ${colors.green200} 100% )`,
     blue: `linear-gradient(
     30deg, ${colors.blue500} 20%, ${colors.blue200} 100% )`,
+    pink: `linear-gradient(
+    30deg, ${colors.pink500} 20%, ${colors.pink} 100% )`,
   },
   hover: {
     plum: "none",
     white: colors.gray700,
-    green: "none",
+    green: `linear-gradient(
+    30deg, ${colors.green300} 20%, ${colors.green200} 100% )`,
     blue: `linear-gradient(
     30deg, ${colors.blue400} 20%, ${colors.blue300} 100% )`,
+    pink: `linear-gradient(
+    30deg, ${colors.pink500} 20%, ${colors.pink} 100% )`,
   },
 }
 
-const Button = ({ children, stacked, color, fill, ...props }) => (
+const Button = ({ children, stacked, color, fill, rounded, ...props }) => (
   <StyledButton
     as={!props.to ? "button" : Link}
     $border={color_list.border[color]}
@@ -109,6 +118,8 @@ const Button = ({ children, stacked, color, fill, ...props }) => (
     $hover={color_list.hover[color]}
     $stacked={stacked ? 1 : 0}
     $fill={fill ? color_list.fill[color] : "#00000044"}
+    $rounded={rounded ? 1 : 0}
+    $textColor={fill ? 1 : 0}
     {...props}
   >
     {children}
@@ -121,12 +132,14 @@ Button.propTypes = {
   color: PropTypes.string, // 'green', 'plum'
   stacked: PropTypes.bool,
   fill: PropTypes.bool,
+  rounded: PropTypes.bool,
   layout: PropTypes.string, // vertical
 }
 
 Button.defaultProps = {
   color: "white",
   stacked: false,
+  rounded: false,
 }
 
 export default Button

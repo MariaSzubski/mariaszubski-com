@@ -1,11 +1,14 @@
 import React from "react"
-import { css } from "styled-components"
 
 import Link from "../utilities/link"
 import { IconMixin } from "./styles"
 
-const Github = props => (
-  <Link to="https://github.com/mariaszubski" target="_blank" title="github">
+export const Github = props => (
+  <Link
+    to="https://github.com/mariaszubski"
+    target="_blank"
+    title="GitHub Profile"
+  >
     <svg
       width="4.8rem"
       height="4.8rem"
@@ -27,5 +30,3 @@ const Github = props => (
     </svg>
   </Link>
 )
-
-export default Github

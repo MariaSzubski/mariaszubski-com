@@ -1,11 +1,14 @@
 import React from "react"
-import { css } from "styled-components"
 
 import Link from "../utilities/link"
 import { IconMixin } from "./styles"
 
-const Email = props => (
-  <Link to="mailto:hello@mariaszubski.com" target="_blank" title="Email me">
+export const Email = props => (
+  <Link
+    to="mailto:hello@mariaszubski.com"
+    target="_blank"
+    title="Send me an email"
+  >
     <svg
       width="4.8rem"
       height="4.8rem"
@@ -33,5 +36,3 @@ const Email = props => (
     </svg>
   </Link>
 )
-
-export default Email

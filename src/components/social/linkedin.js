@@ -1,10 +1,8 @@
 import React from "react"
-import { css } from "styled-components"
-
 import Link from "../utilities/link"
 import { IconMixin } from "./styles"
 
-const LinkedIn = props => (
+export const LinkedIn = props => (
   <Link
     to="https://linkedin.com/in/mariaszubski"
     target="_blank"
@@ -31,5 +29,3 @@ const LinkedIn = props => (
     </svg>
   </Link>
 )
-
-export default LinkedIn
