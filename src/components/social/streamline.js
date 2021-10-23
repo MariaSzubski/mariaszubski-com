@@ -1,7 +1,11 @@
 import React from "react"
 
-const Streamline = () => (
-  <svg viewBox="0 0 512 512" aria-label="icno - bug sitting on a browser window" role="img">
+export const Streamline = () => (
+  <svg
+    viewBox="0 0 512 512"
+    aria-label="icno - bug sitting on a browser window"
+    role="img"
+  >
     <circle fill="#F9D643" cx={256} cy={256} r={256} />
     <path
       fill="#EDB340"
@@ -51,5 +55,3 @@ const Streamline = () => (
     </g>
   </svg>
 )
-
-export default Streamline

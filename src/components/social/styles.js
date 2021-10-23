@@ -1,9 +1,8 @@
-import React from "react"
 import { css } from "styled-components"
 
 import { colors } from "../global/vars"
 
-const IconMixin = css`
+export const IconMixin = css`
   margin-right: 1.2rem;
 
   @keyframes fade {
@@ -44,13 +43,13 @@ const IconMixin = css`
 
   .fill-ring,
   .fill-icon {
-    fill: ${colors.blue300};
+    fill: ${colors.pink};
   }
 
   &:hover,
   &:focus {
     .fill-bg {
-      fill: ${colors.blue300};
+      fill: ${colors.pink};
       transition: fill 0.05s ease;
     }
 
@@ -60,5 +59,3 @@ const IconMixin = css`
     }
   }
 `
-
-export { IconMixin }

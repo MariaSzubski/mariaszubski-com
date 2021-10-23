@@ -4,10 +4,7 @@ import styled from "styled-components"
 
 import { Container, Row, Col } from "../grid-system"
 import HTML from "../utilities/html"
-import HighQuality from "../social/highQuality"
-import Streamline from "../social/streamline"
-import Teamwork from "../social/teamwork"
-
+import { HighQuality, Streamline, Teamwork } from "../social"
 import { colors, screen } from "../global/vars"
 
 const SRow = styled(Row)`

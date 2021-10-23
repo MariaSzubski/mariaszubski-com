@@ -1,17 +1,14 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import PropTypes from "prop-types"
 import styled from "styled-components"
 
 import { Container, Row, Col, Hide } from "../grid-system"
 
 import HTML from "../utilities/html"
 import Form from "../form"
+import Button from "../button"
 
-import Email from "../social/email"
-import Twitter from "../social/twitter"
-import LinkedIn from "../social/linkedin"
-import Github from "../social/github"
+import { Email, Twitter, LinkedIn, Github } from "../social"
 
 import { colors, screen } from "../global/vars"
 
@@ -40,7 +37,7 @@ const ContactH3 = styled.h3`
   }
 `
 
-const ContactSection = props => {
+const ContactSection = () => {
   const data = useStaticQuery(graphql`
     query {
       form: contentfulForm(contentful_id: { eq: "2BIm4mvh8sivBJmxWvjBbL" }) {
@@ -81,6 +78,14 @@ const ContactSection = props => {
                 <h3>Let&#39;s Work Together!</h3>
               </hgroup>
               <Desc content={data.form.desc} />
+              <Button
+                to={`MSzubski_FrontEndDeveloper_Resume.pdf`}
+                color="pink"
+                rounded
+                target="_blank"
+              >
+                Resume (PDF)
+              </Button>
               <Email />
               <Github />
               <LinkedIn />

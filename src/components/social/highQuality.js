@@ -1,6 +1,6 @@
 import React from "react"
 
-const HighQuality = () => (
+export const HighQuality = () => (
   <svg viewBox="0 0 512 512" aria-label="icon - rocket ship" role="img">
     <path
       fill="#FB8454"
@@ -47,5 +47,3 @@ const HighQuality = () => (
     <path fill="#FB8454" d="M377.5 185.6l17-68.2L352 160l25.5 25.6z" />
   </svg>
 )
-
-export default HighQuality

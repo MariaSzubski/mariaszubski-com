@@ -1,1 +1,10 @@
-export { default } from "./email.js"
+export * from "./email"
+export * from "./github"
+export * from "./highQuality"
+export * from "./linkedin"
+export * from "./resume"
+export * from "./streamline"
+export * from "./teamwork"
+export * from "./twitter"
+
+export * from "./styles"

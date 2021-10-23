@@ -1,7 +1,11 @@
 import React from "react"
 
-const Teamwork = () => (
-  <svg viewBox="0 0 512 512" aria-label="icon - group of Raised Fists" role="img">
+export const Teamwork = () => (
+  <svg
+    viewBox="0 0 512 512"
+    aria-label="icon - group of Raised Fists"
+    role="img"
+  >
     <circle fill="#42B28A" cx={256} cy={256} r={256} />
     <path
       fill="#0B8971"
@@ -115,5 +119,3 @@ const Teamwork = () => (
     </g>
   </svg>
 )
-
-export default Teamwork
