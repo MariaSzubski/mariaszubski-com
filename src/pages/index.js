@@ -31,7 +31,7 @@ const IndexPage = () => (
     </div>
     <div
       style={{
-        background: `linear-gradient( 160deg, ${colors.grape700 + "66"} 0%,  ${
+        background: `linear-gradient( 200deg, ${colors.black + "99"} 0%,  ${
           colors.plum500 + "44"
         }  100% )`,
       }}
