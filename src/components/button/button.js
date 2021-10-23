@@ -82,7 +82,7 @@ const color_list = {
   },
   fill: {
     plum: colors.plum300,
-    green: colors.green500,
+    green: colors.green300,
     white: colors.gray500,
     blue: colors.blue400,
     pink: colors.pink500,
@@ -92,7 +92,7 @@ const color_list = {
     30deg, ${colors.plum300} 20%, ${colors.plum700} 100% )`,
     white: colors.gray700,
     green: `linear-gradient(
-    30deg, ${colors.green500} 20%, ${colors.green300} 100% )`,
+    30deg, ${colors.green300} 20%, ${colors.green200} 100% )`,
     blue: `linear-gradient(
     30deg, ${colors.blue500} 20%, ${colors.blue200} 100% )`,
     pink: `linear-gradient(
@@ -101,7 +101,8 @@ const color_list = {
   hover: {
     plum: "none",
     white: colors.gray700,
-    green: "none",
+    green: `linear-gradient(
+    30deg, ${colors.green300} 20%, ${colors.green200} 100% )`,
     blue: `linear-gradient(
     30deg, ${colors.blue400} 20%, ${colors.blue300} 100% )`,
     pink: `linear-gradient(

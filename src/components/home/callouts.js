@@ -44,9 +44,7 @@ const Headline = styled.p`
 const StyledH1 = styled.h1`
   text-align: center;
   margin-bottom: 8rem;
-  ${"" /* font-weight: 600; */}
-  ${"" /* font-size: 6rem; */}
-  color: ${colors.grape300};
+  color: ${colors.pink};
   &:after {
     display: none;
   }

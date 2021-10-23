@@ -17,7 +17,11 @@ const SRow = styled(Row)`
 
 const ExpandCol = styled(Col)`
   text-align: center;
-  padding-top: 7rem;
+  padding-top: 4rem;
+`
+
+const SLink = styled(Link)`
+  color: ${colors.green300};
   font-size: 3.2rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -85,7 +89,14 @@ const FeaturedSection = () => {
               <h1>{data.featured.title}</h1>
             </Col>
             {data.featured.content.map(card => (
-              <Col xs={12} sm={10} md={10} lg={4} xxl={3.25} key={card.contentful_id}>
+              <Col
+                xs={12}
+                sm={10}
+                md={10}
+                lg={4}
+                xxl={3.25}
+                key={card.contentful_id}
+              >
                 <ProjectCard
                   title={card.title}
                   summary={card.summary}
@@ -96,7 +107,7 @@ const FeaturedSection = () => {
               </Col>
             ))}
             <ExpandCol md={12}>
-              <Link to="/projects">View More</Link>
+              <SLink to="/projects">View More</SLink>
             </ExpandCol>
           </Row>
         </Container>
