@@ -1,25 +1,16 @@
 import React, { useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import styled, { css } from "styled-components"
-import Img from "gatsby-image"
-
-import data from "../content/all-skills.yml"
 
 import { Container, Row, Col } from "../components/grid-system"
 import Layout from "../components/layout"
-import { SkillGroup } from "../components/skill"
-import { SkillList, SkillTag } from "../components/skill/list"
 import Link from "../components/utilities/link"
 import Button from "../components/button"
 import ExpCard from "../components/experience/expCard"
 import WorkshopCard from "../components/experience/workshop"
 import HTML from "../components/utilities/html"
 
-import Email from "../components/social/email"
-import Twitter from "../components/social/twitter"
-import LinkedIn from "../components/social/linkedin"
-import Github from "../components/social/github"
-import Resume from "../components/social/resume"
+import { Email, Twitter, LinkedIn, Github, Resume } from "../components/social"
 
 import { colors, screen } from "../components/global/vars"
 
