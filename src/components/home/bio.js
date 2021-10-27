@@ -29,7 +29,7 @@ const BioSection = props => {
         <Container aria-label="Freelance Services">
           <Row
             justify="center"
-            style={{ paddingTop: "8rem", paddingBottom: "10rem" }}
+            style={{ paddingTop: "14rem", paddingBottom: "14rem" }}
           >
             <Col lg={10} xl={8.5} xxl={7}>
               <HTML content={data.stats.copy} className="highlighted" />

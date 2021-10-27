@@ -11,8 +11,8 @@ import Button from "../button"
 import { colors } from "../global/vars"
 
 const SRow = styled(Row)`
-  padding-top: 10rem;
-  padding-bottom: 10rem;
+  padding-top: 8rem;
+  padding-bottom: 14rem;
 `
 
 const ExpandCol = styled(Col)`
