@@ -6,6 +6,7 @@
   "author": "Maria Szubski <hello@mariaszubski.com>",
   "dependencies": {
     "@svgr/cli": "^5.4.0",
+    "@types/styled-components": "^5.1.15",
     "babel-plugin-styled-components": "^1.11.1",
     "babel-preset-react-app": "^10.0.0",
     "bluebird": "^3.7.2",
