@@ -7,6 +7,7 @@ import { DateIcon } from "./icons"
 import {
   SContainer,
   SRow,
+  SCol,
   LabelCol,
   DateCol,
   DurationCol,
