@@ -1,11 +1,16 @@
 import React from "react"
 
 import { Show, Hide } from "../grid-system"
-import Button from "../button"
 import Link from "../utilities/link"
 import MenuIcon from "./menu/icon"
 
-import { StyledLink, StyledNav, Desktop, StyledLogo } from "./styles"
+import {
+  StyledLink,
+  StyledButton,
+  StyledNav,
+  Desktop,
+  StyledLogo,
+} from "./styles"
 
 const Nav = () => (
   <StyledNav>
@@ -26,9 +31,9 @@ const Nav = () => (
         <StyledLink to="/speaking" activeClassName="active">
           Speaking
         </StyledLink>
-        <Button to="/contact" color="blue" activeClassName="active">
+        <StyledButton to="/contact" color="blue" activeClassName="active">
           Contact
-        </Button>
+        </StyledButton>
       </Desktop>
     </Show>
     <Hide md>

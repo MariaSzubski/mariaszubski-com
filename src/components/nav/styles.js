@@ -3,8 +3,13 @@ import styled from "styled-components"
 import { colors, screen } from "../global/vars"
 import Logo from "../logo"
 import Link from "../utilities/link"
+import Button from "../button"
 
 const StyledLink = styled(Link)``
+
+const StyledButton = styled(Button)`
+  font-size: 1.3rem !important;
+`
 
 const StyledNav = styled.nav`
   display: flex;
@@ -63,7 +68,8 @@ const StyledLogo = styled(Logo)`
   &:hover {
     ${"" /* animation: ease .5s grow forwards; */}
   }
-  ${"" /* @keyframes grow {
+  ${
+    "" /* @keyframes grow {
       0% {
         transform: scale(1);
       }
@@ -73,7 +79,8 @@ const StyledLogo = styled(Logo)`
       100% {
         transform: scale(1);
       }
-    } */}
+    } */
+  }
 `
 
 const MobileMenu = styled.div`
@@ -94,4 +101,4 @@ const MobileMenu = styled.div`
     props.$open ? "ease .6s scaled-2 forwards" : "ease .6s scaled-3 forwards"};
 `
 
-export { StyledLink, StyledNav, Desktop, StyledLogo, MobileMenu }
+export { StyledLink, StyledButton, StyledNav, Desktop, StyledLogo, MobileMenu }
