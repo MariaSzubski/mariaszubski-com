@@ -1,20 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
-import styled from "styled-components"
 
-import { Row, Col } from "../grid-system"
-import { screen, colors } from "../global/vars"
-
-const StyledQuote = styled(Col)`
-  background-color: hsla(0, 0%, 100%, 0.03);
-  padding: 4rem 2rem;
-  margin: 1rem;
-
-  h4,
-  h5 {
-    color: ${colors.yellow};
-  }
-`
+import { Row } from "../grid-system"
+import { StyledQuote } from "./styles"
 
 const Quote = props => (
   <StyledQuote className="text-center" md={8}>
@@ -42,11 +30,13 @@ Quote.propTypes = {
 }
 
 Testimonials.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.exact({
-    title: PropTypes.string.isRequired,
-    subtitle: PropTypes.string.isRequired,
-    quote: PropTypes.string.isRequired,
-  })),
+  data: PropTypes.arrayOf(
+    PropTypes.exact({
+      title: PropTypes.string.isRequired,
+      subtitle: PropTypes.string.isRequired,
+      quote: PropTypes.string.isRequired,
+    })
+  ),
 }
 
 export default Testimonials

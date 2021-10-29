@@ -158,15 +158,12 @@ const SpeakingPage = props => {
                       <h5 className="pad" style={{ color: colors.grape300 }}>
                         {section.subtitle}
                       </h5>
-                      {section.content
-                        .filter(c => c.__typename === "ContentfulTechTalk")
-                        .reverse()
-                        .map(talk => (
-                          <WorkshopCard
-                            workshop={talk}
-                            key={talk.contentful_id}
-                          />
-                        ))}
+                      {section.content.map(talk => (
+                        <WorkshopCard
+                          workshop={talk}
+                          key={talk.contentful_id}
+                        />
+                      ))}
                     </div>
                   </Col>
                 </Row>

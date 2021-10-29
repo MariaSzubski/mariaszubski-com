@@ -12,7 +12,6 @@ const Desc = styled.ul`
   li {
     margin-bottom: 2.4rem;
   }
-
 `
 
 const AttributionsSection = props => {

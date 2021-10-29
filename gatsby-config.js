@@ -26,7 +26,6 @@ module.exports = {
     {
       resolve: "gatsby-transformer-remark",
       options: {
-        commonmark: true,
         plugins: [],
       },
     },
@@ -100,7 +99,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
-        exclude: ["/projects", "/projects/*"],
+        excludes: ["/projects", "/projects/*"],
       },
     },
   ],

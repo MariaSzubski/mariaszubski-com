@@ -3,7 +3,6 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 
 import { Container } from "../grid-system"
-import { screen } from "../global/vars"
 import GlobalStyles from "../global/styles"
 import SEO from "./seo"
 import Nav from "../nav"

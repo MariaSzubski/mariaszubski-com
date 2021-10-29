@@ -1,32 +1,8 @@
 import React from "react"
-import styled from "styled-components"
 
-import { Container, Row, Col, Hide } from "../grid-system"
-import { colors } from "../global/vars"
-import Link from "../utilities/link"
+import { Row, Col } from "../grid-system"
 
-const Desc = styled.p`
-  padding-left: 0rem;
-  li {
-    margin-bottom: 2.4rem;
-  }
-`
-
-const Content = styled.div`
-  background: ${colors.white + "EE"};
-  color: black;
-  border-radius: 0.5rem;
-  padding: 3rem 4rem;
-  box-shadow: 0px 0.4rem 1rem rgba(0, 0, 20, 0.5);
-  h3 {
-    color: ${colors.black};
-  }
-`
-
-const SLink = styled(Link)`
-  text-shadow: none;
-  color: ${colors.blue300};
-`
+import { Desc, Content, SLink } from "./styles"
 
 const SuccessSection = () => {
   return (

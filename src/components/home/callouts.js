@@ -11,6 +11,11 @@ const SRow = styled(Row)`
   padding-top: 8rem;
   padding-bottom: 8rem;
   min-height: 90vh;
+  @media ${screen.min.lg} {
+    min-height: auto;
+    height: 90vh;
+    max-height: 1150px;
+  }
 `
 
 const SCol = styled(Col)`
@@ -29,6 +34,11 @@ const SCol = styled(Col)`
     &:not(first-of-type) {
       margin-top: 0rem;
     }
+    svg {
+      max-width: 170px;
+    }
+  }
+  @media ${screen.min.xl} {
     svg {
       max-width: 220px;
     }
@@ -79,7 +89,7 @@ const CalloutsSection = props => {
   return (
     <SRow align="center" fluid>
       <Col fluid>
-        <StyledH1>What I Offer</StyledH1>
+        <StyledH1>Services I Offer</StyledH1>
         <Container>
           <Row justify="center">
             {/* <Col xs={12}>
