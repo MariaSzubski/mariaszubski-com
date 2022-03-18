@@ -74,10 +74,12 @@ const AboutPage = () => {
         }
         content {
           ... on ContentfulSection {
+            __typename
             contentful_id
             subtitle
             content {
               ... on ContentfulTechTalk {
+                __typename
                 contentful_id
                 date(formatString: "MMM YYYY")
                 label
@@ -190,7 +192,7 @@ const AboutPage = () => {
                 </div>
                 <div style={{ textAlign: "center", marginTop: "5rem" }}>
                   <Link to="/speaking">
-                    <h4>{"View More ->"}</h4>
+                    <h4>{"View More"}</h4>
                   </Link>
                   <Button
                     to="/contact"
