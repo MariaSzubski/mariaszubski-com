@@ -9,8 +9,9 @@ const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL
 
 module.exports = {
   siteMetadata: {
-    title: `Maria Szubski - Freelance Frontend Developer - Cincinnati, OH`,
+    title: `Frontend Web Developer - Available For Hire | Maria Szubski | Cincinnati, OH`,
     description: `Web developer specializing in React, Gatsby, GraphQL, and Accessibility. Available for hire.`,
+    image: `https://images.ctfassets.net/sx9v94b5k8eh/4CAcEnflCwe2A6tAfi88rl/4dba9b7ae6d60c864a79cba7ea97092d/maria-szubski_web-developer.jpg`,
     author: `Maria Szubski`,
     siteUrl: siteUrl,
   },

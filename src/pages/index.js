@@ -18,7 +18,7 @@ import FeaturedSection from "../components/home/featured"
 import Contact from "../components/contact"
 
 const IndexPage = () => (
-  <Layout fluid title="Home Page - Available For Hire">
+  <Layout fluid>
     <HeroSection />
     {/* <div style={{ background: colors.black + "33" }}> */}
     <div
