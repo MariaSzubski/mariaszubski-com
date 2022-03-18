@@ -12,13 +12,19 @@ function SEO({ description, lang, meta, title }) {
             title
             description
             author
+            image
+            siteUrl
           }
         }
       }
     `
   )
 
+  const metaAuthor = site.siteMetadata.author
   const metaDescription = description || site.siteMetadata.description
+  const metaImage = site.siteMetadata.image
+  const metaTitle = title || site.siteMetadata.title
+
   const [loaded, setLoaded] = useState(false)
 
   useEffect(() => {
@@ -33,7 +39,7 @@ function SEO({ description, lang, meta, title }) {
       bodyAttributes={{
         class: loaded ? "loaded" : "",
       }}
-      title={title}
+      title={metaTitle}
       titleTemplate={`${site.siteMetadata.title}`}
       meta={[
         {
@@ -41,8 +47,12 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
         {
+          property: "og:image",
+          content: metaImage,
+        },
+        {
           property: `og:title`,
-          content: title,
+          content: metaTitle,
         },
         {
           property: `og:description`,
@@ -58,11 +68,15 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          content: metaAuthor,
+        },
+        {
+          name: `twitter:image`,
+          content: metaImage,
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: metaTitle,
         },
         {
           name: `twitter:description`,
