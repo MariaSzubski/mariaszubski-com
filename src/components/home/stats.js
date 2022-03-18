@@ -9,9 +9,11 @@ import { colors, screen } from "../global/vars"
 const StatsCol = styled(Col)`
   margin-top: 3rem;
   z-index: 100;
-  background-color: #0c151d;
+  background-color: ${colors.black};
+  ${"" /* border: 0.3rem solid ${colors.grape500}; */}
+  border: 0.3rem solid ${colors.blue};
   padding: 3rem 2rem 4rem 2rem;
-  border-radius: 0.6rem;
+  border-radius: 1rem;
   text-align: center;
   color: white;
 
@@ -32,9 +34,11 @@ const StatsCol = styled(Col)`
 `
 
 const Num = styled.div`
+  color: ${colors.pink};
   font-size: 3.2rem;
   text-transform: lowercase;
   font-weight: 600;
+
   @media ${screen.min.lg} {
     font-size: 4rem;
   }
@@ -71,10 +75,7 @@ const StatsSection = props => {
                 })()}
                 key={stat.contentful_id}
               >
-                <Num
-                  style={{ color: colors.blue300 }}
-                  aria-label={`${stat.value} ${stat.key}`}
-                >
+                <Num aria-label={`${stat.value} ${stat.key}`}>
                   <span aria-hidden>{stat.value}</span>
                 </Num>
                 <h6 aria-hidden>{stat.key}</h6>
