@@ -25,7 +25,7 @@
     "gatsby-plugin-styled-components": "^5.0.0",
     "gatsby-source-contentful": "^6.0.0",
     "gatsby-source-filesystem": "^4.0.0",
-    "gatsby-transformer-remark": "^5.0.0",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^4.0.0",
     "gatsby-transformer-yaml": "^4.0.0",
     "path": "^0.12.7",
